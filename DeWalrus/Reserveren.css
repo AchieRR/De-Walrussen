@@ -1,0 +1,222 @@
+/* ===============================
+   Variabelen
+   =============================== */
+:root{
+  --header-h: clamp(48px, 8.2vw, 84px);
+
+  /* logo-kaart gedrag */
+  --logo-bg: #f5e7d9;
+  --logo-w-start: 300px;
+  --logo-w-end:   360px;
+  --logo-shrink-range: 200px;
+  --logo-drop-max: 24px;
+
+  /* tekstverhouding in logo */
+  --logo-text-scale: 1;
+  --walrus-factor: 0.52;
+  --grand-factor:  0.22;
+}
+
+*{ box-sizing:border-box; }
+html, body{
+  margin:0; padding:0; height:100%;
+  font-family: Arial, sans-serif;
+  background:#fff;
+}
+
+/* Ruimte onder fixed header */
+.header-gap{
+  height: calc(var(--header-h) + 8px);
+}
+
+/* Midden content */
+.page-content{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  min-height: calc(100vh - var(--header-h) + 320px); /* forceert scroll zodat footer pas later komt */
+}
+
+/* ===============================
+   Header / Navbar
+   =============================== */
+header{
+  position:fixed; inset:0 0 auto 0;
+  height:var(--header-h);
+  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  z-index:2000;
+  display:flex; align-items:center; justify-content:center;
+  padding:0 clamp(8px,3vw,24px);
+  overflow:visible; /* logo mag onder uitsteken */
+}
+
+.topnav{
+  width:100%; max-width:1500px; margin:0 auto;
+  display:grid; grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  column-gap:32px;
+  position:relative;
+  height:100%;
+}
+
+.nav-left, .nav-right{
+  display:flex; align-items:center; gap:22px;
+}
+.nav-left{ justify-content:flex-end; }
+.nav-right{ justify-content:flex-start; }
+
+.nav-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:6px 14px;
+  background:var(--btn-bg,#ffffff);
+  color:var(--btn-text,#000000);
+  border-radius:10px;
+  font-weight:700; text-decoration:none; white-space:nowrap;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.nav-btn:hover{
+  background:var(--btn-bg-hover,#f1e9e0);
+  transform:scale(1.08);
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+
+/* knoppen kleuren (support beide klassespellings) */
+.btn-solliciteren, .btn-soliciteren { --btn-bg:#c29c1e; --btn-bg-hover:#b6911a; --btn-text:#fff; }
+.btn-menukaart,
+.btn-arrengements,
+.btn-arrangementen,
+.btn-zakelijk,
+.btn-contact { --btn-bg:#ffffff; --btn-bg-hover:#f1e9e0; --btn-text:#000; }
+.btn-reserveren { --btn-bg:#c29c1e; --btn-bg-hover:#b6911a; --btn-text:#fff; }
+
+.nav-btn[aria-current="page"]{
+  outline: 2px solid rgba(255,255,255,.6);
+  box-shadow: 0 0 0 3px rgba(0,0,0,.15) inset;
+}
+
+/* ===============================
+   Logo-kaartje
+   =============================== */
+.logo{
+  grid-column:2;
+  align-self:stretch;
+  height:100%;
+  width:var(--logo-w-start);
+  background:var(--logo-bg);
+  padding:0 40px;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  text-decoration:none;
+  text-align:center;
+  display:flex; flex-direction:column; justify-content:center;
+  will-change: width, height;
+}
+.logo .walrus{
+  font-family:'Alex Brush', cursive;
+  font-size: clamp(32px, calc(var(--header-h) * var(--walrus-factor) * var(--logo-text-scale)), 72px);
+  color:#0b2140; line-height:0.95;
+  margin:0;
+  font-weight:700;
+  -webkit-text-stroke:.35px #0b2140;
+  white-space:nowrap;
+  letter-spacing:0.5px;
+}
+.logo .grandcafe{
+  font-family:Georgia, serif;
+  font-size: clamp(12px, calc(var(--header-h) * var(--grand-factor) * var(--logo-text-scale)), 24px);
+  letter-spacing:2px;
+  color:#8b2f2f; text-transform:uppercase;
+  display:block; margin-top:6px; line-height:1;
+  font-weight:900;
+}
+
+/* ===============================
+   Infobar
+   =============================== */
+.infobar{
+  position:relative;
+  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  color:#fff; padding:12px 20px 18px; margin-top:0;
+}
+.infobar-top-text{ font-family:'Alex Brush', cursive; text-align:center; font-size:22px; margin-bottom:8px; }
+.info-content{ max-width:1300px; margin:0 auto; display:flex; justify-content:flex-start; align-items:center; gap:12px; }
+.info-section{ flex:0 0 auto; min-width:220px; }
+.info-section h4{ font-size:22px; margin-bottom:4px; }
+.info-section p{ font-size:14px; line-height:1.4; }
+.info-section a{ color:#fff; text-decoration:underline; text-decoration-color:#fff; }
+.info-section a:hover{ opacity:.85; }
+.socials{ margin-top:8px; }
+.social-icon{ width:24px; height:24px; margin-right:6px; filter:invert(1); transition:transform .2s ease; }
+.social-icon:hover{ transform:scale(1.15); }
+
+.right-side{ text-align:center; margin-left:auto; padding-left:12px; }
+.infobar-right-text{ font-family:'Alex Brush', cursive; font-size:22px; margin:0 0 10px; }
+
+/* city images in footer (re-added) */
+.city-images{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  margin-top:0;
+}
+.city-images img{
+  width:320px;
+  max-width:100%;
+  height:auto;
+  border-radius:6px;
+  box-shadow:0 3px 8px rgba(0,0,0,.3);
+  transition:transform .25s ease;
+  cursor:pointer;
+}
+.city-images img:hover{ transform:scale(1.04); }
+
+.infobar-brand{ text-align:center; margin-top:12px; }
+.infobar-brand .walrus{ font-family:'Alex Brush', cursive; font-size:22px; color:#fff; line-height:1; display:block; }
+.infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
+
+/* ===============================
+   Scroll-animaties (logo)
+   =============================== */
+@supports (animation-timeline: scroll()) or (animation-timeline: scroll(root)){
+  @keyframes logoGrow {
+    from { width: var(--logo-w-start); height: 100%; }
+    to   { width: var(--logo-w-end);   height: calc(100% + var(--logo-drop-max)); }
+  }
+  @keyframes logoTextScale {
+    from { --logo-text-scale: 1; }
+    to   { --logo-text-scale: 1.08; }
+  }
+  .logo{
+    animation-name: logoGrow, logoTextScale;
+    animation-timeline: scroll(root block), scroll(root block);
+    animation-range: 0 var(--logo-shrink-range), 0 var(--logo-shrink-range);
+    animation-timing-function: linear, linear;
+    animation-fill-mode: both, both;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .logo{ animation:none; }
+  }
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width:960px){
+  .page-content{ padding:20px 16px 56px; }
+}
+@media (max-width:780px){
+  :root{
+    --logo-w-start: 230px;
+    --logo-w-end:   280px;
+    --logo-shrink-range: 160px;
+    --logo-drop-max: 8px;
+    --logo-text-scale: 1.02;
+  }
+  .topnav{ grid-template-columns:1fr; row-gap:8px; }
+  .logo{ order:-1; justify-self:center; }
+  .nav-left, .nav-right{ justify-content:center; flex-wrap:wrap; }
+  .info-content{ flex-direction:column; gap:14px; align-items:flex-start; }
+  .right-side{ text-align:left; margin-left:0; padding-left:0; }
+  .city-images img{ width:280px; }
+}
