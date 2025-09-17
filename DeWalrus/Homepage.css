@@ -1,16 +1,33 @@
-.walrus a {
-  font-family: 'Georgia', serif;   
-  font-size: 48px;                 
-  text-decoration: none;           
-  color: rgb(255, 255, 255);                   
+.logo {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-line: none;
+  background-color: #ffffff;
+  
 }
 
-.grandcafe a {
-  font-family: 'Arial', sans-serif; 
-  font-size: 24px;                  
+.walrus {
+  display: block;
+  font-family: 'Alex Brush', cursive;   
+  font-size: 60px;                      
+  color: #0b2140;                       
+  line-height: 1.2;
+  text-decoration-line: none;
   text-decoration: none;
-  color: rgb(255, 255, 255);                     
 }
+
+.grandcafe {
+  display: block;
+  font-family: 'Georgia', serif;        
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #8b2f2f;                       
+  text-transform: uppercase;
+  text-decoration-line: none;
+  text-decoration: none;
+}
+
 
 a {
   text-decoration: none;
@@ -58,9 +75,49 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+
 }
 
+.infobar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat; /* punt 2: image achtergrond */
+  color: #fff;
+  padding: 18px 24px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
 
-infobar{
-    background-color: #460b0b;
+.infobar-top-text {
+  font-family: 'Alex Brush', cursive;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 8px;
+  opacity: 0.95;
+}
+
+.info-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.info-left, .info-right {
+  flex: 1;
+  min-width: 150px;
+}
+
+.info-left { text-align: left; }
+.info-right { text-align: right; display:flex; align-items:flex-start; gap:12px; justify-content:flex-end; }
+
+.social-icon { width:20px; height:20px; vertical-align:middle; filter: invert(1); }
+
+.info-right-image {
+  font-family: 'Alex Brush', cursive;
+  font-size: 20px;
 }
