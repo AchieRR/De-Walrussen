@@ -68,7 +68,7 @@ header{
 .nav-btn:hover{
   background:var(--btn-bg-hover,var(--nav-btn-bg-hover));
   transform:scale(1.08);
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  box-shadow:0 6px 18px rgb(255, 255, 255);
 }
 .btn-solliciteren { --btn-bg:#c29c1e; --btn-bg-hover:#b6911a; --btn-text:#fff; }
 .btn-menukaart,
@@ -212,7 +212,7 @@ header{
 .infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
 
 /* ===============================
-   Scroll-animaties (kaart & tekst)
+
    =============================== */
 @supports (animation-timeline: scroll()) or (animation-timeline: scroll(root)){
   /* kaart alleen onderaan laten uitsteken en iets breder worden */
@@ -223,7 +223,7 @@ header{
   /* teksten schaal je met 1 factor zodat verhouding altijd gelijk blijft */
   @keyframes logoTextScale {
     from { --logo-text-scale: 1; }
-    to   { --logo-text-scale: 1.08; } /* maak groter/kleiner naar smaak (1.04–1.12) */
+    to   { --logo-text-scale: 1.30} /* maak groter/kleiner naar smaak (1.04–1.12) */
   }
 
   .logo{
