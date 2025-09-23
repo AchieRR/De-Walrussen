@@ -77,7 +77,7 @@ header{
 .nav-btn:hover{
   background:var(--btn-bg-hover,#f1e9e0);
   transform:scale(1.08);
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  box-shadow:0 6px 18px rgb(255, 255, 255);
 }
 
 /* knoppen kleuren (support beide klassespellings) */
