@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>De Walrus — Reserveren</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="Reserveren.css" />
 </head>
 <body>
-  <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
@@ -34,16 +31,15 @@
     </nav>
   </header>
 
-  <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
 
-  <!-- MIDDEN – bouw hier je nieuwe content -->
   <main class="page-content">
     <body>
     <main>
         <section class="reservation-form">
             <h2>Maak een Reservering</h2>
             <form action="Bedankt.html" method="OPEN">
+              <action method="POST" action="/verwerk-reservering">
                 <label for="name">Naam:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -67,11 +63,8 @@
         </section>
     </main>
 </body>
-    <!-- Leeg gelaten zodat je hier de Arrengements-content kunt bouwen -->
   </main>
-  <!-- einde midden -->
 
-  <!-- Infobar / Footer -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 
