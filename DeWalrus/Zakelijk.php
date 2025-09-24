@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus — Contact</title>
+  <title>De Walrus — Zakelijk</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="Contact.css" />
+  <link rel="stylesheet" href="Zakelijk.css" />
 </head>
 <body>
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren/Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
         <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
         <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>

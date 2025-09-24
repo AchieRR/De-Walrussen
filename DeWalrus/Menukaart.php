@@ -1,98 +1,81 @@
-<!DOCTYPE html> <!-- Code taal HTML -->
-<html lang="nl"> <!-- pagina taal NL -->
+<!DOCTYPE html>
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&display=swap" rel="stylesheet"> <!-- Playfair font -->
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet"> <!-- Alex Brush Font -->
-  <link rel="stylesheet" href="Homepage.css" />  <!-- krijgt info van Homepage.css -->
-</head>
+  <title>De Walrus — Menukaart</title>
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="Menukaart.css" />
+</head>
 <body>
+  <!-- Header / Navbar -->
   <header>
-    <nav class="topnav" role="navigation" aria-label="Hoofdmenu"> <!-- navigatie bar -->
-      <div class="nav-left"> <!-- links zijde -->
-        <a href="Soliciteren/Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
+    <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
+      <div class="nav-left">
+        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
         <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.html" class="nav-btn btn-arrangementen">Arrangements</a>
+        <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
 
-      <a href="Homepage.html" class="logo" aria-label="De Walrus Homepage"> <!-- midden logo  -->
+      <a href="Homepage.html" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
 
-      <div class="nav-right"> <!-- rechts zijde -->
+      <div class="nav-right">
         <a href="Zakelijk.html" class="nav-btn btn-zakelijk">Zakelijk</a>
         <a href="Contact.html" class="nav-btn btn-contact">Contact</a>
         <a href="Reserveren.html" class="nav-btn btn-reserveren">Reserveren</a>
       </div>
     </nav>
   </header>
-  
 
-  <section class="slider-wrap" id="galerij" aria-label="Fotogalerij">
-    <input type="radio" name="slides" id="slide-1" checked>
-    <input type="radio" name="slides" id="slide-2">
-    <input type="radio" name="slides" id="slide-3">
+  <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
+  <div class="header-gap" aria-hidden="true"></div>
 
-    <div class="slider">
-      <ul class="slides">
-        <li class="slide slide-1">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f4/46/74/sfeerimpressie.jpg?w=900&h=500&s=1" alt="De Walrus Leeuwarden — terras aan het Gouverneursplein">
-          <div class="caption">
-            <h3>De Walrus Leeuwarden</h3>
-            <p>Geniet aan het Gouverneursplein — dagelijks open tot 01:00.</p>
-          </div>
-        </li>
-        <li class="slide slide-2">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/8d/3d/98/de-walrus-sneek-voorzijde.jpg?w=900&h=500&s=1" alt="De Walrus Sneek — gezellig in de binnenstad">
-          <div class="caption">
-            <h3>De Walrus Sneek</h3>
-            <p>Sfeervol in de hart van Sneek — zeven dagen per week.</p>
-          </div>
-        </li>
-        <li class="slide slide-3">
-          <img src="https://imgs.search.brave.com/sI0xZ5irLFuk9JECfMG_7MS16py96nfzzZsP6QST1As/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vdGYtbGFiL2lt/YWdlL3VwbG9hZC9y/ZXN0YXVyYW50LzNl/OGZiYzBhLTQzY2Yt/NGJhZC04YjdjLTZm/ZTI2NTk5MGVhYS9k/Y2RmOWZjMy1kOTM2/LTQzNDEtYmUwYi1j/YTg5MWRjYjBkOTUu/anBn" alt="Sfeervol diner met kaarslicht">
-          <div class="caption">
-            <h3>Sfeervol Diner</h3>
-            <p>Klassiekers en moderne gerechten — vers en met zorg.</p>
-          </div>
-        </li>
-      </ul>
+  <!-- MIDDEN – bouw hier je nieuwe content -->
+  <main class="page-content">
+    <?php
+$servername = "localhost";
+$username = "root";
+$password = "ServBay.dev";
+$dbname = "menukaart";
 
-      <label for="slide-3" class="control prev ctrl-1" aria-label="Vorige">
-        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
-      </label>
-      <label for="slide-2" class="control next ctrl-1" aria-label="Volgende">
-        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
-      </label>
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-      <label for="slide-1" class="control prev ctrl-2" aria-label="Vorige">
-        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
-      </label>
-      <label for="slide-3" class="control next ctrl-2" aria-label="Volgende">
-        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
-      </label>
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
 
-      <label for="slide-2" class="control prev ctrl-3" aria-label="Vorige">
-        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
-      </label>
-      <label for="slide-1" class="control next ctrl-3" aria-label="Volgende">
-        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
-      </label>
 
-      <div class="dots" aria-hidden="true">
-        <label for="slide-1" class="dot d1"></label>
-        <label for="slide-2" class="dot d2"></label>
-        <label for="slide-3" class="dot d3"></label>
-      </div>
-    </div>
-  </section>
+$sql = "SELECT Naam, Omschrijving, Ingredienten, Prijs FROM menukaart";
+$result = $conn->query($sql);
 
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "Naam: <b>" . $row["Naam"]. "</b> - Omschrijving: " . $row["Omschrijving"]."  Ingredienten: " . $row["Ingredienten"]."  Prijs: " . $row["Prijs"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+
+  </main>
+  <!-- einde midden -->
+
+  <!-- Infobar / Footer -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
+
     <div class="info-content">
       <div class="info-section">
         <h4>De Walrus Leeuwarden</h4>

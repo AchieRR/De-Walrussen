@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus — Soliciteren</title>
+  <title>De Walrus — Bedankt voor Reseveren</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="Soliciteren.css" />
+  <link rel="stylesheet" href="Zakelijk.css" />
 </head>
 <body>
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren/Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
         <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
+        <a href="Arrengements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
 
       <a href="Homepage.html" class="logo" aria-label="De Walrus Homepage">
@@ -36,10 +36,19 @@
 
   <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
-    <div class="info-solicteer" </div>
+
   <!-- MIDDEN – bouw hier je nieuwe content -->
   <main class="page-content">
-   
+    <body>
+    <main>
+        <section class="thank-you-message">
+            <h2>Je reservering is ontvangen!</h2>
+            <p>Bedankt voor het maken van een reservering bij ons restaurant. We kijken ernaar uit je te verwelkomen!</p>
+            <p>Je ontvangt binnenkort een bevestiging via e-mail.</p>
+        </section>
+    </main>
+</body>
+    <!-- Leeg gelaten zodat je hier de Arrengements-content kunt bouwen -->
   </main>
   <!-- einde midden -->
 
