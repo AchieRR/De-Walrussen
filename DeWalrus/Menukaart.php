@@ -16,7 +16,7 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren/Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
         <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
         <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
@@ -39,7 +39,36 @@
 
   <!-- MIDDEN – bouw hier je nieuwe content -->
   <main class="page-content">
-    <!-- Leeg gelaten zodat je hier de Arrengements-content kunt bouwen -->
+    <?php
+$servername = "localhost";
+$username = "root";
+$password = "ServBay.dev";
+$dbname = "menukaart";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+
+$sql = "SELECT Naam, Omschrijving, Ingredienten, Prijs FROM menukaart";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "Naam: <b>" . $row["Naam"]. "</b> - Omschrijving: " . $row["Omschrijving"]."  Ingredienten: " . $row["Ingredienten"]."  Prijs: " . $row["Prijs"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+
   </main>
   <!-- einde midden -->
 

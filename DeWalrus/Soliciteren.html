@@ -16,7 +16,7 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren/Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
         <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
         <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
@@ -34,12 +34,91 @@
     </nav>
   </header>
 
-  <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
+
   <div class="header-gap" aria-hidden="true"></div>
-    <div class="info-solicteer" </div>
-  <!-- MIDDEN – bouw hier je nieuwe content -->
   <main class="page-content">
-   
+   <!-- HERO: tekst links + grote video rechts -->
+<section class="hero-section">
+  <div class="hero-text">
+    <h1>Benieuwd hoe je eerste werkdag bij De Walrus is?</h1>
+    <p>
+      In deze video laten we je precies zien hoe het eraan toe gaat:
+      het team, de sfeer en wat je op je eerste dag kunt verwachten.
+      Heb je daarna nog vragen? Stel ze gerust hieronder bij het formulier!
+    </p>
+  </div>
+
+  <div class="hero-video" aria-label="Introductievideo De Walrus">
+    <div class="video-outer">
+      <iframe
+        src="https://www.youtube.com/watch?v=C8Qkj52bfZE"
+        title="Je eerste werkdag bij De Walrus"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULIER -->
+<section class="apply-form" aria-labelledby="sollicitatie-titel">
+  <h2 id="sollicitatie-titel">Solliciteer via dit formulier!</h2>
+  <form action="#" method="post" enctype="multipart/form-data" novalidate>
+    <div class="form-row">
+      <div class="form-field">
+        <label for="naam">Naam*</label>
+        <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required>
+      </div>
+      <div class="form-field">
+        <label for="email">E-mail*</label>
+        <input type="email" id="email" name="email" placeholder="jij@voorbeeld.nl" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="telefoon">Telefoon</label>
+        <input type="tel" id="telefoon" name="telefoon" placeholder="06 12345678" pattern="^(\+?\d[\d\s-]{7,})$">
+      </div>
+      <div class="form-field">
+        <label for="locatie">Voorkeurslocatie*</label>
+        <select id="locatie" name="locatie" required>
+          <option value="" disabled selected>Kies een locatie</option>
+          <option value="Leeuwarden">De Walrus Leeuwarden</option>
+          <option value="Sneek">De Walrus Sneek</option>
+          <option value="Beide">Beide</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="motivatie">Motivatie*</label>
+      <textarea id="motivatie" name="motivatie" rows="6" placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken." required></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="cv">CV (PDF of DOC)</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+      </div>
+      <div class="form-field">
+        <label for="startdatum">Beschikbaar vanaf</label>
+        <input type="date" id="startdatum" name="startdatum">
+      </div>
+    </div>
+
+    <label class="checkbox">
+      <input type="checkbox" required>
+      Ik ga akkoord met het verwerken van mijn gegevens volgens de privacyverklaring.
+    </label>
+
+    <button type="submit" class="btn-submit">Versturen</button>
+
+    <!-- Tip: vervang action="#" door je eigen verwerkings-endpoint of formulierdienst -->
+  </form>
+</section>
+
   </main>
   <!-- einde midden -->
 
