@@ -3,33 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus — Contact</title>
+  <title>De Walrus — Menukaart</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="Contact.css" />
+  <link rel="stylesheet" href="Menukaart.css" />
 </head>
 <body>
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
-        <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
+        <a href="Soliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
+        <a href="Arrangements.php" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
 
-      <a href="Homepage.html" class="logo" aria-label="De Walrus Homepage">
+      <a href="/" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
 
       <div class="nav-right">
-        <a href="Zakelijk.html" class="nav-btn btn-zakelijk">Zakelijk</a>
-        <a href="Contact.html" class="nav-btn btn-contact">Contact</a>
-        <a href="Reserveren.html" class="nav-btn btn-reserveren">Reserveren</a>
+        <a href="Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
+        <a href="Contact.php" class="nav-btn btn-contact">Contact</a>
+        <a href="Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
       </div>
     </nav>
   </header>
@@ -37,13 +37,27 @@
   <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
 
-  <!-- MIDDEN – bouw hier je nieuwe content -->
-  <main class="page-content">
-    <h1>
-      Menukaart
-    </h1>
-    
+<div class="background-img">
+  <h1>Menukaart</h1>
+</div>
 
+
+
+
+  
+  
+  
+  
+  
+  <!-- MIDDEN – bouw hier je nieuwe content -->
+  
+
+  <main class="page-content">
+<<<<<<< HEAD:DeWalrus/Menukaart.html
+
+=======
+   
+>>>>>>> df4cc36d0c18d5e69606afd7888211defeb2c45e:DeWalrus/Menukaart.php
   </main>
   <!-- einde midden -->
 
