@@ -16,9 +16,9 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Solliciteren.php" class="nav-btn btn-solliciteren" aria-current="page">Solliciteren</a>
+        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
         <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangementen.php" class="nav-btn btn-arrangementen">Arrangementen</a>
+        <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
       </div>
 
       <a href="index.php" class="logo" aria-label="De Walrus Homepage">

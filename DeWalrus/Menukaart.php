@@ -16,9 +16,9 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
         <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.php" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
+        <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
       </div>
 
       <a href="index.php" class="logo" aria-label="De Walrus Homepage">
@@ -37,27 +37,8 @@
   <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
 
-<div class="background-img">
-  <h1>Menukaart</h1>
-</div>
+    <main class="page-content">
 
-
-
-
-  
-  
-  
-  
-  
-  <!-- MIDDEN – bouw hier je nieuwe content -->
-  
-
-  <main class="page-content">
-<<<<<<< HEAD:DeWalrus/Menukaart.html
-
-=======
-   
->>>>>>> df4cc36d0c18d5e69606afd7888211defeb2c45e:DeWalrus/Menukaart.php
   </main>
   <!-- einde midden -->
 

@@ -115,10 +115,6 @@ header{
   box-shadow:0 6px 18px rgb(255 255 255 / 80%);
 }
 
-/* Actieve pagina (nav) */
-.nav-btn[aria-current="page"]{
-  box-shadow:0 0 0 2px var(--brand-gold) inset;
-}
 
 /* Kleurenschema knoppen (match Contact) */
 .btn-solliciteren,
