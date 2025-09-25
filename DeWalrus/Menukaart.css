@@ -125,6 +125,21 @@ header{
   font-weight:900;
 }
 
+
+.background-img {
+    max-width: 1500px;
+    max-height: 1500px;
+    background-image: url(https://media.istockphoto.com/id/523740823/photo/blank-green-chalkboard.jpg?s=612x612&w=0&k=20&c=sDiN5vKAP9JL_6wl-kTjp1iWzLDhTx9UC407KPuGVvc=);
+    background-size: 1000px, 1000px;
+    background-size: 100%;
+    padding: clamp(22px, 2.4vw, 36px);
+    margin-left: auto; margin-right: auto;
+
+
+}
+
+
+
 /* ===============================
    Infobar
    =============================== */

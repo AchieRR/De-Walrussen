@@ -37,37 +37,22 @@
   <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
 
+<div class="background-img">
+  <h1>Menukaart</h1>
+</div>
+
+
+
+
+  
+  
+  
+  
+  
   <!-- MIDDEN – bouw hier je nieuwe content -->
+  
+
   <main class="page-content">
-    <?php
-$servername = "localhost";
-$username = "root";
-$password = "ServBay.dev";
-$dbname = "menukaart";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-
-
-$sql = "SELECT Naam, Omschrijving, Ingredienten, Prijs FROM menukaart";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "Naam: <b>" . $row["Naam"]. "</b> - Omschrijving: " . $row["Omschrijving"]."  Ingredienten: " . $row["Ingredienten"]."  Prijs: " . $row["Prijs"]. "<br>";
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-?>
 
   </main>
   <!-- einde midden -->
@@ -141,3 +126,4 @@ $conn->close();
   </footer>
 </body>
 </html>
+
