@@ -37,9 +37,27 @@
   <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
 
+<div class="background-img">
+  <h1>Menukaart</h1>
+</div>
+
+
+
+
+  
+  
+  
+  
+  
   <!-- MIDDEN – bouw hier je nieuwe content -->
+  
+
   <main class="page-content">
+<<<<<<< HEAD:DeWalrus/Menukaart.html
+
+=======
    
+>>>>>>> df4cc36d0c18d5e69606afd7888211defeb2c45e:DeWalrus/Menukaart.php
   </main>
   <!-- einde midden -->
 
@@ -112,3 +130,4 @@
   </footer>
 </body>
 </html>
+
