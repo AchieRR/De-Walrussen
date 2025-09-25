@@ -34,84 +34,81 @@ html, body{
    Header / Navbar
    =============================== */
 header{
-  position:fixed; inset:0 0 auto 0;
-  height:var(--header-h);
-  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
-  z-index:2000;
-  display:flex; align-items:center; justify-content:center;
-  padding:0 clamp(8px,3vw,24px);
-  overflow:visible; /* kaart mag onder uitsteken */
+  position: fixed; inset: 0 0 auto 0;
+  height: var(--header-h);
+  background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 clamp(8px, 3vw, 24px);
+  overflow: visible; /* logo-kaart mag uitsteken */
 }
 .topnav{
-  width:100%; max-width:1500px; margin:0 auto;
-  display:grid; grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  column-gap:32px;
-  position:relative;
-  height:100%;
+  width: 100%; max-width: 1500px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; column-gap: 32px;
+  height: 100%;
 }
 .nav-left, .nav-right{
-  display:flex; align-items:center; gap:22px;
+  display: flex; align-items: center; gap: 22px;
 }
-.nav-left{ justify-content:flex-end; }
-.nav-right{ justify-content:flex-start; }
+.nav-left{ justify-content: flex-end; }
+.nav-right{ justify-content: flex-start; }
 
+/* Nav-knoppen */
 .nav-btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:6px 14px; /* iets lager dan standaard */
-  background:var(--btn-bg,var(--nav-btn-bg));
-  color:var(--btn-text,var(--nav-btn-text));
-  border-radius:10px;
-  font-weight:700; text-decoration:none; white-space:nowrap;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 6px 14px;
+  background: var(--btn-bg, var(--nav-btn-bg));
+  color: var(--btn-text, var(--nav-btn-text));
+  border-radius: 10px;
+  font-weight: 700; text-decoration: none; white-space: nowrap;
   transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
 }
+
 .nav-btn:hover{
-  background:var(--btn-bg-hover,var(--nav-btn-bg-hover));
-  transform:scale(1.08);
-  box-shadow:0 6px 18px rgb(255, 255, 255);
+  background: var(--btn-bg-hover, var(--nav-btn-bg-hover));
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgb(0, 0, 0);
 }
-.btn-solliciteren { --btn-bg:#c29c1e; --btn-bg-hover:#b6911a; --btn-text:#fff; }
+
+.nav-btn[aria-current="page"]{
+  box-shadow: 0 0 0 2px var(--brand-gold) inset;
+}
+
+.btn-solliciteren,
+.btn-reserveren{ --btn-bg: var(--brand-gold); --btn-bg-hover: var(--brand-gold-dark); --btn-text: #fff; }
 .btn-menukaart,
 .btn-arrangementen,
 .btn-zakelijk,
-.btn-contact { --btn-bg:#ffffff; --btn-bg-hover:#f1e9e0; --btn-text:#000; }
-.btn-reserveren { --btn-bg:#c29c1e; --btn-bg-hover:#b6911a; --btn-text:#fff; }
+.btn-contact{ --btn-bg:#ffffff; --btn-bg-hover:#f1e9e0; --btn-text:#000; }
 
 /* ===============================
    Logo-kaartje
    =============================== */
 .logo{
-  grid-column:2;
-  align-self:stretch;               /* rekt mee met headerhoogte */
-  height:100%;
-  width:var(--logo-w-start);
-  background:var(--logo-bg);
-  padding:0 40px;                   /* vaste binnenmarge, breedte zit in width hierboven */
-  border-radius:6px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
-  text-decoration:none;
-  text-align:center;
-  display:flex; flex-direction:column; justify-content:center;
+  grid-column: 2;
+  align-self: stretch; height: 100%;
+  width: var(--logo-w-start);
+  background: var(--logo-bg);
+  padding: 0 40px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-decoration: none; text-align: center;
+  display: flex; flex-direction: column; justify-content: center;
   will-change: width, height;
 }
 .logo .walrus{
-  font-family:'Alex Brush', cursive;
-  /* schaal beide regels met 1 variabele + zelfde onderlinge ratio */
+  font-family: 'Alex Brush', cursive;
   font-size: clamp(32px, calc(var(--header-h) * var(--walrus-factor) * var(--logo-text-scale)), 72px);
-  color:#0b2140; line-height:0.95;
-  margin:0;
-  font-weight:700;
-  -webkit-text-stroke:.35px #0b2140;
-  white-space:nowrap;               /* voorkomt rare afbreking 'De' op een eigen regel */
-  letter-spacing:0.5px;
+  color: #0b2140; line-height: 0.95; margin: 0; font-weight: 700;
+  -webkit-text-stroke: .35px #0b2140;
+  white-space: nowrap; letter-spacing: .5px;
 }
 .logo .grandcafe{
-  font-family:Georgia, serif;
+  font-family: Georgia, serif;
   font-size: clamp(12px, calc(var(--header-h) * var(--grand-factor) * var(--logo-text-scale)), 24px);
-  letter-spacing:2px;
-  color:#8b2f2f; text-transform:uppercase;
-  display:block; margin-top:6px; line-height:1;
-  font-weight:900;
+  letter-spacing: 2px; color: #8b2f2f; text-transform: uppercase;
+  display: block; margin-top: 6px; line-height: 1; font-weight: 900;
 }
 
 /* ===============================
@@ -212,20 +209,17 @@ header{
 .infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
 
 /* ===============================
-
+scroll animatie 
    =============================== */
 @supports (animation-timeline: scroll()) or (animation-timeline: scroll(root)){
-  /* kaart alleen onderaan laten uitsteken en iets breder worden */
-  @keyframes logoGrow {
-    from { width: var(--logo-w-start); height: 100%; }
-    to   { width: var(--logo-w-end);   height: calc(100% + var(--logo-drop-max)); }
+  @keyframes logoGrow{
+    from{ width: var(--logo-w-start); height: 100%; }
+    to  { width: var(--logo-w-end);   height: calc(100% + var(--logo-drop-max)); }
   }
-  /* teksten schaal je met 1 factor zodat verhouding altijd gelijk blijft */
-  @keyframes logoTextScale {
-    from { --logo-text-scale: 1; }
-    to   { --logo-text-scale: 1.30} /* maak groter/kleiner naar smaak (1.04–1.12) */
+  @keyframes logoTextScale{
+    from{ --logo-text-scale: 1; }
+    to  { --logo-text-scale: 1.08; } /* pas aan naar smaak */
   }
-
   .logo{
     animation-name: logoGrow, logoTextScale;
     animation-timeline: scroll(root block), scroll(root block);
@@ -233,9 +227,8 @@ header{
     animation-timing-function: linear, linear;
     animation-fill-mode: both, both;
   }
-
   @media (prefers-reduced-motion: reduce){
-    .logo{ animation:none; }
+    .logo{ animation: none; }
   }
 }
 
@@ -250,13 +243,13 @@ header{
   :root{
     --logo-w-start: 230px;
     --logo-w-end:   280px;
-    --logo-shrink-range: 160px; 
+    --logo-shrink-range: 160px;
     --logo-drop-max: 8px;
-    --logo-text-scale: 1.02; /* subtieler op mobiel */
+    --logo-text-scale: 1.02;
   }
-  .topnav{ grid-template-columns:1fr; row-gap:8px; }
-  .logo{ order:-1; justify-self:center; }
-  .nav-left, .nav-right{ justify-content:center; flex-wrap:wrap; }
+  .topnav{ grid-template-columns: 1fr; row-gap: 8px; }
+  .logo{ order: -1; justify-self: center; }
+  .nav-left, .nav-right{ justify-content: center; flex-wrap: wrap; }
   .info-content{ flex-direction:column; gap:14px; align-items:flex-start; }
   .right-side{ text-align:left; margin-left:0; padding-left:0; }
   .city-images{ align-items:flex-start; }

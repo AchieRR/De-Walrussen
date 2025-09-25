@@ -13,7 +13,7 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu"> <!-- navigatie bar -->
       <div class="nav-left"> <!-- links zijde -->
-        <a href="Soliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
         <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
         <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangements</a>
       </div>

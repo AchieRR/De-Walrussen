@@ -1,0 +1,598 @@
+/* ===============================
+   Variabelen (match Contact)
+   =============================== */
+:root{
+  --header-h: clamp(48px, 8.2vw, 84px);
+
+  /* Logo-kaart gedrag */
+  --logo-bg: #f5e7d9;
+  --logo-w-start: 300px;
+  --logo-w-end:   360px;
+  --logo-shrink-range: 200px;
+  --logo-drop-max: 24px;
+
+  /* Logo tekstverhouding */
+  --logo-text-scale: 1;
+  --walrus-factor: 0.52;
+  --grand-factor:  0.22;
+
+  /* Merk */
+  --brand-gold: #c29c1e;
+  --brand-gold-dark: #b6911a;
+  --ink: #0b2140;
+}
+
+/* ===============================
+   Basis (match Contact)
+   =============================== */
+*{ box-sizing:border-box; }
+
+html, body{
+  margin:0;
+  padding:0;
+  height:100%;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:#fff;
+  color:#111;
+  line-height:1.4;
+}
+
+/* Links / Focus (Contact: #7cb6ff) */
+a{ color:inherit; }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid #7cb6ff;
+  outline-offset: 2px;
+}
+
+/* Ruimte onder fixed header */
+.header-gap{ height: calc(var(--header-h) + 8px); }
+
+/* Midden content */
+.page-content{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  min-height: calc(100vh - var(--header-h) + 320px);
+}
+
+/* ===============================
+   Header / Navbar
+   =============================== */
+header{
+  position:fixed;
+  inset:0 0 auto 0;
+  height:var(--header-h);
+  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  z-index:2000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 clamp(8px,3vw,24px);
+  overflow:visible;
+}
+
+.topnav{
+  width:100%;
+  max-width:1500px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  column-gap:32px;
+  position:relative;
+  height:100%;
+}
+
+.nav-left,
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.nav-left{ justify-content:flex-end; }
+.nav-right{ justify-content:flex-start; }
+
+.nav-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 14px;
+  background:var(--btn-bg,#ffffff);
+  color:var(--btn-text,#000000);
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  white-space:nowrap;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.nav-btn:hover{
+  background:var(--btn-bg-hover,#f1e9e0);
+  transform:scale(1.08);
+  box-shadow:0 6px 18px rgb(255 255 255 / 80%);
+}
+
+/* Actieve pagina (nav) */
+.nav-btn[aria-current="page"]{
+  box-shadow:0 0 0 2px var(--brand-gold) inset;
+}
+
+/* Kleurenschema knoppen (match Contact) */
+.btn-solliciteren,
+.btn-reserveren{
+  --btn-bg: var(--brand-gold);
+  --btn-bg-hover: var(--brand-gold-dark);
+  --btn-text:#fff;
+}
+.btn-menukaart,
+.btn-arrangementen,
+.btn-zakelijk,
+.btn-contact{
+  --btn-bg:#ffffff;
+  --btn-bg-hover:#f1e9e0;
+  --btn-text:#000;
+}
+
+/* ===============================
+   Logo-kaartje
+   =============================== */
+.logo{
+  grid-column:2;
+  align-self:stretch;
+  height:100%;
+  width:var(--logo-w-start);
+  background:var(--logo-bg);
+  padding:0 40px;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  text-decoration:none;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  will-change: width, height;
+}
+
+.logo .walrus{
+  font-family:'Alex Brush', cursive;
+  font-size: clamp(32px, calc(var(--header-h) * var(--walrus-factor) * var(--logo-text-scale)), 72px);
+  color:var(--ink);
+  line-height:0.95;
+  margin:0;
+  font-weight:700;
+  -webkit-text-stroke:.35px var(--ink);
+  white-space:nowrap;
+  letter-spacing:.5px;
+}
+
+.logo .grandcafe{
+  font-family:Georgia, serif;
+  font-size: clamp(12px, calc(var(--header-h) * var(--grand-factor) * var(--logo-text-scale)), 24px);
+  letter-spacing:2px;
+  color:#8b2f2f;
+  text-transform:uppercase;
+  display:block;
+  margin-top:6px;
+  line-height:1;
+  font-weight:900;
+}
+
+/* Scroll-animaties (logo) */
+@supports (animation-timeline: scroll()) or (animation-timeline: scroll(root)){
+  @keyframes logoGrow {
+    from { width: var(--logo-w-start); height: 100%; }
+    to   { width: var(--logo-w-end);   height: calc(100% + var(--logo-drop-max)); }
+  }
+  @keyframes logoTextScale {
+    from { --logo-text-scale: 1; }
+    to   { --logo-text-scale: 1.08; }
+  }
+  .logo{
+    animation-name: logoGrow, logoTextScale;
+    animation-timeline: scroll(root block), scroll(root block);
+    animation-range: 0 var(--logo-shrink-range), 0 var(--logo-shrink-range);
+    animation-timing-function: linear, linear;
+    animation-fill-mode: both, both;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .logo{ animation:none; }
+  }
+}
+
+/* ===============================
+   Hero (normaal, 1 kolom)
+   =============================== */
+.hero-section{
+  display:grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items:start;
+  margin:16px auto 44px;
+}
+
+.hero-side-text{ margin-left:12px; }
+
+.hero-side-text h1{
+  font-family:'Playfair Display', serif;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height:1.1;
+  margin:0 0 12px;
+  color:var(--ink);
+}
+
+.hero-side-text p{
+  font-size:19px;
+  line-height:1.65;
+  margin:0 0 14px;
+  color:#333;
+}
+
+.hero-photo{
+  max-width:700px;
+  margin:14px 0 0;
+}
+.hero-photo img{
+  width:100%;
+  max-width:560px;
+  height:auto;
+  border-radius:12px;
+  box-shadow:0 10px 28px rgba(0,0,0,.15);
+  display:block;
+}
+.hero-photo figcaption{
+  font-size:13px;
+  color:#666;
+  margin-top:6px;
+}
+
+.hero-video{ 
+   justify-self:end;
+   width:95%;
+   max-width:700px;
+   margin-right:-10px; }
+
+.video-lead{
+  font-family:'Playfair Display', serif;
+  margin:0 0 10px;
+  font-size:16px;
+  font-weight:600;
+  color:#222;
+}
+.video-outer{
+  position:relative;
+  width:100%;
+  padding-top:56.25%;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 10px 28px rgba(0,0,0,.18);
+}
+.hero-video iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.below-video{ margin-top:18px; }
+.below-video h2{
+  font-family:'Playfair Display', serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  margin:8px 0;
+  color:var(--ink);
+}
+.below-video .intro-small{
+  margin:0 0 12px;
+  font-size:17px;
+  color:#333;
+}
+.vacature-intro{ margin:10px 0 6px; font-weight:700; }
+.vacature-links{
+  list-style:none;
+  padding:0;
+  margin:4px 0 10px;
+}
+.vacature-links li{ margin:4px 0; }
+.vacature-links a{
+  color:var(--brand-gold);
+  font-weight:700;
+  text-decoration:none;
+  position:relative;
+}
+.vacature-links a::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-2px;
+  height:2px;
+  background:var(--brand-gold);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .2s ease;
+}
+.vacature-links a:hover::after{ transform:scaleX(1); }
+
+.open-sollicitatie{
+  margin-top:8px;
+  font-size:16px;
+  display:block;
+}
+.open-sollicitatie span{
+  display:block;
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:4px;
+}
+.open-link-like{
+  color:var(--brand-gold);
+  font-weight:700;
+  text-decoration:none;
+  position:relative;
+}
+.open-link-like::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-2px;
+  height:2px;
+  background:var(--brand-gold);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .2s ease;
+}
+.open-link-like:hover::after{ transform:scaleX(1); }
+
+/* ===============================
+   Divider
+   =============================== */
+.section-divider{
+  height:1px;
+  background:#eee;
+  margin:36px auto;
+  max-width:1200px;
+}
+
+/* ===============================
+   Formulier (match Contact)
+   =============================== */
+.apply-form{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+.apply-form h2{
+  font-family:'Playfair Display', serif;
+  font-size: clamp(22px, 3.2vw, 34px);
+  margin:0 0 8px;
+  color:var(--ink);
+}
+
+.form-intro{
+  margin:0 0 18px;
+  color:#333;
+}
+
+.form-subtitle{
+  font-size:18px;
+  margin:18px 0 10px;
+  color:#222;
+}
+
+/* Grids */
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.form-row-3{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:14px;
+}
+.form-row-4{
+  display:grid;
+  grid-template-columns:1.3fr .7fr .8fr 1fr;
+  gap:14px;
+}
+
+/* Fields */
+.form-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+label{ font-weight:600; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea{
+  border:1px solid #d8d8d8;
+  border-radius:8px;
+  padding:10px 12px;
+  font-size:16px;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+textarea{ resize:vertical; }
+
+/* Focus (Contact #7cb6ff) */
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#7cb6ff;
+  box-shadow:0 0 0 3px rgb(124 182 255 / 30%);
+  outline:0;
+}
+
+/* Checklijst onder elkaar */
+.form-field-checklist .checklist{ display:block; }
+.form-field-checklist .checklist label{
+  display:block;
+  margin:0 0 8px;
+  font-weight:500;
+}
+.form-field-checklist .checklist input[type="checkbox"]{
+  margin-right:8px;
+  vertical-align:middle;
+}
+.checklist-anders input[type="text"]{
+  display:block;
+  width:100%;
+  max-width:420px;
+  margin:6px 0 0;
+  padding:10px 12px;
+  border:1px solid #d8d8d8;
+  border-radius:8px;
+  font-size:16px;
+}
+
+/* Privacy + acties */
+.checkbox{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+}
+.checkbox input{ margin-top:3px; }
+
+.form-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:18px;
+}
+.btn-submit{
+  appearance:none;
+  border:0;
+  background:var(--brand-gold);
+  color:#fff;
+  font-weight:800;
+  padding:10px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.btn-submit:hover{
+  background:var(--brand-gold-dark);
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+
+/* ===============================
+   Infobar (match Contact)
+   =============================== */
+.infobar{
+  position:relative;
+  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  color:#fff;
+  padding:12px 20px 18px;
+  margin-top:0;
+}
+.infobar-top-text{
+  font-family:'Alex Brush', cursive;
+  text-align:center;
+  font-size:22px;
+  margin-bottom:8px;
+}
+.info-content{
+  max-width:1300px;
+  margin:0 auto;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  gap:12px;
+}
+.info-section{ flex:0 0 auto; min-width:220px; }
+.info-section h4{ font-size:22px; margin:0 0 4px; }
+.info-section p{ font-size:14px; line-height:1.5; margin:0; }
+.info-section a{
+  color:#fff;
+  text-decoration:underline;
+  text-decoration-color:#fff;
+}
+.info-section a:hover{ opacity:.85; }
+.socials{ margin-top:8px; }
+.social-icon{
+  width:24px;
+  height:24px;
+  margin-right:6px;
+  filter:invert(1);
+  transition:transform .2s ease;
+}
+.social-icon:hover{ transform:scale(1.15); }
+
+.right-side{
+  text-align:center;
+  margin-left:auto;
+  padding-left:12px;
+}
+.infobar-right-text{
+  font-family:'Alex Brush', cursive;
+  font-size:22px;
+  margin:0 0 10px;
+}
+.city-images{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  margin-top:0;
+}
+.city-images img{
+  width:320px;
+  max-width:100%;
+  height:auto;
+  border-radius:6px;
+  box-shadow:0 3px 8px rgba(0,0,0,.3);
+  transition:transform .25s ease;
+  cursor:pointer;
+}
+.city-images img:hover{ transform:scale(1.04); }
+
+.infobar-brand{ text-align:center; margin-top:12px; }
+.infobar-brand .walrus{
+  font-family:'Alex Brush', cursive;
+  font-size:22px;
+  color:#fff;
+  line-height:1;
+  display:block;
+}
+.infobar-brand .grandcafe{
+  font-family:Georgia, serif;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#fff;
+  text-transform:uppercase;
+  display:block;
+  margin-top:2px;
+}
+
+/* ===============================
+   Responsive (match Contact)
+   =============================== */
+@media (max-width:960px){
+  .page-content{ padding:20px 16px 56px; }
+  .form-row,
+  .form-row-3,
+  .form-row-4{ grid-template-columns:1fr; }
+}
+
+@media (max-width:780px){
+  :root{
+    --logo-w-start: 230px;
+    --logo-w-end:   280px;
+    --logo-shrink-range: 160px;
+    --logo-drop-max: 8px;
+    --logo-text-scale: 1.02;
+  }
+  .topnav{ grid-template-columns:1fr; row-gap:8px; }
+  .logo{ order:-1; justify-self:center; }
+  .nav-left, .nav-right{ justify-content:center; flex-wrap:wrap; }
+  .info-content{ flex-direction:column; gap:14px; align-items:flex-start; }
+  .right-side{ text-align:left; margin-left:0; padding-left:0; }
+  .city-images img{ width:280px; }
+}

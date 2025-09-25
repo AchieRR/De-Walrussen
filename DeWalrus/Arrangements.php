@@ -20,12 +20,12 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Solliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
         <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
         <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
 
-      <a href="Homepage.html" class="logo" aria-label="De Walrus Homepage">
+      <a href="index.html" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>

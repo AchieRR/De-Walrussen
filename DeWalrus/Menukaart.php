@@ -16,12 +16,12 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
         <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
         <a href="Arrangements.php" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
 
-      <a href="/" class="logo" aria-label="De Walrus Homepage">
+      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
