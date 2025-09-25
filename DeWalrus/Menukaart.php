@@ -16,20 +16,20 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
-        <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
+        <a href="Soliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
+        <a href="Arrangements.php" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
 
-      <a href="Homepage.html" class="logo" aria-label="De Walrus Homepage">
+      <a href="/" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
 
       <div class="nav-right">
-        <a href="Zakelijk.html" class="nav-btn btn-zakelijk">Zakelijk</a>
-        <a href="Contact.html" class="nav-btn btn-contact">Contact</a>
-        <a href="Reserveren.html" class="nav-btn btn-reserveren">Reserveren</a>
+        <a href="Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
+        <a href="Contact.php" class="nav-btn btn-contact">Contact</a>
+        <a href="Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
       </div>
     </nav>
   </header>

@@ -3,51 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus — Contact</title>
+  <title>De Walrus — Reserveren</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="Contact.css" />
+  <link rel="stylesheet" href="Reserveren.css" />
 </head>
 <body>
-  <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren.html" class="nav-btn btn-solliciteren">Soliciteren</a>
-        <a href="Menukaart.html" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.html" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
+        <a href="Soliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
+        <a href="Arrangements.php" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
 
-      <a href="Homepage.html" class="logo" aria-label="De Walrus Homepage">
+      <a href="Homepage.php" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
 
       <div class="nav-right">
-        <a href="Zakelijk.html" class="nav-btn btn-zakelijk">Zakelijk</a>
-        <a href="Contact.html" class="nav-btn btn-contact">Contact</a>
-        <a href="Reserveren.html" class="nav-btn btn-reserveren">Reserveren</a>
+        <a href="Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
+        <a href="Contact.php" class="nav-btn btn-contact">Contact</a>
+        <a href="Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
       </div>
     </nav>
   </header>
 
-  <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
 
-  <!-- MIDDEN – bouw hier je nieuwe content -->
   <main class="page-content">
-    <h1>
-      Menukaart
-    </h1>
-    
+    <body>
+    <main>
+        <section class="reservation-form">
+            <h2>Maak een Reservering</h2>
+            <form action="Bedankt.php" method="OPEN">
+              <action method="POST" action="/verwerk-reservering">
+                <label for="name">Naam:</label>
+                <input type="text" id="name" name="name" required>
 
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telefoonnummer:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Datum:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Tijd:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="guests">Aantal Gasten:</label>
+                <input type="number" id="guests" name="guests" min="1" max="20" required>
+
+                <button type="submit">Reserveren</button>
+            </form>
+        </section>
+    </main>
+</body>
   </main>
-  <!-- einde midden -->
 
-  <!-- Infobar / Footer -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 
@@ -116,4 +133,3 @@
   </footer>
 </body>
 </html>
-
