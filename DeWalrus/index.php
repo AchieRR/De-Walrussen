@@ -18,7 +18,7 @@
         <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangements</a>
       </div>
 
-      <a href="Homepage.php" class="logo" aria-label="De Walrus Homepage"> <!-- midden logo  -->
+      <a href="/" class="logo" aria-label="De Walrus Homepage"> <!-- midden logo  -->
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>

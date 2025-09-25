@@ -21,7 +21,7 @@
         <a href="Arrangements.php" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
       </div>
 
-      <a href="Homepage.php" class="logo" aria-label="De Walrus Homepage">
+      <a href="/" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
