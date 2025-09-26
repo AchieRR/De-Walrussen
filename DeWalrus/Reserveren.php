@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus — Zakelijk</title>
+  <title>De Walrus — Reserveren</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
@@ -34,39 +34,87 @@
     </nav>
   </header>
 
-  <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">
-    <body>
-    <main>
-        <section class="reservation-form">
-            <h2>Maak een Reservering</h2>
-            <form action="Bedankt.php" method="OPEN">
-              <action method="POST" action="/verwerk-reservering">
-                <label for="name">Naam:</label>
-                <input type="text" id="name" name="name" required>
+    <section class="reservation-form">
+      <h1>Reserveren</h1>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+      <form action="Bedankt.php" method="post" novalidate>
+        <!-- Persoonlijk -->
+        <h3 class="form-subtitle">Persoonlijke gegevens</h3>
+        <div class="form-row-3">
+          <div class="form-field">
+            <label for="voornaam">Voornaam<span aria-hidden="true">*</span></label>
+            <input type="text" id="voornaam" name="voornaam" autocomplete="given-name" required>
+          </div>
+          <div class="form-field">
+            <label for="tussenvoegsel">Tussenvoegsel</label>
+            <input type="text" id="tussenvoegsel" name="tussenvoegsel" autocomplete="additional-name" placeholder="van, de, van der…">
+          </div>
+          <div class="form-field">
+            <label for="achternaam">Achternaam<span aria-hidden="true">*</span></label>
+            <input type="text" id="achternaam" name="achternaam" autocomplete="family-name" required>
+          </div>
+        </div>
 
-                <label for="phone">Telefoonnummer:</label>
-                <input type="tel" id="phone" name="phone" required>
+        <!-- Contact -->
+        <h3 class="form-subtitle">Contact</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">E-mail<span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.nl" required>
+          </div>
+          <div class="form-field">
+            <label for="telefoon">Telefoon (NL)<span aria-hidden="true">*</span></label>
+            <input
+              type="tel"
+              id="telefoon"
+              name="telefoon"
+              autocomplete="tel"
+              inputmode="tel"
+              pattern="^(?:0\d{9}|(?:\+|00)31\d{9})$"
+              placeholder="0612345678, +31612345678 of 0031612345678"
+              required
+              title="Voer 0612345678, +31612345678 of 0031612345678 in.">
+          </div>
+        </div>
 
-                <label for="date">Datum:</label>
-                <input type="date" id="date" name="date" required>
+        <!-- Locatie -->
+        <h3 class="form-subtitle">Locatie</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="locatie">Voorkeurslocatie<span aria-hidden="true">*</span></label>
+            <select id="locatie" name="locatie" required>
+              <option value="" disabled selected>Kies een locatie</option>
+              <option value="Leeuwarden">De Walrus Leeuwarden</option>
+              <option value="Sneek">De Walrus Sneek</option>
+            </select>
+          </div>
+        </div>
 
-                <label for="time">Tijd:</label>
-                <input type="time" id="time" name="time" required>
+        <!-- Datum / Tijd / Aantal -->
+        <h3 class="form-subtitle">Datum & tijd</h3>
+        <div class="form-row-3">
+          <div class="form-field">
+            <label for="date">Datum<span aria-hidden="true">*</span></label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-field">
+            <label for="time">Tijd<span aria-hidden="true">*</span></label>
+            <input type="time" id="time" name="time" step="900" required>
+          </div>
+          <div class="form-field">
+            <label for="guests">Aantal gasten<span aria-hidden="true">*</span></label>
+            <input type="number" id="guests" name="guests" min="1" max="20" required>
+          </div>
+        </div>
 
-                <label for="guests">Aantal Gasten:</label>
-                <input type="number" id="guests" name="guests" min="1" max="20" required>
-
-                <button type="submit">Reserveren</button>
-            </form>
-        </section>
-    </main>
-</body>
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Versturen</button>
+        </div>
+      </form>
+    </section>
   </main>
 
   <footer class="infobar">
