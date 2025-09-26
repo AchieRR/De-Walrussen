@@ -9,21 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="soliciteren.css" />
+  <link rel="stylesheet" href="Solliciteren.css" />
 </head>
 <body>
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-
-        <a href="Soliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
         <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.php" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
-
+        <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
       </div>
 
-      <a href="Homepage.php" class="logo" aria-label="De Walrus Homepage">
+      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
@@ -39,43 +37,40 @@
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">
-    <!-- HERO -->
+    <!-- HERO (normaal, 1 kolom) -->
     <section class="hero-section">
-      <!-- LINKERKOLOM -->
       <div class="hero-side-text">
         <h1>Kom je werken bij De Walrus?</h1>
         <p>
           Is ons grand café al bekend terrein, of lonkt het juist als iets nieuws om te ontdekken?
-          We hebben regelmatig verschillende functies open. Denk aan de keuken
-          (chef, sous-chef, keukenhulp), de bar, of de bediening op de vloer.
-          Je werkt samen in een hecht team waar goede service en gezelligheid
-          hand in hand gaan.
+          We hebben regelmatig verschillende functies open. Denk aan de keuken (chef, sous-chef, keukenhulp),
+          de bar, of de bediening op de vloer. Je werkt samen in een hecht team waar goede service
+          en gezelligheid hand in hand gaan.
         </p>
         <p>
-          Voel je je aangesproken, maar staat de perfecte functie er even niet tussen?
-          Geen probleem. Stuur gerust een open sollicitatie en vertel kort
-          waar jij in uitblinkt. We kijken graag mee of er een plek in het
-          team past bij jouw talent en beschikbaarheid.
+          Voel je je aangesproken, maar staat de perfecte functie er even niet tussen? Geen probleem.
+          Stuur gerust een open sollicitatie en vertel kort waar jij in uitblinkt. We kijken graag mee
+          of er een plek in het team past bij jouw talent en beschikbaarheid.
         </p>
         <p>
-          Solliciteer via het formulier onderaan deze pagina, dan nodigen we je
-          graag uit voor een kennismaking. De koffie is van ons ☕. Laat
-          meteen even weten welke dagen jou het beste uitkomen – wel zo makkelijk
+          Solliciteer via het formulier onderaan deze pagina, dan nodigen we je graag uit voor een kennismaking.
+          De koffie is van ons ☕. Laat meteen even weten welke dagen jou het beste uitkomen – wel zo makkelijk
           voor het plannen.
         </p>
 
         <figure class="hero-photo">
-          <img src="https://imgs.search.brave.com/sYaaTczU5Xpkc9U1aKX_BYRln7qanY1xqKueMYAEoB4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93c2Zw/dWJsaWMuYmxvYi5j/b3JlLndpbmRvd3Mu/bmV0L3Byb2Qtbmwv/aW1hZ2VzL3NsaWRl/cjEyOTB4NzI3L3dh/bHJ1cy1sZWV1d2Fy/ZGVuLXdpam5zcGlq/cy1iaWVyLmpwZw" alt="Sfeerimpressie werken bij De Walrus">
+          <img
+            src="https://imgs.search.brave.com/sYaaTczU5Xpkc9U1aKX_BYRln7qanY1xqKueMYAEoB4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93c2Zw/dWJsaWMuYmxvYi5j/b3JlLndpbmRvd3Mu/bmV0L3Byb2Qtbmwv/aW1hZ2VzL3NsaWRl/cjEyOTB4NzI3L3dh/bHJ1cy1sZWV1d2Fy/ZGVuLXdpam5zcGlq/cy1iaWVyLmpwZw"
+            alt="Sfeerimpressie werken bij De Walrus">
           <figcaption>Werken bij De Walrus – DE WALRUSSEN</figcaption>
         </figure>
       </div>
 
-      <!-- RECHTERKOLOM -->
       <div class="hero-video" aria-label="Introductievideo De Walrus">
-        <p class="video-lead">
-          In deze video laten we je precies zien hoe het eraan toe gaat: het team, de
-          sfeer en wat je op je eerste dag kunt verwachten.
-        </p>
+        <h1 class="video-lead">
+          In deze video laten we je precies zien hoe het eraan toe gaat: het team, de sfeer en wat je
+          op je eerste dag kunt verwachten.
+</h1>
         <div class="video-outer">
           <iframe
             src="https://www.youtube.com/embed/C8Qkj52bfZE"
@@ -87,7 +82,6 @@
           ></iframe>
         </div>
 
-        <!-- VACATUREBLOK  -->
         <div class="below-video">
           <h2>Benieuwd hoe je eerste werkdag bij De Walrus is?</h2>
           <p class="intro-small">
@@ -98,18 +92,18 @@
 
           <p class="vacature-intro">Ontdek ook onze vacatures:</p>
           <ul class="vacature-links">
-            <li><a href="1Keukenhulp.html"> > Keukenhulp</a></li>
-            <li><a href="1Kok.html"> > Kok</a></li>
-            <li><a href="1Medewerkerbediening.html"> > Medewerker bediening</a></li>
-            <li><a href="1Supervisorbediening.html"> > Supervisor bediening</a></li>
-            <li><a href="1Schoonmaak.html"> > Schoonmaak</a></li>
-            <li><a href="1Restaurantmanager.html"> > Restaurantmanager</a></li>
-            <li><a href="1Afwasser.html"> > Afwasser</a></li>
+            <li><a href="1Keukenhulp.html"> &gt; Keukenhulp</a></li>
+            <li><a href="1Kok.html"> &gt; Kok</a></li>
+            <li><a href="1Medewerkerbediening.html"> &gt; Medewerker bediening</a></li>
+            <li><a href="1Supervisorbediening.html"> &gt; Supervisor bediening</a></li>
+            <li><a href="1Schoonmaak.html"> &gt; Schoonmaak</a></li>
+            <li><a href="1Restaurantmanager.html"> &gt; Restaurantmanager</a></li>
+            <li><a href="1Afwasser.html"> &gt; Afwasser</a></li>
           </ul>
-          <br>
+
           <div class="open-sollicitatie">
             <span>Staat jouw vacature hier niet tussen?</span>
-            <a class="open-link-like" href="1Opensollicitatie.html"> > Open sollicitatie</a>
+            <a class="open-link-like" href="1Opensollicitatie.html"> &gt; Open sollicitatie</a>
           </div>
         </div>
       </div>
@@ -129,7 +123,7 @@
         We zien je sollicitatie graag tegemoet!
       </p>
 
-      <form action="Bedankt.html" method="get" enctype="multipart/form-data">
+      <form action="Bedankt.php" method="post" enctype="multipart/form-data">
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
@@ -162,7 +156,7 @@
               name="telefoon"
               autocomplete="tel"
               inputmode="tel"
-              pattern="^(?:0\\d{9}|\\+31\\s?\\d{9})$"
+              pattern="^(?:0\d{9}|\+31\s?\d{9})$"
               placeholder="0612345678 of +31 612345678"
               required
               title="Voer 0612345678 in of +31 612345678.">
@@ -182,9 +176,11 @@
           </div>
           <div class="form-field">
             <label for="postcode">Postcode*</label>
-            <input type="text" id="postcode" name="postcode" autocomplete="postal-code" placeholder="1234 AB"
-                   pattern="^[1-9][0-9]{3}\\s?[A-Za-z]{2}$" required
-                   title="Voer een geldige Nederlandse postcode in, bijv. 1234 AB.">
+            <input
+              type="text" id="postcode" name="postcode"
+              autocomplete="postal-code" placeholder="1234 AB"
+              pattern="^[1-9][0-9]{3}\s?[A-Za-z]{2}$" required
+              title="Voer een geldige Nederlandse postcode in, bijv. 1234 AB.">
           </div>
           <div class="form-field">
             <label for="woonplaats">Woonplaats*</label>
@@ -196,10 +192,6 @@
         <h3 class="form-subtitle">Over jezelf</h3>
         <div class="form-row">
           <div class="form-field">
-            <label for="geboortedatum">Geboortedatum*</label>
-            <input type="date" id="geboortedatum" name="geboortedatum" autocomplete="bday" required>
-          </div>
-          <div class="form-field">
             <label for="geslacht">Geslacht*</label>
             <select id="geslacht" name="geslacht" required>
               <option value="" disabled selected>Kies een optie</option>
@@ -207,6 +199,10 @@
               <option>Vrouw</option>
               <option>Anders of zeg ik liever niet</option>
             </select>
+          </div>
+          <div class="form-field">
+            <label for="geboortedatum">Geboortedatum*</label>
+            <input type="date" id="geboortedatum" name="geboortedatum" autocomplete="bday" required>
           </div>
         </div>
 
@@ -223,8 +219,7 @@
           </div>
           <div class="form-field">
             <label for="maxuren">Max. uren per week</label>
-            <input type="number" id="maxuren" name="maxuren" min="1" max="40"
-                   placeholder="bijv. 24" title="Maximaal aantal uren per week">
+            <input type="number" id="maxuren" name="maxuren" min="1" max="40" placeholder="bijv. 24" title="Maximaal aantal uren per week">
           </div>
         </div>
 
@@ -247,17 +242,12 @@
         <h3 class="form-subtitle">Motivatie</h3>
         <div class="form-field">
           <label for="motivatie">Motivatie*</label>
-          <textarea id="motivatie" name="motivatie" rows="10"
-            placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken." required></textarea>
+          <textarea id="motivatie" name="motivatie" rows="10" placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken." required></textarea>
         </div>
 
         <!-- Bijlagen & Locatie -->
         <h3 class="form-subtitle">Bijlagen & Locatie</h3>
         <div class="form-row">
-          <div class="form-field">
-            <label for="cv">CV (PDF of DOC)</label>
-            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
-          </div>
           <div class="form-field">
             <label for="locatie">Voorkeurslocatie*</label>
             <select id="locatie" name="locatie" required>
@@ -266,6 +256,10 @@
               <option value="Sneek">De Walrus Sneek</option>
               <option value="Beide">Beide</option>
             </select>
+          </div>
+          <div class="form-field">
+            <label for="cv">CV (PDF of DOC)</label>
+            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
           </div>
         </div>
 
@@ -302,6 +296,9 @@
     </section>
   </main>
 
+  <!-- Divider -->
+  <div class="section-divider" aria-hidden="true"></div>
+
   <!-- Infobar / Footer -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
@@ -309,44 +306,40 @@
     <div class="info-content">
       <div class="info-section">
         <h4>De Walrus Leeuwarden</h4>
-        <br>
         <p>
           <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
-            Gouverneursplein 37<br>
-            8911 HH Leeuwarden
+            Gouverneursplein 37<br>8911 HH Leeuwarden
           </a><br><br>
           Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
           <strong>Tel:</strong> <a href="tel:0582137740">058-2137740</a><br>
-          <strong>Email:</strong> <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a>
+          <strong>E-mail:</strong> <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a>
         </p>
         <div class="socials">
-          <a href="https://www.facebook.com/DeWalrusLeeuwarden/?locale=nl_NL" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="Facebook">
+          <a href="https://www.facebook.com/DeWalrusLeeuwarden/?locale=nl_NL" target="_blank" rel="noopener" aria-label="Facebook Leeuwarden">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="">
           </a>
-          <a href="https://www.instagram.com/dewalrusleeuwarden/" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="Instagram">
+          <a href="https://www.instagram.com/dewalrusleeuwarden/" target="_blank" rel="noopener" aria-label="Instagram Leeuwarden">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="">
           </a>
         </div>
       </div>
 
       <div class="info-section">
         <h4>De Walrus Sneek</h4>
-        <br>
         <p>
           <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
-            Leeuwenburg 11<br>
-            8601 CG Sneek
+            Leeuwenburg 11<br>8601 CG Sneek
           </a><br><br>
           Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
-          <strong>Tel:</strong> <a href="tel:05151438100">05151-438100</a><br>
-          <strong>Email:</strong> <a href="mailto:info@dewalrussneek.nl">info@dewalrussneek.nl</a>
+          <strong>Tel:</strong> <a href="tel:0515438100">0515-438100</a><br>
+          <strong>E-mail:</strong> <a href="mailto:info@dewalrussneek.nl">info@dewalrussneek.nl</a>
         </p>
         <div class="socials">
-          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="Facebook">
+          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener" aria-label="Facebook Sneek">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="">
           </a>
-          <a href="https://www.instagram.com/dewalrussneek/" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="Instagram">
+          <a href="https://www.instagram.com/dewalrussneek/" target="_blank" rel="noopener" aria-label="Instagram Sneek">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="">
           </a>
         </div>
       </div>

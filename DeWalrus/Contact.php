@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus — Contact</title>
+  <title>De Walrus — Solliciteren</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
@@ -16,12 +16,12 @@
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Soliciteren.php" class="nav-btn btn-solliciteren">Soliciteren</a>
+        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
         <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.php" class="nav-btn btn-arrangementen" aria-current="page">Arrangements</a>
+        <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
       </div>
 
-      <a href="Homepage.php" class="logo" aria-label="De Walrus Homepage">
+      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
@@ -34,18 +34,94 @@
     </nav>
   </header>
 
-  <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
   <div class="header-gap" aria-hidden="true"></div>
 
-  <!-- MIDDEN – bouw hier je nieuwe content -->
   <main class="page-content">
-    <h1>
-      Menukaart 
-    </h1>
-    
+    <!-- FORMULIER -->
+    <section class="apply-form" aria-labelledby="sollicitatie-titel">
+      <h2 id="sollicitatie-titel">Neem contact met ons op!</h2>
+      <p class="form-intro">
+        Onze telefoon staat bíjna altijd aan en je kan ons bereiken in Leeuwarden op 
+        <a href="tel:0582137740">058 213 7740</a> of in Sneek op
+        <a href="tel:0515438100">0515 438 100</a>.
+        Een mailtje sturen mag natuurlijk ook! Vul daarvoor het formulier hieronder in.
+      </p>
 
+      <form action="Bedankt.html" method="post" novalidate>
+        <!-- Persoonlijk -->
+        <h3 class="form-subtitle">Persoonlijke gegevens</h3>
+        <div class="form-row-3">
+          <div class="form-field">
+            <label for="voornaam">Voornaam<span aria-hidden="true">*</span></label>
+            <input type="text" id="voornaam" name="voornaam" autocomplete="given-name" required>
+          </div>
+          <div class="form-field">
+            <label for="tussenvoegsel">Tussenvoegsel</label>
+            <input type="text" id="tussenvoegsel" name="tussenvoegsel" autocomplete="additional-name" placeholder="van, de, van der…">
+          </div>
+          <div class="form-field">
+            <label for="achternaam">Achternaam<span aria-hidden="true">*</span></label>
+            <input type="text" id="achternaam" name="achternaam" autocomplete="family-name" required>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <h3 class="form-subtitle">Contact</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">E-mail<span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.nl" required>
+          </div>
+          <div class="form-field">
+            <label for="telefoon">Telefoon (NL)<span aria-hidden="true">*</span></label>
+            <input
+              type="tel"
+              id="telefoon"
+              name="telefoon"
+              autocomplete="tel"
+              inputmode="tel"
+              pattern="^(?:0\d{9}|(?:\+?31)\d{9})$"
+              placeholder="0612345678 of +31612345678"
+              required
+              title="Voer 0612345678 in of +31612345678.">
+          </div>
+        </div>
+
+        <!-- Locatie -->
+        <h3 class="form-subtitle">Locatie</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="locatie">Voorkeurslocatie<span aria-hidden="true">*</span></label>
+            <select id="locatie" name="locatie" required>
+              <option value="" disabled selected>Kies een locatie</option>
+              <option value="Leeuwarden">De Walrus Leeuwarden</option>
+              <option value="Sneek">De Walrus Sneek</option>
+              <option value="Beide">Beide</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Omschrijving -->
+        <h3 class="form-subtitle">Omschrijving</h3>
+        <div class="form-field">
+          <label for="onderwerp">Onderwerp<span aria-hidden="true">*</span></label>
+          <textarea id="onderwerp" name="onderwerp" rows="1" placeholder="Afspraak maken… (etc.)" required></textarea>
+        </div>
+        <div class="form-field">
+          <label for="bericht">Bericht<span aria-hidden="true">*</span></label>
+          <textarea id="bericht" name="bericht" rows="8" placeholder="Algemene informatie…" required></textarea>
+        </div>
+
+
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Versturen</button>
+        </div>
+      </form>
+    </section>
   </main>
-  <!-- einde midden -->
+
+  <!-- DIVIDER TUSSEN FORMULIER EN /// -->
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Infobar / Footer -->
   <footer class="infobar">
@@ -54,7 +130,6 @@
     <div class="info-content">
       <div class="info-section">
         <h4>De Walrus Leeuwarden</h4>
-        <br>
         <p>
           <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
             Gouverneursplein 37<br>
@@ -62,36 +137,35 @@
           </a><br><br>
           Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
           <strong>Tel:</strong> <a href="tel:0582137740">058-2137740</a><br>
-          <strong>Email:</strong> <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a>
+          <strong>E-mail:</strong> <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a>
         </p>
         <div class="socials">
-          <a href="https://www.facebook.com/DeWalrusLeeuwarden/?locale=nl_NL" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="Facebook">
+          <a href="https://www.facebook.com/DeWalrusLeeuwarden/?locale=nl_NL" target="_blank" rel="noopener" aria-label="Facebook Leeuwarden">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="">
           </a>
-          <a href="https://www.instagram.com/dewalrusleeuwarden/" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="Instagram">
+          <a href="https://www.instagram.com/dewalrusleeuwarden/" target="_blank" rel="noopener" aria-label="Instagram Leeuwarden">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="">
           </a>
         </div>
       </div>
 
       <div class="info-section">
         <h4>De Walrus Sneek</h4>
-        <br>
         <p>
           <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
             Leeuwenburg 11<br>
             8601 CG Sneek
           </a><br><br>
           Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
-          <strong>Tel:</strong> <a href="tel:05151438100">05151-438100</a><br>
-          <strong>Email:</strong> <a href="mailto:info@dewalrussneek.nl">info@dewalrussneek.nl</a>
+          <strong>Tel:</strong> <a href="tel:0515438100">0515-438100</a><br>
+          <strong>E-mail:</strong> <a href="mailto:info@dewalrussneek.nl">info@dewalrussneek.nl</a>
         </p>
         <div class="socials">
-          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="Facebook">
+          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener" aria-label="Facebook Sneek">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="">
           </a>
-          <a href="https://www.instagram.com/dewalrussneek/" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="Instagram">
+          <a href="https://www.instagram.com/dewalrussneek/" target="_blank" rel="noopener" aria-label="Instagram Sneek">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="">
           </a>
         </div>
       </div>
@@ -114,6 +188,6 @@
       <span class="grandcafe">— GRAND CAFÉ —</span>
     </div>
   </footer>
+
 </body>
 </html>
-

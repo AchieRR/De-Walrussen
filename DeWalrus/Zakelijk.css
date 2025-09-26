@@ -2,92 +2,125 @@
    Variabelen
    =============================== */
 :root{
-  --header-h: clamp(48px, 8.2vw, 84px);
+--header-h: clamp(48px, 8.2vw, 84px);
 
-  /* logo-kaart gedrag */
+  /* Logo-kaart gedrag */
   --logo-bg: #f5e7d9;
   --logo-w-start: 300px;
   --logo-w-end:   360px;
   --logo-shrink-range: 200px;
   --logo-drop-max: 24px;
 
-  /* tekstverhouding in logo */
+  /* Logo tekstverhouding */
   --logo-text-scale: 1;
   --walrus-factor: 0.52;
   --grand-factor:  0.22;
+
+  /* Merk */
+  --brand-gold: #c29c1e;
+  --brand-gold-dark: #b6911a;
+  --ink: #0b2140;
 }
 
 *{ box-sizing:border-box; }
+
 html, body{
-  margin:0; padding:0; height:100%;
-  font-family: Arial, sans-serif;
+  margin:0;
+  padding:0;
+  height:100%;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:#fff;
+  color:#111;
+  line-height:1.4;
 }
 
 /* Ruimte onder fixed header */
-.header-gap{
-  height: calc(var(--header-h) + 8px);
-}
+.header-gap{ height: calc(var(--header-h) + 8px); }
 
 /* Midden content */
 .page-content{
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px 20px 60px;
-  min-height: calc(100vh - var(--header-h) + 320px); /* forceert scroll zodat footer pas later komt */
+  min-height: calc(100vh - var(--header-h) + 320px);
 }
 
 /* ===============================
    Header / Navbar
    =============================== */
+
 header{
-  position:fixed; inset:0 0 auto 0;
+  position:fixed;
+  inset:0 0 auto 0;
   height:var(--header-h);
   background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   z-index:2000;
-  display:flex; align-items:center; justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   padding:0 clamp(8px,3vw,24px);
-  overflow:visible; /* logo mag onder uitsteken */
+  overflow:visible;
 }
 
 .topnav{
-  width:100%; max-width:1500px; margin:0 auto;
-  display:grid; grid-template-columns:1fr auto 1fr;
+  width:100%;
+  max-width:1500px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
   align-items:center;
   column-gap:32px;
   position:relative;
   height:100%;
 }
 
-.nav-left, .nav-right{
-  display:flex; align-items:center; gap:22px;
+.nav-left,
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:22px;
 }
+
 .nav-left{ justify-content:flex-end; }
 .nav-right{ justify-content:flex-start; }
 
+/* Nav-knoppen */
 .nav-btn{
-  display:inline-flex; align-items:center; justify-content:center;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:6px 14px;
   background:var(--btn-bg,#ffffff);
   color:var(--btn-text,#000000);
   border-radius:10px;
-  font-weight:700; text-decoration:none; white-space:nowrap;
+  font-weight:700;
+  text-decoration:none;
+  white-space:nowrap;
   transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
 }
+
 .nav-btn:hover{
   background:var(--btn-bg-hover,#f1e9e0);
   transform:scale(1.08);
-  box-shadow:0 6px 18px rgb(255, 255, 255);
+  box-shadow:0 6px 18px rgb(255 255 255 / 80%);
 }
 
-/* knoppen kleuren (support beide klassespellings) */
-.btn-solliciteren, .btn-soliciteren { --btn-bg:#c29c1e; --btn-bg-hover:#b6911a; --btn-text:#fff; }
+
+/* Kleurenschema knoppen (match Contact) */
+.btn-solliciteren,
+.btn-reserveren{
+  --btn-bg: var(--brand-gold);
+  --btn-bg-hover: var(--brand-gold-dark);
+  --btn-text:#fff;
+}
 .btn-menukaart,
-.btn-arrengements,
 .btn-arrangementen,
 .btn-zakelijk,
-.btn-contact { --btn-bg:#ffffff; --btn-bg-hover:#f1e9e0; --btn-text:#000; }
-.btn-reserveren { --btn-bg:#c29c1e; --btn-bg-hover:#b6911a; --btn-text:#fff; }
+.btn-contact{
+  --btn-bg:#ffffff;
+  --btn-bg-hover:#f1e9e0;
+  --btn-text:#000;
+}
 
 /* ===============================
    Logo-kaartje
@@ -103,27 +136,37 @@ header{
   box-shadow:0 6px 18px rgba(0,0,0,0.08);
   text-decoration:none;
   text-align:center;
-  display:flex; flex-direction:column; justify-content:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   will-change: width, height;
 }
+
 .logo .walrus{
   font-family:'Alex Brush', cursive;
   font-size: clamp(32px, calc(var(--header-h) * var(--walrus-factor) * var(--logo-text-scale)), 72px);
-  color:#0b2140; line-height:0.95;
+  color:var(--ink);
+  line-height:0.95;
   margin:0;
   font-weight:700;
-  -webkit-text-stroke:.35px #0b2140;
+  -webkit-text-stroke:.35px var(--ink);
   white-space:nowrap;
-  letter-spacing:0.5px;
+  letter-spacing:.5px;
 }
+
 .logo .grandcafe{
   font-family:Georgia, serif;
   font-size: clamp(12px, calc(var(--header-h) * var(--grand-factor) * var(--logo-text-scale)), 24px);
   letter-spacing:2px;
-  color:#8b2f2f; text-transform:uppercase;
-  display:block; margin-top:6px; line-height:1;
+  color:#8b2f2f;
+  text-transform:uppercase;
+  display:block;
+  margin-top:6px;
+  line-height:1;
   font-weight:900;
 }
+
+
 
 /* ===============================
    Infobar
