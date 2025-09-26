@@ -46,31 +46,38 @@
   <!-- MIDDEN – bouw hier je nieuwe content -->
   <main class="page-content">
     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f4/46/74/sfeerimpressie.jpg?w=900&h=500&s=1" alt="het terras" aria-hidden="true">
-    <h1> meer info</h1>
+    <h1>
+      <div class="foto-naast-tekst">
+    <img src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="Beschrijving" />
+    <div>ARRANGEMENTEN</div>
+    <div class="foto-naast-tekst">
+    <img src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="Beschrijving" /><div>
+    </h1>
+    <br>
     <main class="arrangements-section">
       <h2>Onze Arrangementen</h2>
       <div class="arrangement">
         <h3>High Tea Arrangement</h3>
-        <p>Geniet van een heerlijke High Tea met een selectie van zoete en hartige lekkernijen, vergezeld van diverse theesoorten.</p>
-        <p><strong>Prijs:</strong> €25 per persoon</p>
+        <p1>Geniet van een heerlijke High Tea met een selectie van zoete en hartige lekkernijen, vergezeld van diverse theesoorten.</p1>
+        <p2><strong>Prijs:</strong> €25 per persoon</p2>
         <a href="hightea.php" class="nav-btn btn-reserveren">Meer info</a>
       </div>
       <div class="arrangement">
         <h3>Walking Diner Buffet</h3>
-        <p>Een uitgebreid walking diner met diverse gangen, perfect voor een gezellige avond met vrienden of familie.</p>
-        <p><strong>Prijs:</strong> €40 per persoon</p>
+        <p1>Een uitgebreid walking diner met diverse gangen, perfect voor een gezellige avond met vrienden of familie.</p1>
+        <p2><strong>Prijs:</strong> €40 per persoon</p2>
         <a href="walkingdiner.php" class="nav-btn btn-reserveren">Meer info</a>
       </div>
       <div class="arrangement">
         <h3>live cooking buffet</h3>
-        <p>Een interactief buffet waarbij onze chef-koks ter plekke heerlijke gerechten bereiden voor jou en je gezelschap.</p>
-        <p><strong>Prijs:</strong> €20 per persoon</p>
+        <p1>Een interactief buffet waarbij onze chef-koks ter plekke heerlijke gerechten bereiden voor jou en je gezelschap.</p1>
+        <p2><strong>Prijs:</strong> €20 per persoon</p2>
         <a href="livecooking.php" class="nav-btn btn-reserveren">Meer info</a>
       </div>
       <div class="arrangement">
         <h3>Bier Arrangement</h3>
-        <p>Proef een selectie van ambachtelijke bieren, gecombineerd met bijpassende hapjes voor de ultieme bierervaring.</p>
-        <p><strong>Prijs:</strong> €30 per persoon</p>
+        <p1>Proef een selectie van ambachtelijke bieren, gecombineerd met bijpassende hapjes voor de ultieme bierervaring.</p1>
+        <p2><strong>Prijs:</strong> €30 per persoon</p2>
         <a href="bierarrangement.php" class="nav-btn btn-reserveren">Meer info</a>
       </div>
 
