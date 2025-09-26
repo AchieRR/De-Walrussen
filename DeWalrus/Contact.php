@@ -47,7 +47,7 @@
         Een mailtje sturen mag natuurlijk ook! Vul daarvoor het formulier hieronder in.
       </p>
 
-      <form action="Bedankt.html" method="post" novalidate>
+      <form action="Bedankt.php" method="post"  novalidate>
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
