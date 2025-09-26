@@ -53,24 +53,25 @@
         <h3>High Tea Arrangement</h3>
         <p>Geniet van een heerlijke High Tea met een selectie van zoete en hartige lekkernijen, vergezeld van diverse theesoorten.</p>
         <p><strong>Prijs:</strong> €25 per persoon</p>
+        <a href="hightea.php" class="nav-btn btn-reserveren">Meer info</a>
       </div>
       <div class="arrangement">
         <h3>Walking Diner Buffet</h3>
         <p>Een uitgebreid walking diner met diverse gangen, perfect voor een gezellige avond met vrienden of familie.</p>
         <p><strong>Prijs:</strong> €40 per persoon</p>
+        <a href="walkingdiner.php" class="nav-btn btn-reserveren">Meer info</a>
       </div>
       <div class="arrangement">
         <h3>live cooking buffet</h3>
         <p>Een interactief buffet waarbij onze chef-koks ter plekke heerlijke gerechten bereiden voor jou en je gezelschap.</p>
         <p><strong>Prijs:</strong> €20 per persoon</p>
+        <a href="livecooking.php" class="nav-btn btn-reserveren">Meer info</a>
       </div>
       <div class="arrangement">
         <h3>Bier Arrangement</h3>
         <p>Proef een selectie van ambachtelijke bieren, gecombineerd met bijpassende hapjes voor de ultieme bierervaring.</p>
         <p><strong>Prijs:</strong> €30 per persoon</p>
-
-        <a href="Reserveren.html" class="nav-btn btn-reserveren">Reserveer nu</a>
-
+        <a href="bierarrangement.php" class="nav-btn btn-reserveren">Meer info</a>
       </div>
 
       </main>
