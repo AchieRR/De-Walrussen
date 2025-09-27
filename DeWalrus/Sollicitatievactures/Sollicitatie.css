@@ -218,15 +218,17 @@ header{
 }
 
 /* ===============================
-   Hero (normaal, 1 kolom)
+   Hero (2 kolommen geforceerd)
    =============================== */
 .hero-section{
-  display:grid;
-  grid-template-columns: 1fr 1.15fr;
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) minmax(0,1.15fr);
   gap: clamp(28px, 4vw, 56px);
   align-items:start;
   margin:16px auto 44px;
 }
+/* laat items krimpen, voorkomt 2e rij */
+.hero-section > *{ min-width:0; }
 
 .hero-side-text{ margin-left:12px; }
 
@@ -279,11 +281,13 @@ header{
   margin-top:6px;
 }
 
-.hero-video{ 
-   justify-self:end;
-   width:95%;
-   max-width:700px;
-   margin-right:-10px; }
+/* video-kolom mag niet duwen; geen 95% of negatieve marge */
+.hero-video{
+  justify-self: stretch;
+  width: 100%;
+  max-width: none;
+  margin-right: 0;
+}
 
 .video-lead{
   font-family:'Playfair Display', serif;
@@ -636,8 +640,14 @@ textarea:focus{
 .theme-walrus-cream .title-line{ opacity:.9; filter:none; }
 
 /* ===============================
-   Responsive (match Contact)
+   Responsive
    =============================== */
+
+/* Stapel hero onder ~980px breed */
+@media (max-width:980px){
+  .hero-section{ grid-template-columns: 1fr; }
+}
+
 @media (max-width:960px){
   .page-content{ padding:20px 16px 56px; }
   .form-row,
