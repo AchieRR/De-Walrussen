@@ -11,7 +11,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="Menukaart.css" />
 </head>
-<body>
+<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
@@ -38,6 +38,12 @@
   <div class="header-gap" aria-hidden="true"></div>
 
     <main class="page-content">
+        <!-- Titel met lijnen links/rechts -->
+    <div class="page-title" aria-hidden="true">
+      <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
+      <h1 class="title-text">MENUKAART</h1>
+      <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
+    </div>
 
   </main>
   <!-- einde midden -->

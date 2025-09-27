@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="Solliciteren.css" />
+  <link rel="stylesheet" href="Sollicitatie.css" />
 </head>
 <body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
   <!-- Header / Navbar -->
@@ -40,7 +40,7 @@
         <!-- Titel met lijnen links/rechts -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
-      <h1 class="title-text">SOLLICITATIES</h1>
+      <h1 class="title-text">OPEN SOLLICITATIE</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
     </div>
 
@@ -108,9 +108,9 @@
             <li><a href="Sollicitatievactures/1Afwasser.html"> &gt; Afwasser</a></li>
           </ul>
 
-          <div class="open-sollicitatie">   
+          <div class="open-sollicitatie">
             <span>Staat jouw vacature hier niet tussen?</span>
-            <a class="open-link-like" href="1Opensolicitatie.php"> &gt; Open sollicitatie</a>
+            <a class="open-link-like" href="Sollicitatievactures/1Opensollicitatie.html"> &gt; Open sollicitatie</a>
           </div>
         </div>
       </div>

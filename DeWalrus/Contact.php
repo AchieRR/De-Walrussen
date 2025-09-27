@@ -11,7 +11,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="Contact.css" />
 </head>
-<body>
+<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
@@ -37,6 +37,13 @@
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">
+        <!-- TITEL: links/rechts lijn, midden tekst -->
+    <div class="page-title" aria-hidden="true">
+      <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
+      <h1 class="title-text">CONTACT</h1>
+      <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
+    </div>
+
     <!-- FORMULIER -->
     <section class="apply-form" aria-labelledby="sollicitatie-titel">
       <h2 id="sollicitatie-titel">Neem contact met ons op!</h2>

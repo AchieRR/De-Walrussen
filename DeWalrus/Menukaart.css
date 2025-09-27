@@ -166,6 +166,27 @@ header{
   font-weight:900;
 }
 
+/* ===============================
+   Pagina-titel
+   =============================== */
+.page-title{
+  display:flex; align-items:center; justify-content:center;
+  gap: clamp(12px, 2.5vw, 28px);
+  margin: 4px 0 20px;
+}
+.title-text{
+  margin:0;
+  font-family:'Playfair Display', serif;
+  font-weight:700; color:var(--ink);
+  text-transform:uppercase; letter-spacing:.04em;
+  font-size: clamp(26px, 4.2vw, 44px);
+}
+.title-line{
+  display:block; height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9;
+}
+@media (max-width:600px){ .title-line{ display:none; } }
+
+
 
 
 /* ===============================
@@ -236,6 +257,40 @@ header{
     .logo{ animation:none; }
   }
 }
+
+/* ===== THEME: Walrus Cream (simple, on-brand, no images) ===== */
+.theme-walrus-cream{
+  /* basis tint die matcht met je logo-kaart (#f5e7d9) */
+  background-color: #fbf5ea;
+
+  /* 1) zachte highlight van boven, 2) heel lichte gold gloed onderin,
+     3) micro-dot textuur voor 'papier' gevoel */
+  background-image:
+    radial-gradient(80% 50% at 50% -10%, #f5e7d9 0%, #fbf5ea 45%, #ffffff 80%),
+    radial-gradient(900px 500px at 50% 115%, rgba(194,156,30,0.06), rgba(255,255,255,0) 60%),
+    radial-gradient(rgba(11,33,64,0.035) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    44px 44px;              /* textuur raster */
+  background-position:
+    center top,
+    center bottom,
+    0 0;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+/* Contentblokken blijven strak en leesbaar op de crème achtergrond */
+.theme-walrus-cream .apply-form,
+.theme-walrus-cream .section{
+  background:#ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+/* Titel blijft in inktkleur; GEEN inversie nodig zoals bij de foto-theme */
+.theme-walrus-cream .title-text{ color: var(--ink); }
+.theme-walrus-cream .title-line{ opacity:.9; filter:none; }
+
 
 /* ===============================
    Responsive

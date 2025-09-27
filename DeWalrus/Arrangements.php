@@ -1,7 +1,6 @@
 <?php
-
+// (optioneel) PHP-logica later; nu puur markup.
 ?>
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -15,7 +14,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="Arrengements.css" />
 </head>
-<body>
+<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
@@ -38,67 +37,122 @@
     </nav>
   </header>
 
-  <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
-  <div class="header-gap" aria-hidden="true">
+  <!-- ruimte onder fixed header -->
+  <div class="header-gap" aria-hidden="true"></div>
 
-  </div>
-
-  <!-- MIDDEN – bouw hier je nieuwe content -->
   <main class="page-content">
-    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f4/46/74/sfeerimpressie.jpg?w=900&h=500&s=1" alt="het terras" aria-hidden="true">
-    <h1>
-      <div class="foto-naast-tekst">
-    <img src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="Beschrijving" />
-    <div>ARRANGEMENTEN</div>
-    <div class="foto-naast-tekst">
-    <img src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="Beschrijving" /><div>
-    </h1>
-    <br>
-    <main class="arrangements-section">
-      <h2>Onze Arrangementen</h2>
-      <div class="arrangement">
-        <h3>High Tea Arrangement</h3>
-        <p1>Geniet van een heerlijke High Tea met een selectie van zoete en hartige lekkernijen, vergezeld van diverse theesoorten.</p1>
-        <p2><strong>Prijs:</strong> €25 per persoon</p2>
-        <a href="hightea.php" class="nav-btn btn-reserveren">Meer info</a>
-      </div>
-      <div class="arrangement">
-        <h3>Walking Diner Buffet</h3>
-        <p1>Een uitgebreid walking diner met diverse gangen, perfect voor een gezellige avond met vrienden of familie.</p1>
-        <p2><strong>Prijs:</strong> €40 per persoon</p2>
-        <a href="walkingdiner.php" class="nav-btn btn-reserveren">Meer info</a>
-      </div>
-      <div class="arrangement">
-        <h3>live cooking buffet</h3>
-        <p1>Een interactief buffet waarbij onze chef-koks ter plekke heerlijke gerechten bereiden voor jou en je gezelschap.</p1>
-        <p2><strong>Prijs:</strong> €20 per persoon</p2>
-        <a href="livecooking.php" class="nav-btn btn-reserveren">Meer info</a>
-      </div>
-      <div class="arrangement">
-        <h3>Bier Arrangement</h3>
-        <p1>Proef een selectie van ambachtelijke bieren, gecombineerd met bijpassende hapjes voor de ultieme bierervaring.</p1>
-        <p2><strong>Prijs:</strong> €30 per persoon</p2>
-        <a href="bierarrangement.php" class="nav-btn btn-reserveren">Meer info</a>
-      </div>
+    <!-- Titel met lijnen links/rechts -->
+    <div class="page-title" aria-hidden="true">
+      <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
+      <h1 class="title-text">Arrangementen</h1>
+      <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
+    </div>
 
-      </main>
+    <!-- Intro + grid met kaarten -->
+    <section class="section">
+      <h2>Onze arrangementen</h2>
+      <p class="lead">Kies wat past bij je gezelschap. Alle arrangementen zijn te boeken in Leeuwarden en Sneek.</p>
 
+      <div class="arr-grid">
+        <!-- High Tea -->
+        <article class="arr-card">
+          <img src="img/high-tea.jpg" alt="High Tea">
+          <div class="arr-card-content">
+            <h3>High Tea</h3>
+            <div class="meta">2 uur • €25 p.p.</div>
+            <p>Zoete en hartige lekkernijen met diverse theesoorten.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="hightea.php">Meer info</a>
+            </div>
+          </div>
+        </article>
 
+        <!-- Walking Diner -->
+        <article class="arr-card">
+          <img src="img/walking-diner.jpg" alt="Walking Diner Buffet">
+          <div class="arr-card-content">
+            <h3>Walking Diner Buffet</h3>
+            <div class="meta">Avond • €40 p.p.</div>
+            <p>Diverse kleine gangen, ideaal voor groepen.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="walkingdiner.php">Meer info</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Live Cooking -->
+        <article class="arr-card">
+          <img src="img/live-cooking.jpg" alt="Live Cooking Buffet">
+          <div class="arr-card-content">
+            <h3>Live Cooking Buffet</h3>
+            <div class="meta">Op maat • vanaf €20 p.p.</div>
+            <p>Onze chefs bereiden jouw gerechten live aan station.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="livecooking.php">Meer info</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bierproeverij -->
+        <article class="arr-card">
+          <img src="img/beer-arr.jpg" alt="Bier Arrangement">
+          <div class="arr-card-content">
+            <h3>Bier Arrangement</h3>
+            <div class="meta">Tasting • €30 p.p.</div>
+            <p>Selectie ambachtelijke bieren met bijpassende hapjes.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="bierarrangement.php">Meer info</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- High Wine -->
+        <article class="arr-card">
+          <img src="img/high-wine.jpg" alt="High Wine">
+          <div class="arr-card-content">
+            <h3>High Wine</h3>
+            <div class="meta">Middag/avond • €32,50 p.p.</div>
+            <p>Wijnproeverij met bijpassende bites.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="highwine.php">Meer info</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vergadering -->
+        <article class="arr-card">
+          <img src="img/meeting.jpg" alt="Vergadering">
+          <div class="arr-card-content">
+            <h3>Vergadering</h3>
+            <div class="meta">Op maat • prijs in overleg</div>
+            <p>Rustige ruimtes met techniek en catering-opties.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="vergadering.php">Meer info</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
   </main>
-  <!-- einde midden -->
 
-  <!-- Infobar / Footer -->
+  <!-- Footer -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 
     <div class="info-content">
       <div class="info-section">
         <h4>De Walrus Leeuwarden</h4>
-        <br>
         <p>
           <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
-            Gouverneursplein 37<br>
-            8911 HH Leeuwarden
+            Gouverneursplein 37<br>8911 HH Leeuwarden
           </a><br><br>
           Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
           <strong>Tel:</strong> <a href="tel:0582137740">058-2137740</a><br>
@@ -116,14 +170,12 @@
 
       <div class="info-section">
         <h4>De Walrus Sneek</h4>
-        <br>
         <p>
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
-            Leeuwenburg 11<br>
-            8601 CG Sneek
+          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener">
+            Leeuwenburg 11<br>8601 CG Sneek
           </a><br><br>
           Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
-          <strong>Tel:</strong> <a href="tel:05151438100">05151-438100</a><br>
+          <strong>Tel:</strong> <a href="tel:0515438100">0515-438100</a><br>
           <strong>Email:</strong> <a href="mailto:info@dewalrussneek.nl">info@dewalrussneek.nl</a>
         </p>
         <div class="socials">

@@ -11,7 +11,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="Zakelijk.css" />
 </head>
-<body>
+<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
