@@ -101,16 +101,16 @@
           <ul class="vacature-links">
             <li><a href="Sollicitatievactures/1Keukenhulp.html"> &gt; Keukenhulp</a></li>
             <li><a href="Sollicitatievactures/1Kok.html"> &gt; Kok</a></li>
-            <li><a href="Sollicitatievactures/1Medewerkerbediening.html"> &gt; Medewerker bediening</a></li>
-            <li><a href="Sollicitatievactures/1Supervisorbediening.html"> &gt; Supervisor bediening</a></li>
+            <li><a href="Sollicitatievactures/1Medewerkerbediening.html"> &gt; Medewerker Bediening</a></li>
+            <li><a href="Sollicitatievactures/1Supervisorbediening.html"> &gt; Supervisor Bediening</a></li>
             <li><a href="Sollicitatievactures/1Schoonmaak.html"> &gt; Schoonmaak</a></li>
-            <li><a href="Sollicitatievactures/1Restaurantmanager.html"> &gt; Restaurantmanager</a></li>
+            <li><a href="Sollicitatievactures/1Restaurantmanager.html"> &gt; Restaurant Manager</a></li>
             <li><a href="Sollicitatievactures/1Afwasser.html"> &gt; Afwasser</a></li>
           </ul>
 
           <div class="open-sollicitatie">   
             <span>Staat jouw vacature hier niet tussen?</span>
-            <a class="open-link-like" href="1Opensolicitatie.php"> &gt; Open sollicitatie</a>
+            <a class="open-link-like" href="Sollicitatievactures/1Opensollicitatie.html"> &gt; Open sollicitatie</a>
           </div>
         </div>
       </div>
@@ -237,11 +237,13 @@
           <select id="functie" name="functie" required>
             <option value="" disabled selected>Kies een functie</option>
             <option value="Keukenhulp">Keukenhulp</option>
-            <option value="Medewerker bediening">Medewerker bediening</option>
-            <option value="Supervisor bediening">Supervisor bediening</option>
+            <option value="Keukenhulp">Kok</option>            
+            <option value="Medewerker bediening">Medewerker Bediening</option>
+            <option value="Supervisor bediening">Supervisor Bediening</option>
             <option value="Schoonmaak">Schoonmaak</option>
-            <option value="Restaurantmanager">Restaurantmanager</option>
+            <option value="Restaurantmanager">Restaurant Manager</option>
             <option value="Afwasser">Afwasser</option>
+            <option value="Anders">Anders</option>           
           </select>
         </div>
 

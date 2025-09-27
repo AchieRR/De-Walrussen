@@ -115,7 +115,6 @@ header{
   box-shadow:0 6px 18px rgb(255 255 255 / 80%);
 }
 
-
 /* Kleurenschema knoppen (match Contact) */
 .btn-solliciteren,
 .btn-reserveren{
@@ -196,7 +195,6 @@ header{
 }
 @media (max-width:600px){ .title-line{ display:none; } }
 
-
 /* Scroll-animaties (logo) */
 @supports (animation-timeline: scroll()) or (animation-timeline: scroll(root)){
   @keyframes logoGrow {
@@ -240,12 +238,28 @@ header{
   color:var(--ink);
 }
 
+.hero-side-text .subhead{
+  font-family:'Playfair Display', serif;
+  font-size: clamp(18px, 2.2vw, 22px);
+  margin: 14px 0 6px;
+  color:#222;
+}
+
 .hero-side-text p{
   font-size:19px;
   line-height:1.65;
   margin:0 0 14px;
   color:#333;
 }
+
+/* simpele bulletstijl voor de USP-lijst */
+.usp-list{
+  margin: 6px 0 14px 18px;
+  padding: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.usp-list li{ margin: 4px 0; }
 
 .hero-photo{
   max-width:700px;

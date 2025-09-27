@@ -11,25 +11,25 @@
   <!-- Styles -->
   <link rel="stylesheet" href="Sollicitatie.css" />
 </head>
-<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
+<body class="theme-walrus-cream">
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
-        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
-        <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
+        <a href="../Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
+        <a href="../Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
+        <a href="../Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
       </div>
 
-      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
+      <a href="../index.php" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
 
       <div class="nav-right">
-        <a href="Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
-        <a href="Contact.php" class="nav-btn btn-contact">Contact</a>
-        <a href="Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
+        <a href="../Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
+        <a href="../Contact.php" class="nav-btn btn-contact">Contact</a>
+        <a href="../Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
       </div>
     </nav>
   </header>
@@ -37,32 +37,51 @@
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">
-        <!-- Titel met lijnen links/rechts -->
+    <!-- Titel met lijnen links/rechts -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
       <h1 class="title-text">OPEN SOLLICITATIE</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
     </div>
 
-    <!-- HERO (normaal, 1 kolom) -->
+    <!-- HERO -->
     <section class="hero-section">
+      <!-- LINKS: NIEUWE TITEL + TEKST -->
       <div class="hero-side-text">
-        <h1>Kom je werken bij De Walrus?</h1>
+        <h1>Wil je graag werken bij De Walrus?</h1>
+
         <p>
-          Is ons grand café al bekend terrein, of lonkt het juist als iets nieuws om te ontdekken?
-          We hebben regelmatig verschillende functies open. Denk aan de keuken (chef, sous-chef, keukenhulp),
-          de bar, of de bediening op de vloer. Je werkt samen in een hecht team waar goede service
-          en gezelligheid hand in hand gaan.
+          We zijn altijd op zoek naar nieuw talent om ons team te versterken. 
+          Staat er nu geen vacature die precies bij je past? Laat van je horen. 
+          Wie weet is er wél plek voor jouw skills — in de keuken, achter de bar of in de bediening.
+        </p>
+
+        <h2 class="subhead">Wie zijn wij?</h2>
+        <p>
+          Je vindt De Walrus in Sneek én in Leeuwarden. Twee sfeervolle panden op toplocaties in het centrum: 
+          perfect voor koffie, een uitgebreide lunch, een goed diner en een gezellige borrel. 
+          Kom langs of reserveer en ervaar de vibe zelf.
         </p>
         <p>
-          Voel je je aangesproken, maar staat de perfecte functie er even niet tussen? Geen probleem.
-          Stuur gerust een open sollicitatie en vertel kort waar jij in uitblinkt. We kijken graag mee
-          of er een plek in het team past bij jouw talent en beschikbaarheid.
+          Aandacht voor de gast staat bij ons voorop — net als jouw ontwikkeling. 
+          We groeien als bedrijf, en jij groeit mee: met online trainingen en 
+          <em>on the job</em> coaching door onze toppers.
         </p>
+
+        <h2 class="subhead">Wat bieden we jou?</h2>
+        <ul class="usp-list">
+          <li>Inwerktraject: in korte tijd helemaal “Walrus-klaar”</li>
+          <li>Stabiele werkomgeving met duidelijke verwachtingen</li>
+          <li>Marktconform salaris plus vakantiegeld</li>
+          <li>Werkrooster minimaal 4 weken vooraf bekend</li>
+          <li>Gezellig team dat voor elkaar klaarstaat</li>
+          <li>Doorgroeikansen (na interne cursussen o.a. leermeesterdiploma)</li>
+          <li>En ja — een sluitborrel hoort erbij (18+ 😉)</li>
+        </ul>
+
         <p>
-          Solliciteer via het formulier onderaan deze pagina, dan nodigen we je graag uit voor een kennismaking.
-          De koffie is van ons ☕. Laat meteen even weten welke dagen jou het beste uitkomen – wel zo makkelijk
-          voor het plannen.
+          Open sollicitatie sturen? Top. Vertel kort waar jij in uitblinkt en wanneer je kunt. 
+          Dan plannen we snel een kennismaking. De koffie is van ons ☕.
         </p>
 
         <figure class="hero-photo">
@@ -73,11 +92,10 @@
         </figure>
       </div>
 
+      <!-- RECHTS: VIDEO + AANGEPASTE TEKST -->
       <div class="hero-video" aria-label="Introductievideo De Walrus">
-        <h1 class="video-lead">
-          In deze video laten we je precies zien hoe het eraan toe gaat: het team, de sfeer en wat je
-          op je eerste dag kunt verwachten.
-</h1>
+        <h1 class="video-lead">Zo ziet je eerste week eruit (in 60 seconden)</h1>
+
         <div class="video-outer">
           <iframe
             src="https://www.youtube.com/embed/C8Qkj52bfZE"
@@ -89,28 +107,27 @@
           ></iframe>
         </div>
 
-        <div class="below-video">
-          <h2>Benieuwd hoe je eerste werkdag bij De Walrus is?</h2>
+        <div class="below-video">.php
+          <h2>Wat je kunt verwachten</h2>
           <p class="intro-small">
-            Je leert snel je collega’s kennen, ontdekt onze manier van werken en proeft de
-            sfeer van het grand café. We helpen je op weg zodat je je bij De Walrus al gauw
-            helemaal thuis voelt.
+            Kennismaken met het team, meedraaien op de vloer en stap voor stap je station leren kennen. 
+            Je staat nooit alleen: we coachen je mee tot je ritme en snelheid helemaal goed zitten.
           </p>
 
-          <p class="vacature-intro">Ontdek ook onze vacatures:</p>
+          <p class="vacature-intro">Liever gericht solliciteren? Check de functies:</p>
           <ul class="vacature-links">
-            <li><a href="Sollicitatievactures/1Keukenhulp.html"> &gt; Keukenhulp</a></li>
-            <li><a href="Sollicitatievactures/1Kok.html"> &gt; Kok</a></li>
-            <li><a href="Sollicitatievactures/1Medewerkerbediening.html"> &gt; Medewerker bediening</a></li>
-            <li><a href="Sollicitatievactures/1Supervisorbediening.html"> &gt; Supervisor bediening</a></li>
-            <li><a href="Sollicitatievactures/1Schoonmaak.html"> &gt; Schoonmaak</a></li>
-            <li><a href="Sollicitatievactures/1Restaurantmanager.html"> &gt; Restaurantmanager</a></li>
-            <li><a href="Sollicitatievactures/1Afwasser.html"> &gt; Afwasser</a></li>
+            <li><a href="1Keukenhulp.html"> &gt; Keukenhulp</a></li>
+            <li><a href="1Kok.html"> &gt; Kok</a></li>
+            <li><a href="1Medewerkerbediening.html"> &gt; Medewerker Bediening</a></li>
+            <li><a href="1Supervisorbediening.html"> &gt; Supervisor Bediening</a></li>
+            <li><a href="1Schoonmaak.html"> &gt; Schoonmaak</a></li>
+            <li><a href="1Restaurantmanager.html"> &gt; Restaurant Manager</a></li>
+            <li><a href="1Afwasser.html"> &gt; Afwasser</a></li>
           </ul>
 
           <div class="open-sollicitatie">
-            <span>Staat jouw vacature hier niet tussen?</span>
-            <a class="open-link-like" href="Sollicitatievactures/1Opensollicitatie.html"> &gt; Open sollicitatie</a>
+            <span>Staat jouw vacature er niet tussen?</span>
+            <a class="open-link-like" href="1Opensollicitatie.html"> &gt; Open sollicitatie</a>
           </div>
         </div>
       </div>
@@ -130,7 +147,7 @@
         We zien je sollicitatie graag tegemoet!
       </p>
 
-      <form action="Bedankt.php" method="post" enctype="multipart/form-data">
+      <form action="../Bedankt/Solliciterenbedankt.php" method="post" enctype="multipart/form-data">
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
@@ -163,10 +180,10 @@
               name="telefoon"
               autocomplete="tel"
               inputmode="tel"
-              pattern="^(?:0\d{9}|\+31\s?\d{9})$"
-              placeholder="0612345678 of +31 612345678"
+              pattern="^(?:0\d{9}|\+31\s?6\s?\d{8}|\+31\s?\d{9})$"
+              placeholder="0612345678 of +31 6 12345678"
               required
-              title="Voer 0612345678 in of +31 612345678.">
+              title="Voer 0612345678, +31 612345678 of +31 6 12345678 in.">
           </div>
         </div>
 
@@ -237,11 +254,13 @@
           <select id="functie" name="functie" required>
             <option value="" disabled selected>Kies een functie</option>
             <option value="Keukenhulp">Keukenhulp</option>
-            <option value="Medewerker bediening">Medewerker bediening</option>
-            <option value="Supervisor bediening">Supervisor bediening</option>
+            <option value="Keukenhulp">Kok</option>
+            <option value="Medewerker bediening">Medewerker Bediening</option>
+            <option value="Supervisor bediening">Supervisor Bediening</option>
             <option value="Schoonmaak">Schoonmaak</option>
-            <option value="Restaurantmanager">Restaurantmanager</option>
+            <option value="Restaurantmanager">Restaurant Manager</option>
             <option value="Afwasser">Afwasser</option>
+            <option value="Anders">Anders</option>
           </select>
         </div>
 
@@ -249,7 +268,7 @@
         <h3 class="form-subtitle">Motivatie</h3>
         <div class="form-field">
           <label for="motivatie">Motivatie*</label>
-          <textarea id="motivatie" name="motivatie" rows="10" placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken." required></textarea>
+          <textarea id="motivatie" name="motivatie" rows="10" placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken."></textarea>
         </div>
 
         <!-- Bijlagen & Locatie -->
@@ -292,7 +311,7 @@
 
         <!-- Privacy + verzenden -->
         <label class="checkbox">
-          <input type="checkbox" required>
+          <input type="checkbox" name="privacy_ok" value="1" required>
           Ik ga akkoord met het verwerken van mijn gegevens volgens de privacyverklaring.
         </label>
 
