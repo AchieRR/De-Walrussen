@@ -107,7 +107,7 @@
           ></iframe>
         </div>
 
-        <div class="below-video">.php
+        <div class="below-video">
           <h2>Wat je kunt verwachten</h2>
           <p class="intro-small">
             Kennismaken met het team, meedraaien op de vloer en stap voor stap je station leren kennen. 
@@ -116,18 +116,18 @@
 
           <p class="vacature-intro">Liever gericht solliciteren? Check de functies:</p>
           <ul class="vacature-links">
-            <li><a href="1Keukenhulp.html"> &gt; Keukenhulp</a></li>
-            <li><a href="1Kok.html"> &gt; Kok</a></li>
-            <li><a href="1Medewerkerbediening.html"> &gt; Medewerker Bediening</a></li>
-            <li><a href="1Supervisorbediening.html"> &gt; Supervisor Bediening</a></li>
-            <li><a href="1Schoonmaak.html"> &gt; Schoonmaak</a></li>
-            <li><a href="1Restaurantmanager.html"> &gt; Restaurant Manager</a></li>
-            <li><a href="1Afwasser.html"> &gt; Afwasser</a></li>
+            <li><a href="1Keukenhulp.php"> &gt; Keukenhulp</a></li>
+            <li><a href="1Kok.php"> &gt; Kok</a></li>
+            <li><a href="1Medewerkerbediening.php"> &gt; Medewerker Bediening</a></li>
+            <li><a href="1Supervisorbediening.php"> &gt; Supervisor Bediening</a></li>
+            <li><a href="1Schoonmaak.php"> &gt; Schoonmaak</a></li>
+            <li><a href="1Restaurantmanager.php"> &gt; Restaurant Manager</a></li>
+            <li><a href="1Afwasser.php"> &gt; Afwasser</a></li>
           </ul>
 
           <div class="open-sollicitatie">
             <span>Staat jouw vacature er niet tussen?</span>
-            <a class="open-link-like" href="1Opensollicitatie.html"> &gt; Open sollicitatie</a>
+            <a class="open-link-like" href="1Opensollicitatie.php"> &gt; Open sollicitatie</a>
           </div>
         </div>
       </div>
