@@ -1,19 +1,20 @@
 <?php
 // DeWalrus/Bedankt/Solliciterenbedankt.php
 
-// --- DEBUG (tijdelijk aan als je vastloopt) ---
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 
-// DB connect (db.php ligt één map hoger)
 require __DIR__ . '/../db.php';
 
-// Verplicht velden (server-side, want front-end kun je niet vertrouwen)
+/**
+ * Vereiste velden (server-side)
+ * We gebruiken LEEFTIJD ipv geboortedatum.
+ */
 $required = [
   'voornaam','achternaam','email','telefoon',
   'straat','huisnummer','postcode','woonplaats',
-  'geslacht','geboortedatum',
+  'geslacht','leeftijd',
   'dienstverband','functie','motivatie','locatie'
 ];
 
@@ -24,15 +25,15 @@ foreach ($required as $f) {
   }
 }
 
-// Normaliseren/valideren
+// Normaliseren / valideren
 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 if (!$email) {
   http_response_code(400);
   exit('Ongeldig e-mailadres.');
 }
 
-$telefoon = preg_replace('/\s+/', '', $_POST['telefoon']);
-if (!preg_match('/^(0\d{9}|\+31\d{9})$/', $telefoon)) {
+$telefoon = preg_replace('/\s+/', '', $_POST['telefoon']);           // spaties weg
+if (!preg_match('/^(0\d{9}|\+31\d{9})$/', $telefoon)) {               // 0612345678 of +31612345678
   http_response_code(400);
   exit('Ongeldig telefoonnummer.');
 }
@@ -44,82 +45,36 @@ if (!preg_match('/^[1-9][0-9]{3}\s?[A-Z]{2}$/', $postcode)) {
   exit('Ongeldige postcode.');
 }
 
+$leeftijd = filter_var($_POST['leeftijd'], FILTER_VALIDATE_INT, [
+  'options' => ['min_range' => 16, 'max_range' => 80]
+]);
+if ($leeftijd === false) {
+  http_response_code(400);
+  exit('Leeftijd moet tussen 16 en 80 zijn.');
+}
+
 $bronArray   = isset($_POST['bron']) && is_array($_POST['bron']) ? $_POST['bron'] : [];
 $bronCsv     = implode(',', array_map('trim', $bronArray));
 $bronAnders  = isset($_POST['bron_anders']) ? trim($_POST['bron_anders']) : null;
 $maxuren     = isset($_POST['maxuren']) && $_POST['maxuren'] !== '' ? (int)$_POST['maxuren'] : null;
 
-// --- Upload (optioneel) ---
-$cvPath = null;
-$cvOriginal = null;
-
-if (!empty($_FILES['cv']['name'])) {
-  if ($_FILES['cv']['error'] !== UPLOAD_ERR_OK) {
-    http_response_code(400);
-    exit('Uploadfout bij het CV.');
-  }
-
-  $allowed = [
-    'application/pdf',
-    'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-  ];
-
-  $finfo = new finfo(FILEINFO_MIME_TYPE);
-  $mime  = $finfo->file($_FILES['cv']['tmp_name']);
-  if (!in_array($mime, $allowed, true)) {
-    http_response_code(400);
-    exit('Alleen PDF, DOC of DOCX zijn toegestaan.');
-  }
-
-  if ($_FILES['cv']['size'] > 5 * 1024 * 1024) {
-    http_response_code(400);
-    exit('CV is te groot (max 5MB).');
-  }
-
-  $ext = pathinfo($_FILES['cv']['name'], PATHINFO_EXTENSION);
-  $safeExt = preg_replace('/[^a-zA-Z0-9]+/', '', $ext);
-  $cvOriginal = $_FILES['cv']['name'];
-  $newName = 'cv_' . date('Ymd_His') . '_' . bin2hex(random_bytes(6)) . '.' . $safeExt;
-
-  // Map: één niveau omhoog vanaf /Bedankt naar /uploads
-  $uploadDir = __DIR__ . '/../uploads';
-
-  if (!is_dir($uploadDir)) {
-    if (!mkdir($uploadDir, 0777, true) && !is_dir($uploadDir)) {
-      http_response_code(500);
-      exit('Kon de uploads-map niet aanmaken.');
-    }
-  }
-
-  $target = $uploadDir . DIRECTORY_SEPARATOR . $newName;
-
-  if (!move_uploaded_file($_FILES['cv']['tmp_name'], $target)) {
-    http_response_code(500);
-    exit('Kon het CV niet opslaan.');
-  }
-
-  // Relatief pad voor opslag in DB/weergave
-  $cvPath = 'uploads/' . $newName;
-}
-
 // --- INSERT ---
+// NB: we gebruiken hier 'leeftijd' en NIET 'geboortedatum'.
+// Laat cv_* achterwege; die gebruik je niet meer.
 $sql = "INSERT INTO applications
   (voornaam, tussenvoegsel, achternaam, email, telefoon,
    straat, huisnummer, postcode, woonplaats,
-   geslacht, geboortedatum,
+   geslacht, leeftijd,
    dienstverband, maxuren,
    functie, motivatie,
-   locatie, bron, bron_anders,
-   cv_path, cv_original)
+   locatie, bron, bron_anders)
   VALUES
   (:voornaam, :tussenvoegsel, :achternaam, :email, :telefoon,
    :straat, :huisnummer, :postcode, :woonplaats,
-   :geslacht, :geboortedatum,
+   :geslacht, :leeftijd,
    :dienstverband, :maxuren,
    :functie, :motivatie,
-   :locatie, :bron, :bron_anders,
-   :cv_path, :cv_original)";
+   :locatie, :bron, :bron_anders)";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
@@ -135,7 +90,7 @@ $stmt->execute([
   ':woonplaats'     => trim($_POST['woonplaats']),
 
   ':geslacht'       => $_POST['geslacht'],
-  ':geboortedatum'  => $_POST['geboortedatum'],
+  ':leeftijd'       => $leeftijd,
 
   ':dienstverband'  => $_POST['dienstverband'],
   ':maxuren'        => $maxuren,
@@ -145,10 +100,7 @@ $stmt->execute([
 
   ':locatie'        => $_POST['locatie'],
   ':bron'           => $bronCsv !== '' ? $bronCsv : null,
-  ':bron_anders'    => $bronAnders !== '' ? $bronAnders : null,
-
-  ':cv_path'        => $cvPath,
-  ':cv_original'    => $cvOriginal
+  ':bron_anders'    => ($bronAnders !== '') ? $bronAnders : null,
 ]);
 ?>
 <!DOCTYPE html>

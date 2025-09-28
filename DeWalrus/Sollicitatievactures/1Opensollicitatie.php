@@ -132,7 +132,7 @@
     <!-- DIVIDER TUSSEN HERO EN FORMULIER -->
     <div class="section-divider" aria-hidden="true"></div>
 
-    <!-- FORMULIER -->
+   <!-- FORMULIER -->
     <section class="apply-form" aria-labelledby="sollicitatie-titel">
       <h2 id="sollicitatie-titel">Solliciteer via dit formulier!</h2>
       <p class="form-intro">
@@ -143,7 +143,6 @@
         We zien je sollicitatie graag tegemoet!
       </p>
 
-      <!-- Exact zelfde formulier als Solliciteren (zonder CV, met leeftijd 16+) -->
       <form action="../Bedankt/Solliciterenbedankt.php" method="post">
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
@@ -177,7 +176,7 @@
               name="telefoon"
               autocomplete="tel"
               inputmode="tel"
-              pattern="^(?:0\\d{9}|\\+31\\s?\\d{9})$"
+              pattern="^(?:0\d{9}|\+31\s?\d{9})$"
               placeholder="0612345678 of +31 612345678"
               required
               title="Voer 0612345678 in of +31 612345678.">
@@ -200,7 +199,7 @@
             <input
               type="text" id="postcode" name="postcode"
               autocomplete="postal-code" placeholder="1234 AB"
-              pattern="^[1-9][0-9]{3}\\s?[A-Za-z]{2}$" required
+              pattern="^[1-9][0-9]{3}\s?[A-Za-z]{2}$" required
               title="Voer een geldige Nederlandse postcode in, bijv. 1234 AB.">
           </div>
           <div class="form-field">
@@ -234,7 +233,8 @@
               inputmode="numeric"
               required
               oninvalid="this.setCustomValidity('Je moet minimaal 16 jaar zijn.')"
-              oninput="this.setCustomValidity('')">
+              oninput="this.setCustomValidity('')"
+            />
           </div>
         </div>
 
@@ -262,7 +262,7 @@
           <select id="functie" name="functie" required>
             <option value="" disabled selected>Kies een functie</option>
             <option value="Keukenhulp">Keukenhulp</option>
-            <option value="Keukenhulp">Kok</option>
+            <option value="Kok">Kok</option>
             <option value="Medewerker bediening">Medewerker Bediening</option>
             <option value="Supervisor bediening">Supervisor Bediening</option>
             <option value="Schoonmaak">Schoonmaak</option>
