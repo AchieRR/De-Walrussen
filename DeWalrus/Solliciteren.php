@@ -99,13 +99,12 @@
 
           <p class="vacature-intro">Ontdek ook onze vacatures:</p>
           <ul class="vacature-links">
-            <li><a href="Sollicitatievactures/1Keukenhulp.php"> &gt; Keukenhulp</a></li>
+            <li><a href="Sollicitatievactures/1Keukenhulp.php"> &gt; Keukenhulp/Afwasser</a></li>
             <li><a href="Sollicitatievactures/1Kok.php"> &gt; Kok</a></li>
             <li><a href="Sollicitatievactures/1Medewerkerbediening.php"> &gt; Medewerker Bediening</a></li>
             <li><a href="Sollicitatievactures/1Supervisorbediening.php"> &gt; Supervisor Bediening</a></li>
             <li><a href="Sollicitatievactures/1Schoonmaak.php"> &gt; Schoonmaak</a></li>
             <li><a href="Sollicitatievactures/1Restaurantmanager.php"> &gt; Restaurant Manager</a></li>
-            <li><a href="Sollicitatievactures/1Afwasser.php"> &gt; Afwasser</a></li>
           </ul>
 
           <div class="open-sollicitatie">
@@ -247,13 +246,12 @@
           <label for="functie">Functie*</label>
           <select id="functie" name="functie" required>
             <option value="" disabled selected>Kies een functie</option>
-            <option value="Keukenhulp">Keukenhulp</option>
+            <option value="Keukenhulp/Afwasser">Keukenhulp/Afwasser</option>
             <option value="Kok">Kok</option>
             <option value="Medewerker bediening">Medewerker Bediening</option>
             <option value="Supervisor bediening">Supervisor Bediening</option>
             <option value="Schoonmaak">Schoonmaak</option>
             <option value="Restaurantmanager">Restaurant Manager</option>
-            <option value="Afwasser">Afwasser</option>
             <option value="Anders">Anders</option>
           </select>
         </div>

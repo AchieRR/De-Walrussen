@@ -1,10 +1,9 @@
 <?php
-// db.php
-$DB_HOST = '127.0.0.1';   // ServBay -> MySQL scherm: bind address localhost, port 3306
+$DB_HOST = '127.0.0.1';   
 $DB_PORT = 3306;
 $DB_NAME = 'walrus';
 $DB_USER = 'root';
-$DB_PASS = 'ServBay.dev';  // te zien in je screenshot
+$DB_PASS = 'ServBay.dev';  
 
 $options = [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

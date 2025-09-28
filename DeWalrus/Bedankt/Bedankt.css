@@ -3,55 +3,52 @@
    =============================== */
 :root{
   --header-h: clamp(48px, 8.2vw, 84px);
-
-  /* (oude logo-kaart variabelen gelaten voor compat, ongebruikt) */
-  --logo-bg: #f5e7d9;
-  --logo-w-start: 300px;
-  --logo-w-end:   360px;
-  --logo-shrink-range: 200px;
-  --logo-drop-max: 24px;
-
-  --logo-text-scale: 1;
-  --walrus-factor: 0.52;
-  --grand-factor:  0.22;
-
   --brand-gold: #c29c1e;
   --brand-gold-dark: #b6911a;
   --ink: #0b2140;
 }
 
 /* ===============================
-   Reset & basis
+   Basis
    =============================== */
-*{ box-sizing: border-box; }
+*{ box-sizing:border-box; }
 html, body{
   margin:0; padding:0; height:100%;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:#fff; color:#111; line-height:1.4;
+  background:#fff; color:#111; line-height:1.45;
 
-  /* geen horizontale scroll (zoals Bedankt.css) */
+  /* geen horizontale scroll */
   max-width:100%;
   overflow-x:hidden;
 }
+
+/* Links / Focus */
 a{ color:inherit; }
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
-  outline: 3px solid #7cb6ff; outline-offset: 2px;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid #7cb6ff;
+  outline-offset: 2px;
 }
 
-/* ruimte onder fixed header */
+
+
+/* Ruimte onder fixed header */
 .header-gap{ height: calc(var(--header-h) + 8px); }
 
-/* midden content */
+/* Midden content (normale breedte) */
 .page-content{
   max-width: 1500px;
   margin: 0 auto;
   padding: 24px 20px 60px;
   min-height: calc(100vh - var(--header-h) + 320px);
-  overflow-x: clip; /* safeguard */
+  overflow-x: clip;           /* extra safeguard */
 }
 
 /* ===============================
-   Header / Navbar (exact als Bedankt.css)
+   Header / Navbar (clean)
    =============================== */
 header{
   position:fixed; inset:0 0 auto 0; height:var(--header-h);
@@ -100,7 +97,7 @@ header{
 .btn-solliciteren:hover, .btn-reserveren:hover{ background: var(--brand-gold-dark); box-shadow:0 6px 16px rgba(0,0,0,.18); transform: translateY(-1px); }
 
 /* ===============================
-   Pagina-titel (exact als Bedankt.css)
+   Pagina-titel
    =============================== */
 .page-title{
   display:flex; align-items:center; justify-content:center;
@@ -116,88 +113,101 @@ header{
 @media (max-width:600px){ .title-line{ display:none; } }
 
 /* ===============================
-   Secties / kaartjes
+   Bedankt-kaart
    =============================== */
-.section{
-  background:#fff;
+.thankyou-card{
+  background:#fff; border:1px solid #eee; border-radius:16px;
+  padding:24px; width:100%;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+  display:flex; flex-direction:column; align-items:stretch;
+}
+.thankyou-icon{
+  width:72px; height:72px; border-radius:50%;
+  background: var(--brand-gold); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 16px rgba(194,156,30,.35);
+  margin: 6px auto 12px;           /* gecentreerd */
+}
+.thankyou-title{
+  font-family:'Playfair Display', serif;
+  text-align:center; color:var(--ink);
+  font-size: clamp(22px, 3.3vw, 34px);
+  margin:0 0 6px;
+}
+.thankyou-intro{
+  text-align:center; color:#333; font-size:18px; line-height:1.6;
+  margin:0 0 18px;
+}
+
+/* identiteitsrij (naam – e-mail – telefoon) */
+.identity-row{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+  margin-bottom: 8px;
+}
+.identity-row .k{ display:block; font-weight:700; color:#222; }
+.identity-row .v{ display:block; color:#333; }
+
+/* inklapper */
+.more{
+  margin-top:4px;
   border:1px solid #eee;
   border-radius:12px;
-  padding:20px;
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  padding:6px 10px;
 }
-.section + .section{ margin-top:18px; }
+.more > summary{
+  cursor:pointer; list-style:none; user-select:none;
+  font-weight:800; color:#222; position:relative; padding:8px 30px 8px 6px;
+}
+.more > summary::marker{ display:none; }
+.more > summary::after{
+  content:"▸"; position:absolute; right:8px; top:50%; transform:translateY(-50%) rotate(0deg);
+  transition: transform .18s ease;
+}
+.more[open] > summary::after{ transform:translateY(-50%) rotate(90deg); }
 
-.section h2{
-  font-family:'Playfair Display', serif;
-  font-size: clamp(22px, 3.2vw, 34px);
-  margin:0 0 8px; color:var(--ink); text-align:left;
+/* key-value grid binnen inklapper */
+.kv{
+  list-style:none; margin:6px 0 4px; padding:0;
+  display:grid; grid-template-columns: 1fr 2fr; gap:10px 16px;
 }
-.section .lead{
-  margin:0 0 18px; color:#333;
+.kv li{ display:contents; }
+
+/* ⛏ FIX: full-row rij blijft een grid met 2 kolommen */
+.kv li.full{
+  grid-column: 1 / -1;      /* over beide kolommen */
+  display: grid;            /* binnenin weer een grid */
+  grid-template-columns: 1fr 2fr;
+  gap: 10px 16px;
 }
 
-/* grid */
-.arr-grid{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap:16px;
-}
-@media (max-width:1024px){
-  .arr-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
-@media (max-width:640px){
-  .arr-grid{ grid-template-columns: 1fr; }
-}
+.kv .k{ font-weight:700; color:#222; }
+.kv .v{ color:#333; white-space: pre-line; }  /* nette regelafbreking voor Motivatie */
 
-/* kaarten */
-.arr-card{
-  display:flex; flex-direction:column;
-  border:1px solid #eee; border-radius:12px; overflow:hidden;
-  background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.04);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.arr-card:hover{
-  transform: translateY(-2px);
-  box-shadow:0 10px 26px rgba(0,0,0,.10);
-}
-.arr-card img{
-  display:block; width:100%; height:auto;
-  aspect-ratio: 16 / 9; object-fit: cover;
-}
-.arr-card-content{ padding:14px 14px 16px; }
-.arr-card h3{ margin:0 0 6px; font-size:20px; color:var(--ink); }
-.arr-card .meta{ font-size:14px; color:#555; margin-bottom:10px; }
-.arr-card p{ margin:0 0 12px; color:#333; }
-
-.cta{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
+/* CTA’s */
+.cta-row{ display:flex; gap:12px; margin-top:14px; flex-wrap:wrap; }
+.cta-row.center{ justify-content:center; }
 .btn{
-  appearance:none; border:0; cursor:pointer;
-  padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none;
-  background:#f6f6f6; color:#111;
-  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:800; cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
 }
-.btn:hover{ background:#eee; transform:translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
-.btn-primary{ background:var(--brand-gold); color:#fff; }
-.btn-primary:hover{ background:var(--brand-gold-dark); }
-
-/* Divider */
-.section-divider{ height:1px; background:#eee; margin:36px auto; max-width:1200px; }
+.btn-primary{ background:var(--brand-gold); color:#fff; border:0; }
+.btn-primary:hover{ background:var(--brand-gold-dark); transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,.15); }
+.btn-secondary{ background:transparent; color:var(--ink); border:2px solid #ddd; }
+.btn-secondary:hover{ border-color:var(--brand-gold); color:var(--brand-gold); transform:translateY(-1px); }
 
 /* ===============================
-   Footer (infobar)
+   Infobar
    =============================== */
 .infobar{
-  position:relative;
-  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  position:relative; background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   color:#fff; padding:12px 20px 18px; margin-top:0;
   box-shadow: 0 -14px 32px rgba(0, 0, 0, 0.534);
 }
-.infobar-top-text{
-  font-family:'Alex Brush', cursive; text-align:center; font-size:22px; margin-bottom:8px;
-}
-.info-content{
-  max-width:1300px; margin:0 auto; display:flex; justify-content:flex-start; align-items:center; gap:12px;
-}
+.infobar-top-text{ font-family:'Alex Brush', cursive; text-align:center; font-size:22px; margin-bottom:8px; }
+.info-content{ max-width:1300px; margin:0 auto; display:flex; justify-content:flex-start; align-items:center; gap:12px; }
 .info-section{ flex:0 0 auto; min-width:220px; }
 .info-section h4{ font-size:22px; margin:0 0 4px; }
 .info-section p{ font-size:14px; line-height:1.5; margin:0; }
@@ -209,13 +219,9 @@ header{
 
 .right-side{ text-align:center; margin-left:auto; padding-left:12px; }
 .infobar-right-text{ font-family:'Alex Brush', cursive; font-size:22px; margin:0 0 10px; }
-.city-images{
-  display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:0;
-}
+.city-images{ display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:0; }
 .city-images img{
-  width:320px; max-width:100%; height:auto;
-  border-radius:6px; box-shadow:0 3px 8px rgba(0,0,0,.3);
-  transition:transform .25s ease; cursor:pointer;
+  width:320px; max-width:100%; height:auto; border-radius:6px; box-shadow:0 3px 8px rgba(0,0,0,.3); transition:transform .25s ease; cursor:pointer;
 }
 .city-images img:hover{ transform:scale(1.04); }
 
@@ -223,7 +229,9 @@ header{
 .infobar-brand .walrus{ font-family:'Alex Brush', cursive; font-size:22px; color:#fff; line-height:1; display:block; }
 .infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
 
-/* ===== THEME: Walrus Cream ===== */
+/* ===============================
+   Thema crème
+   =============================== */
 .theme-walrus-cream{
   background-color: #fbf5ea;
   background-image:
@@ -234,25 +242,16 @@ header{
   background-position: center top, center bottom, 0 0;
   background-repeat: no-repeat, no-repeat, repeat;
 }
-.theme-walrus-cream .apply-form,
-.theme-walrus-cream .section{
-  background:#ffffff;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-}
-.theme-walrus-cream .title-text{ color: var(--ink); }
-.theme-walrus-cream .title-line{ opacity:.9; filter:none; }
 
 /* ===============================
-   Responsive tweaks
+   Responsive
    =============================== */
-@media (max-width:960px){
-  .page-content{ padding:20px 16px 56px; }
-}
 @media (max-width:780px){
   .topnav{ grid-template-columns:1fr; row-gap:8px; }
   .logo{ order:-1; justify-self:center; }
   .nav-left, .nav-right{ justify-content:center; flex-wrap:wrap; }
-  .info-content{ flex-direction:column; gap:14px; align-items:flex-start; }
-  .right-side{ text-align:left; margin-left:0; padding-left:0; }
-  .city-images img{ width:280px; }
+
+  .identity-row{ grid-template-columns:1fr; }
+  .kv{ grid-template-columns:1fr; }
+  .kv li.full{ grid-template-columns:1fr; } /* op mobiel label boven inhoud */
 }
