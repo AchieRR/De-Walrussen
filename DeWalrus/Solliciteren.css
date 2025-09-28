@@ -17,7 +17,7 @@ html, body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:#fff; color:#111; line-height:1.4;
 
-  /* geen horizontale scroll – net als Bedankt.css */
+  
   max-width:100%;
   overflow-x:hidden;
 }
@@ -43,7 +43,7 @@ textarea:focus-visible{
 }
 
 /* ===============================
-   Header / Navbar (exact als Bedankt.css)
+   Header / Navbar 
    =============================== */
 header{
   position:fixed; inset:0 0 auto 0; height:var(--header-h);
@@ -61,7 +61,7 @@ header{
 .nav-left{ justify-content:flex-end; }
 .nav-right{ justify-content:flex-start; }
 
-/* Logo plain (vervangt logo-kaart + animaties) */
+/* Logo */
 .logo{
   grid-column:2; display:flex; flex-direction:column; align-items:center; justify-content:center;
   background:transparent; width:auto; height:auto; padding:0; border-radius:0; box-shadow:none;
@@ -92,7 +92,7 @@ header{
 .btn-solliciteren:hover, .btn-reserveren:hover{ background: var(--brand-gold-dark); box-shadow:0 6px 16px rgba(0,0,0,.18); transform: translateY(-1px); }
 
 /* ===============================
-   Pagina-titel (exact als Bedankt.css)
+   Pagina-titel 
    =============================== */
 .page-title{
   display:flex; align-items:center; justify-content:center;
@@ -308,7 +308,7 @@ textarea{
 }
 textarea{ resize:vertical; }
 
-/* Spin-knoppen bij number-input weghalen (optioneel) */
+/*  */
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 input[type=number] { -moz-appearance: textfield; }

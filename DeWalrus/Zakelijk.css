@@ -4,17 +4,6 @@
 :root{
   --header-h: clamp(48px, 8.2vw, 84px);
 
-  /* oude logo-kaart variabelen (ongebruikt) */
-  --logo-bg: #f5e7d9;
-  --logo-w-start: 300px;
-  --logo-w-end:   360px;
-  --logo-shrink-range: 200px;
-  --logo-drop-max: 24px;
-
-  --logo-text-scale: 1;
-  --walrus-factor: 0.52;
-  --grand-factor:  0.22;
-
   --brand-gold: #c29c1e;
   --brand-gold-dark: #b6911a;
   --ink: #0b2140;
@@ -32,46 +21,48 @@ html, body{
   line-height:1.4;
 
   max-width:100%;
-  overflow-x:hidden;
+  overflow-x:hidden; 
 }
 
 /* Ruimte onder fixed header */
-.header-gap{ height: calc(var(--header-h) + 8px); }
+.header-gap{ height: calc(var(--header-h) + 8px); } /* content offset */
 
 /* Midden content */
 .page-content{
   max-width: 1500px;
   margin: 0 auto;
   padding: 24px 20px 60px;
-  min-height: calc(100vh - var(--header-h) + 320px);
-  overflow-x: clip;
+  min-height: calc(100vh - var(--header-h) + 320px); /* visuele balans */
+  overflow-x: clip; /* clip overflow */
 }
 
 /* ===============================
-   Header / Navbar (exact Bedankt.css)
+   Header / Navbar 
    =============================== */
 header{
-  position:fixed;
+  position:fixed; /* blijft boven */
   inset:0 0 auto 0;
   height:var(--header-h);
-  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
-  z-index:2000;
+  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat; /* hero bg */
+  z-index:2000; /* bovenaan */
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:0 clamp(8px,3vw,24px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.534);
+  padding:0 clamp(8px,3vw,24px); /* responsieve padding */
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.534); /* diepe schaduw */
 }
+
 .topnav{
   width:100%;
   max-width:1500px;
   margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
+  display:grid; /* grid layout */
+  grid-template-columns:1fr auto 1fr; /* links-logo-rechts */
   align-items:center;
   column-gap:32px;
   height:100%;
 }
+
 .nav-left,
 .nav-right{
   display:flex;
@@ -94,26 +85,25 @@ header{
   font-weight:700;
   text-decoration:none;
   white-space:nowrap;
-  transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease; /* micro-animaties */
 }
 .nav-btn:hover{
   background: rgba(255,255,255,.12);
   border-color: rgba(255,255,255,.22);
-  transform: translateY(-1px);
+  transform: translateY(-1px); /* kleine lift */
 }
 .btn-solliciteren, .btn-reserveren{ background: var(--brand-gold); color:#fff; border-color:transparent; }
 .btn-solliciteren:hover, .btn-reserveren:hover{ background: var(--brand-gold-dark); box-shadow:0 6px 16px rgba(0,0,0,.18); transform: translateY(-1px); }
 
-/* Logo plain */
 .logo{
-  grid-column:2;
+  grid-column:2; /* midden kolom */
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   background:transparent; width:auto; height:auto; padding:0; border-radius:0; box-shadow:none;
   text-decoration:none; text-align:center;
 }
 .logo .walrus{
   font-family:'Alex Brush', cursive;
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(28px, 4vw, 48px); /* schaal met viewport */
   color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.25);
   line-height:.95; font-weight:700; letter-spacing:.5px; margin:0;
 }
@@ -141,7 +131,7 @@ header{
 .title-line{
   display:block; height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9;
 }
-@media (max-width:600px){ .title-line{ display:none; } }
+@media (max-width:600px){ .title-line{ display:none; } } /* verberg lijnen */
 
 /* ===============================
    Infobar
@@ -150,7 +140,7 @@ header{
   position:relative;
   background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   color:#fff; padding:12px 20px 18px; margin-top:0;
-  box-shadow: 0 -14px 32px rgba(0, 0, 0, 0.534);
+  box-shadow: 0 -14px 32px rgba(0, 0, 0, 0.534); /* inverse schaduw */
 }
 .infobar-top-text{ font-family:'Alex Brush', cursive; text-align:center; font-size:22px; margin-bottom:8px; }
 .info-content{ max-width:1300px; margin:0 auto; display:flex; justify-content:flex-start; align-items:center; gap:12px; }
@@ -160,7 +150,7 @@ header{
 .info-section a{ color:#fff; text-decoration:underline; text-decoration-color:#fff; }
 .info-section a:hover{ opacity:.85; }
 .socials{ margin-top:8px; }
-.social-icon{ width:24px; height:24px; margin-right:6px; filter:invert(1); transition:transform .2s ease; }
+.social-icon{ width:24px; height:24px; margin-right:6px; filter:invert(1); transition:transform .2s ease; } /* invert voor donker bg */
 .social-icon:hover{ transform:scale(1.15); }
 
 .right-side{ text-align:center; margin-left:auto; padding-left:12px; }
@@ -169,7 +159,7 @@ header{
 /* city images in footer */
 .city-images{
   display:flex;
-  flex-direction:column;
+  flex-direction:column; /* stapel verticaal */
   align-items:center;
   gap:8px;
   margin-top:0;
@@ -183,7 +173,7 @@ header{
   transition:transform .25s ease;
   cursor:pointer;
 }
-.city-images img:hover{ transform:scale(1.04); }
+.city-images img:hover{ transform:scale(1.04); } /* subtiele zoom */
 
 .infobar-brand{ text-align:center; margin-top:12px; }
 .infobar-brand .walrus{ font-family:'Alex Brush', cursive; font-size:22px; color:#fff; line-height:1; display:block; }
@@ -192,7 +182,7 @@ header{
 /* ===== THEME: Walrus Cream ===== */
 .theme-walrus-cream{
   background-color: #fbf5ea;
-  background-image:
+  background-image: /* gelaagde gradients */
     radial-gradient(80% 50% at 50% -10%, #f5e7d9 0%, #fbf5ea 45%, #ffffff 80%),
     radial-gradient(900px 500px at 50% 115%, rgba(194,156,30,0.06), rgba(255,255,255,0) 60%),
     radial-gradient(rgba(11,33,64,0.035) 1px, transparent 1px);
@@ -205,7 +195,7 @@ header{
 .theme-walrus-cream .apply-form,
 .theme-walrus-cream .section{
   background:#ffffff;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08); /* zachte elevatie */
 }
 .theme-walrus-cream .title-text{ color: var(--ink); }
 .theme-walrus-cream .title-line{ opacity:.9; filter:none; }
@@ -214,13 +204,13 @@ header{
    Responsive
    =============================== */
 @media (max-width:960px){
-  .page-content{ padding:20px 16px 56px; }
+  .page-content{ padding:20px 16px 56px; } /* compacter mobiel */
 }
 @media (max-width:780px){
-  .topnav{ grid-template-columns:1fr; row-gap:8px; }
-  .logo{ order:-1; justify-self:center; }
+  .topnav{ grid-template-columns:1fr; row-gap:8px; } /* nav stapelt */
+  .logo{ order:-1; justify-self:center; } /* logo bovenaan */
   .nav-left, .nav-right{ justify-content:center; flex-wrap:wrap; }
-  .info-content{ flex-direction:column; gap:14px; align-items:flex-start; }
+  .info-content{ flex-direction:column; gap:14px; align-items:flex-start; } /* footer stapelt */
   .right-side{ text-align:left; margin-left:0; padding-left:0; }
-  .city-images img{ width:280px; }
+  .city-images img{ width:280px; } /* kleinere plaatjes */
 }

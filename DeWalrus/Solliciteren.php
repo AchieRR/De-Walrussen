@@ -11,7 +11,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="Solliciteren.css" />
 </head>
-<body class="theme-walrus-cream">
+<body class="theme-walrus-cream"> <!-- pagina achtergrond -->
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">

@@ -2,26 +2,26 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- mobiel schaal -->
   <title>De Walrus — Zakelijk</title>
 
-  <!-- Fonts -->
+  <!-- Fonts --> <!-- externe lettertypes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="Zakelijk.css" />
+  <link rel="stylesheet" href="Zakelijk.css" /> <!-- koppel css -->
 </head>
-<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
+<body class="theme-walrus-cream"> <!-- themaklasse -->
   <!-- Header / Navbar -->
   <header>
-    <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
+    <nav class="topnav" role="navigation" aria-label="Hoofdmenu"> <!-- hoofdmenu -->
       <div class="nav-left">
         <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
         <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
         <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
       </div>
 
-      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
+      <a href="index.php" class="logo" aria-label="De Walrus Homepage"> <!-- home link -->
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
@@ -35,11 +35,11 @@
   </header>
 
   <!-- Ruimte onder de vaste header zodat content niet eronder valt -->
-  <div class="header-gap" aria-hidden="true"></div>
+  <div class="header-gap" aria-hidden="true"></div> <!-- spacer onder header -->
 
   <main class="page-content">
          <!-- Titel met lijnen links/rechts -->
-    <div class="page-title" aria-hidden="true">
+    <div class="page-title" aria-hidden="true"> <!-- decoratieve titel -->
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
       <h1 class="title-text">ZAKELIJK</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
@@ -49,15 +49,15 @@
   <!-- einde midden -->
 
   <!-- Infobar / Footer -->
-  <footer class="infobar">
+  <footer class="infobar"> <!-- visuele footer -->
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 
     <div class="info-content">
-      <div class="info-section">
+      <div class="info-section"> <!-- vestiging lwd -->
         <h4>De Walrus Leeuwarden</h4>
         <br>
         <p>
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
+          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener"> <!-- nieuwe tab veilig -->
             Gouverneursplein 37<br>
             8911 HH Leeuwarden
           </a><br><br>
@@ -67,7 +67,7 @@
         </p>
         <div class="socials">
           <a href="https://www.facebook.com/DeWalrusLeeuwarden/?locale=nl_NL" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="Facebook">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="Facebook"> <!-- vector icoon -->
           </a>
           <a href="https://www.instagram.com/dewalrusleeuwarden/" target="_blank" rel="noopener">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="Instagram">
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="info-section">
+      <div class="info-section"> <!-- vestiging sneek -->
         <h4>De Walrus Sneek</h4>
         <br>
         <p>
@@ -97,11 +97,11 @@
         </div>
       </div>
 
-      <div class="right-side">
+      <div class="right-side"> <!-- visuals en maps -->
         <div class="infobar-right-text">Leuk dat je bent geweest</div>
         <div class="city-images">
           <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
-            <img src="https://res.cloudinary.com/laad-media-b-v/image/upload/s--J6Q_KcqC--/c_scale,dpr_auto,f_auto,q_auto:best/v1/Afbeeldingen%20knooppunten/266-8911/Grand-Caf%C3%A9_De_Walrus_Leeuwarden" alt="De Walrus Leeuwarden">
+            <img src="https://res.cloudinary.com/laad-media-b-v/image/upload/s--J6Q_KcqC--/c_scale,dpr_auto,f_auto,q_auto:best/v1/Afbeeldingen%20knooppunten/266-8911/Grand-Caf%C3%A9_De_Walrus_Leeuwarden" alt="De Walrus Leeuwarden"> <!-- cdn optimalisatie -->
           </a>
           <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
             <img src="https://res.cloudinary.com/laad-media-b-v/image/upload/s--dLwzwzgP--/c_scale,dpr_auto,f_auto,q_auto:best/v1/Afbeeldingen%20knooppunten/513-8601/Grand-Caf%C3%A9_De_Walrus_Sneek" alt="De Walrus Sneek">
@@ -110,7 +110,7 @@
       </div>
     </div>
 
-    <div class="infobar-brand">
+    <div class="infobar-brand"> <!-- merk lockup -->
       <span class="walrus">De Walrus</span>
       <span class="grandcafe">— GRAND CAFÉ —</span>
     </div>
