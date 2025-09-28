@@ -11,7 +11,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="Solliciteren.css" />
 </head>
-<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
+<body class="theme-walrus-cream">
   <!-- Header / Navbar -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
@@ -37,14 +37,14 @@
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">
-        <!-- Titel met lijnen links/rechts -->
+    <!-- Titel -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
       <h1 class="title-text">SOLLICITATIES</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
     </div>
 
-    <!-- HERO (normaal, 1 kolom) -->
+    <!-- HERO -->
     <section class="hero-section">
       <div class="hero-side-text">
         <h1>Kom je werken bij De Walrus?</h1>
@@ -77,7 +77,7 @@
         <h1 class="video-lead">
           In deze video laten we je precies zien hoe het eraan toe gaat: het team, de sfeer en wat je
           op je eerste dag kunt verwachten.
-</h1>
+        </h1>
         <div class="video-outer">
           <iframe
             src="https://www.youtube.com/embed/C8Qkj52bfZE"
@@ -108,7 +108,7 @@
             <li><a href="Sollicitatievactures/1Afwasser.php"> &gt; Afwasser</a></li>
           </ul>
 
-          <div class="open-sollicitatie">   
+          <div class="open-sollicitatie">
             <span>Staat jouw vacature hier niet tussen?</span>
             <a class="open-link-like" href="Sollicitatievactures/1Opensollicitatie.php"> &gt; Open sollicitatie</a>
           </div>
@@ -116,7 +116,6 @@
       </div>
     </section>
 
-    <!-- DIVIDER TUSSEN HERO EN FORMULIER -->
     <div class="section-divider" aria-hidden="true"></div>
 
     <!-- FORMULIER -->
@@ -130,7 +129,7 @@
         We zien je sollicitatie graag tegemoet!
       </p>
 
-      <form action="Bedankt.php" method="post" enctype="multipart/form-data">
+      <form action="Bedankt/Solliciterenbedankt.php" method="post">
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
@@ -208,8 +207,20 @@
             </select>
           </div>
           <div class="form-field">
-            <label for="geboortedatum">Geboortedatum*</label>
-            <input type="date" id="geboortedatum" name="geboortedatum" autocomplete="bday" required>
+            <label for="leeftijd">Leeftijd*</label>
+            <input
+              type="number"
+              id="leeftijd"
+              name="leeftijd"
+              min="16"
+              max="80"
+              step="1"
+              placeholder="Min leeftijd is 16"
+              inputmode="numeric"
+              required
+              oninvalid="this.setCustomValidity('Je moet minimaal 16 jaar zijn.')"
+              oninput="this.setCustomValidity('')"
+            />
           </div>
         </div>
 
@@ -237,13 +248,13 @@
           <select id="functie" name="functie" required>
             <option value="" disabled selected>Kies een functie</option>
             <option value="Keukenhulp">Keukenhulp</option>
-            <option value="Keukenhulp">Kok</option>            
+            <option value="Kok">Kok</option>
             <option value="Medewerker bediening">Medewerker Bediening</option>
             <option value="Supervisor bediening">Supervisor Bediening</option>
             <option value="Schoonmaak">Schoonmaak</option>
             <option value="Restaurantmanager">Restaurant Manager</option>
             <option value="Afwasser">Afwasser</option>
-            <option value="Anders">Anders</option>           
+            <option value="Anders">Anders</option>
           </select>
         </div>
 
@@ -254,8 +265,8 @@
           <textarea id="motivatie" name="motivatie" rows="10" placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken." required></textarea>
         </div>
 
-        <!-- Bijlagen & Locatie -->
-        <h3 class="form-subtitle">Bijlagen & Locatie</h3>
+        <!-- Locatie -->
+        <h3 class="form-subtitle">Locatie</h3>
         <div class="form-row">
           <div class="form-field">
             <label for="locatie">Voorkeurslocatie*</label>
@@ -265,10 +276,6 @@
               <option value="Sneek">De Walrus Sneek</option>
               <option value="Beide">Beide</option>
             </select>
-          </div>
-          <div class="form-field">
-            <label for="cv">CV (PDF of DOC)</label>
-            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
           </div>
         </div>
 
@@ -305,10 +312,9 @@
     </section>
   </main>
 
-  <!-- Divider -->
   <div class="section-divider" aria-hidden="true"></div>
 
-  <!-- Infobar / Footer -->
+  <!-- Footer -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 

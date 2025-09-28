@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus — Solliciteren</title>
+  <title>De Walrus — Open sollicitatie</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
 
     <!-- HERO -->
     <section class="hero-section">
-      <!-- LINKS: NIEUWE TITEL + TEKST -->
+      <!-- LINKS: TITEL + TEKST -->
       <div class="hero-side-text">
         <h1>Wil je graag werken bij De Walrus?</h1>
 
@@ -60,7 +60,6 @@
         <p>
           Je vindt De Walrus in Sneek én in Leeuwarden. Twee sfeervolle panden op toplocaties in het centrum: 
           perfect voor koffie, een uitgebreide lunch, een goed diner en een gezellige borrel. 
-          Kom langs of reserveer en ervaar de vibe zelf.
         </p>
         <p>
           Aandacht voor de gast staat bij ons voorop — net als jouw ontwikkeling. 
@@ -79,11 +78,6 @@
           <li>En ja — een sluitborrel hoort erbij (18+ 😉)</li>
         </ul>
 
-        <p>
-          Open sollicitatie sturen? Top. Vertel kort waar jij in uitblinkt en wanneer je kunt. 
-          Dan plannen we snel een kennismaking. De koffie is van ons ☕.
-        </p>
-
         <figure class="hero-photo">
           <img
             src="https://imgs.search.brave.com/sYaaTczU5Xpkc9U1aKX_BYRln7qanY1xqKueMYAEoB4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93c2Zw/dWJsaWMuYmxvYi5j/b3JlLndpbmRvd3Mu/bmV0L3Byb2Qtbmwv/aW1hZ2VzL3NsaWRl/cjEyOTB4NzI3L3dh/bHJ1cy1sZWV1d2Fy/ZGVuLXdpam5zcGlq/cy1iaWVyLmpwZw"
@@ -92,9 +86,12 @@
         </figure>
       </div>
 
-      <!-- RECHTS: VIDEO + AANGEPASTE TEKST -->
+      <!-- RECHTS: VIDEO -->
       <div class="hero-video" aria-label="Introductievideo De Walrus">
-        <h1 class="video-lead">Zo ziet je eerste week eruit (in 60 seconden)</h1>
+        <h1 class="video-lead">
+          In deze video laten we je precies zien hoe het eraan toe gaat: het team, de sfeer en wat je
+          op je eerste dag kunt verwachten.
+        </h1>
 
         <div class="video-outer">
           <iframe
@@ -110,8 +107,7 @@
         <div class="below-video">
           <h2>Wat je kunt verwachten</h2>
           <p class="intro-small">
-            Kennismaken met het team, meedraaien op de vloer en stap voor stap je station leren kennen. 
-            Je staat nooit alleen: we coachen je mee tot je ritme en snelheid helemaal goed zitten.
+            Kennismaken met het team, meedraaien op de vloer en stap voor stap je station leren kennen.
           </p>
 
           <p class="vacature-intro">Liever gericht solliciteren? Check de functies:</p>
@@ -147,7 +143,8 @@
         We zien je sollicitatie graag tegemoet!
       </p>
 
-      <form action="../Bedankt/Solliciterenbedankt.php" method="post" enctype="multipart/form-data">
+      <!-- Exact zelfde formulier als Solliciteren (zonder CV, met leeftijd 16+) -->
+      <form action="../Bedankt/Solliciterenbedankt.php" method="post">
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
@@ -180,10 +177,10 @@
               name="telefoon"
               autocomplete="tel"
               inputmode="tel"
-              pattern="^(?:0\d{9}|\+31\s?6\s?\d{8}|\+31\s?\d{9})$"
-              placeholder="0612345678 of +31 6 12345678"
+              pattern="^(?:0\\d{9}|\\+31\\s?\\d{9})$"
+              placeholder="0612345678 of +31 612345678"
               required
-              title="Voer 0612345678, +31 612345678 of +31 6 12345678 in.">
+              title="Voer 0612345678 in of +31 612345678.">
           </div>
         </div>
 
@@ -203,7 +200,7 @@
             <input
               type="text" id="postcode" name="postcode"
               autocomplete="postal-code" placeholder="1234 AB"
-              pattern="^[1-9][0-9]{3}\s?[A-Za-z]{2}$" required
+              pattern="^[1-9][0-9]{3}\\s?[A-Za-z]{2}$" required
               title="Voer een geldige Nederlandse postcode in, bijv. 1234 AB.">
           </div>
           <div class="form-field">
@@ -225,8 +222,19 @@
             </select>
           </div>
           <div class="form-field">
-            <label for="geboortedatum">Geboortedatum*</label>
-            <input type="date" id="geboortedatum" name="geboortedatum" autocomplete="bday" required>
+            <label for="leeftijd">Leeftijd*</label>
+            <input
+              type="number"
+              id="leeftijd"
+              name="leeftijd"
+              min="16"
+              max="80"
+              step="1"
+              placeholder="Min leeftijd is 16"
+              inputmode="numeric"
+              required
+              oninvalid="this.setCustomValidity('Je moet minimaal 16 jaar zijn.')"
+              oninput="this.setCustomValidity('')">
           </div>
         </div>
 
@@ -268,11 +276,11 @@
         <h3 class="form-subtitle">Motivatie</h3>
         <div class="form-field">
           <label for="motivatie">Motivatie*</label>
-          <textarea id="motivatie" name="motivatie" rows="10" placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken."></textarea>
+          <textarea id="motivatie" name="motivatie" rows="10" placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken." required></textarea>
         </div>
 
-        <!-- Bijlagen & Locatie -->
-        <h3 class="form-subtitle">Bijlagen & Locatie</h3>
+        <!-- Locatie -->
+        <h3 class="form-subtitle">Locatie</h3>
         <div class="form-row">
           <div class="form-field">
             <label for="locatie">Voorkeurslocatie*</label>
@@ -282,10 +290,6 @@
               <option value="Sneek">De Walrus Sneek</option>
               <option value="Beide">Beide</option>
             </select>
-          </div>
-          <div class="form-field">
-            <label for="cv">CV (PDF of DOC)</label>
-            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
           </div>
         </div>
 
@@ -311,7 +315,7 @@
 
         <!-- Privacy + verzenden -->
         <label class="checkbox">
-          <input type="checkbox" name="privacy_ok" value="1" required>
+          <input type="checkbox" required>
           Ik ga akkoord met het verwerken van mijn gegevens volgens de privacyverklaring.
         </label>
 
