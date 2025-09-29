@@ -117,6 +117,12 @@
               <option>Borrel</option>
               <option>Vergadering</option>
               <option>Workshop</option>
+              <option>Evenement</option>
+              
+
+
+
+              
             </select>
           </div>
         </div>

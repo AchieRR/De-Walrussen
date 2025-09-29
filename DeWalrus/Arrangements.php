@@ -51,7 +51,7 @@
     <!-- Intro + grid met kaarten -->
     <section class="section">
       <h2>Onze arrangementen</h2>
-      <p class="lead">Kies wat past bij je gezelschap. Alle arrangementen zijn te boeken in Leeuwarden en Sneek.</p>
+      <p class="lead">Kies wat past bij je gezelschap. Alle arrangementen zijn te boeken in Leeuwarden <a href="tel:0582137740">058 213 7740</a> en Sneek <a href="tel:0515438100">0515 438 100</a>.</p>
 
       <div class="arr-grid">
         <!-- High Tea -->
@@ -84,7 +84,7 @@
 
         <!-- Live Cooking -->
         <article class="arr-card">
-          <img src="img/live-cooking.jpg" alt="Live Cooking Buffet">
+          <img src="https://www.dewalrus.nl/mediadepot/184ff8d30f0/610/740/min/LucasKemperWalrusSneekLR-172.jpg" alt="Live Cooking Buffet">
           <div class="arr-card-content">
             <h3>Live Cooking Buffet</h3>
             <div class="meta">Op maat • vanaf €20 p.p.</div>

@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS applications (
   ingredienten         VARCHAR(190) NOT NULL,
   prijs      VARCHAR(32)  NOT NULL,
 
-  PRIMARY KEY (id),
-   ENGINE=InnoDB
+  PRIMARY KEY (id)
+)ENGINE=InnoDB
   DEFAULT CHARSET=utf8mb4
   COLLATE=utf8mb4_unicode_ci;

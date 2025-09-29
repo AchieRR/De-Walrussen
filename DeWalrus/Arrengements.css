@@ -33,10 +33,17 @@ html, body{
   max-width:100%;
   overflow-x:hidden;
 }
+/* Links / Focus */
 a{ color:inherit; }
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
-  outline: 3px solid #7cb6ff; outline-offset: 2px;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid #7cb6ff;
+  outline-offset: 2px;
 }
+
 
 /* ruimte onder fixed header */
 .header-gap{ height: calc(var(--header-h) + 8px); }
