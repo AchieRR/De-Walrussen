@@ -137,6 +137,48 @@
             </div>
           </div>
         </article>
+
+        <!-- boot & borrel -->
+        <article class="arr-card">
+          <img src="img/boot-borrel.jpg" alt="Boot & Borrel">
+          <div class="arr-card-content">
+            <h3>Boot & Borrel</h3>
+            <div class="meta">2 uur • €45 p.p.</div>
+            <p>Rondvaart met hapjes en drankjes aan boord.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="bootborrel.php">Meer info</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bioscoop Arrangement -->
+        <article class="arr-card">
+          <img src="img/cinema-arr.jpg" alt="Bioscoop Arrangement">
+          <div class="arr-card-content">
+            <h3>Bioscoop Arrangement</h3>
+            <div class="meta">Avond • €35 p.p.</div>
+            <p>Film kijken met een borrelplank en drankjes.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="bioscoop.php">Meer info</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Theater Sneek - Arrangement -->
+        <article class="arr-card">
+          <img src="img/theater-arr.jpg" alt="Theater Sneek Arrangement">
+          <div class="arr-card-content">
+            <h3>Theater Sneek Arrangement</h3>
+            <div class="meta">Avond • €50 p.p.</div>
+            <p>Diner en voorstelling in Theater Sneek.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
+              <a class="btn" href="theatersneek.php">Meer info</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
