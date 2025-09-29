@@ -109,20 +109,22 @@
             <label for="type">Type reservering<span aria-hidden="true">*</span></label>
             <select id="type" name="type" required>
               <option value="" disabled selected>Kies een type</option>
-              <option>Diner</option>
-              <option>Lunch</option>
               <option>High wine</option>
-              <option>High beer</option>
-              <option>High tea</option>
-              <option>Borrel</option>
+              <option>High tea</option> 
+              <option>Borrel Boot</option>
+              <option>Walking Diner Buffet</option>
+              <option>Live Cooking Buffet</option>
+              <option>Bier Arrangement</option>
+              <option>Bioscoop Arrangement</option>
+              <option>Theater Sneek Arrangement</option>              
+              <option>Bier Arrangement</option>              
               <option>Vergadering</option>
               <option>Workshop</option>
-              <option>Evenement</option>
-              
+              <option>Evenement</option> 
+              <option>Vergadering</option>              
+              <option>Diner</option>
+              <option>Lunch</option>             
 
-
-
-              
             </select>
           </div>
         </div>

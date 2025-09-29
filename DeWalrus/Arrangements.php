@@ -56,10 +56,10 @@
       <div class="arr-grid">
         <!-- High Tea -->
         <article class="arr-card">
-          <img src="img/high-tea.jpg" alt="High Tea">
+          <img src="https://www.dewalrus.nl/mediadepot/392b5b14c0c/610/740/min/WalrusLeeuwardenLR11.jpg" alt="High Tea">
           <div class="arr-card-content">
             <h3>High Tea</h3>
-            <div class="meta">2 uur • €25 p.p.</div>
+            <div class="meta">Leeuwarden/Sneek</div>
             <p>Zoete en hartige lekkernijen met diverse theesoorten.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
@@ -70,10 +70,10 @@
 
         <!-- Walking Diner -->
         <article class="arr-card">
-          <img src="img/walking-diner.jpg" alt="Walking Diner Buffet">
+          <img src="https://www.dewalrus.nl/mediadepot/1861375e626/610/740/min/WalrusLeeuwardenLR85.jpg" alt="Walking Diner Buffet">
           <div class="arr-card-content">
             <h3>Walking Diner Buffet</h3>
-            <div class="meta">Avond • €40 p.p.</div>
+            <div class="meta">Leeuwarden/Sneek</div>
             <p>Diverse kleine gangen, ideaal voor groepen.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
@@ -87,7 +87,7 @@
           <img src="https://www.dewalrus.nl/mediadepot/184ff8d30f0/610/740/min/LucasKemperWalrusSneekLR-172.jpg" alt="Live Cooking Buffet">
           <div class="arr-card-content">
             <h3>Live Cooking Buffet</h3>
-            <div class="meta">Op maat • vanaf €20 p.p.</div>
+            <div class="meta">Sneek</div>
             <p>Onze chefs bereiden jouw gerechten live aan station.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
@@ -98,10 +98,10 @@
 
         <!-- Bierproeverij -->
         <article class="arr-card">
-          <img src="img/beer-arr.jpg" alt="Bier Arrangement">
+          <img src="https://www.dewalrus.nl/mediadepot/179a8514be2/610/740/min/kleinLucasKemperWalrusSneekLR-370-.jpg" alt="Bier Arrangement">
           <div class="arr-card-content">
             <h3>Bier Arrangement</h3>
-            <div class="meta">Tasting • €30 p.p.</div>
+            <div class="meta">Leeuwarden/Sneek</div>
             <p>Selectie ambachtelijke bieren met bijpassende hapjes.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
@@ -112,10 +112,10 @@
 
         <!-- High Wine -->
         <article class="arr-card">
-          <img src="img/high-wine.jpg" alt="High Wine">
+          <img src="https://www.dewalrus.nl/mediadepot/194a6a4e3b4/610/740/min/LucasKemperWalrusSneekLR-297.jpg" alt="High Wine">
           <div class="arr-card-content">
             <h3>High Wine</h3>
-            <div class="meta">Middag/avond • €32,50 p.p.</div>
+            <div class="meta">Leeuwarden/Sneek</div>
             <p>Wijnproeverij met bijpassende bites.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
@@ -124,26 +124,26 @@
           </div>
         </article>
 
-        <!-- Vergadering -->
+        <!-- Dinermenu's voor groepen -->
         <article class="arr-card">
-          <img src="img/meeting.jpg" alt="Vergadering">
+          <img src="https://www.dewalrus.nl/mediadepot/183782fa5e0/610/740/min/LucasKemperWalrusSneekLR-173.jpg" alt="Dinermenus voor groepen">
           <div class="arr-card-content">
-            <h3>Vergadering</h3>
-            <div class="meta">Op maat • prijs in overleg</div>
+            <h3>Dinermenu's voor groepen</h3>
+            <div class="meta">Leeuwarden/Sneek</div>
             <p>Rustige ruimtes met techniek en catering-opties.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="vergadering.php">Meer info</a>
+              <a class="btn" href="dinermenu.php">Meer info</a>
             </div>
           </div>
         </article>
 
         <!-- boot & borrel -->
         <article class="arr-card">
-          <img src="img/boot-borrel.jpg" alt="Boot & Borrel">
+          <img src="https://www.dewalrus.nl/mediadepot/4905b5653616/610/740/min/NHLStedenShootBig-13-1024x683.jpg" alt="Boot & Borrel">
           <div class="arr-card-content">
             <h3>Boot & Borrel</h3>
-            <div class="meta">2 uur • €45 p.p.</div>
+            <div class="meta">Leeuwarden</div>
             <p>Rondvaart met hapjes en drankjes aan boord.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
@@ -154,10 +154,10 @@
 
         <!-- Bioscoop Arrangement -->
         <article class="arr-card">
-          <img src="img/cinema-arr.jpg" alt="Bioscoop Arrangement">
+          <img src="https://www.dewalrus.nl/mediadepot/3918629cddd/610/740/min/DEWALRUSfinal-selectie173.jpg" alt="Bioscoop Arrangement">
           <div class="arr-card-content">
             <h3>Bioscoop Arrangement</h3>
-            <div class="meta">Avond • €35 p.p.</div>
+            <div class="meta">Leeuwarden/Sneek</div>
             <p>Film kijken met een borrelplank en drankjes.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
@@ -168,10 +168,10 @@
 
         <!-- Theater Sneek - Arrangement -->
         <article class="arr-card">
-          <img src="img/theater-arr.jpg" alt="Theater Sneek Arrangement">
+          <img src="https://www.dewalrus.nl/mediadepot/48951c007943/610/740/min/theater-sneek-zaal4183119197.jpg" alt="Theater Sneek Arrangement">
           <div class="arr-card-content">
             <h3>Theater Sneek Arrangement</h3>
-            <div class="meta">Avond • €50 p.p.</div>
+            <div class="meta">Sneek</div>
             <p>Diner en voorstelling in Theater Sneek.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
