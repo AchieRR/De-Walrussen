@@ -1,12 +1,14 @@
 <?php
-$DB_HOST = '127.0.0.1';   
+// DeWalrus/db.php
+
+$DB_HOST = '127.0.0.1';
 $DB_PORT = 3306;
 $DB_NAME = 'walrus';
 $DB_USER = 'root';
-$DB_PASS = 'ServBay.dev';  
+$DB_PASS = 'ServBay.dev';
 
 $options = [
-  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+  PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
   PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
 ];

@@ -1,5 +1,5 @@
 <?php
-// DeWalrus/Menukaart.php — Menukaart met crème buitenrand en groen krijtbord binnen
+// DeWalrus/Menukaart.php — Menukaart met crème buitenrand en groen krijtbord binnen (HTML/PHP/SQL/CSS only)
 require __DIR__ . '/db.php';
 
 function e($v){ return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
@@ -41,7 +41,7 @@ $rows = $stmt->fetchAll();
 $byCat = [];
 foreach ($rows as $r) $byCat[$r['category']][] = $r;
 
-/* Eerste zichtbare categorie (voor 'één tegelijk' UI) */
+/* Eerste zichtbare categorie */
 $firstCat = $orderedCats[0] ?? null;
 ?>
 <!DOCTYPE html>
@@ -56,9 +56,19 @@ $firstCat = $orderedCats[0] ?? null;
 
   <!-- Styles -->
   <link rel="stylesheet" href="Menukaart.css" />
+
+  <!-- Dynamische CSS voor radio-tab koppelingsregels -->
+  <style>
+  <?php
+    foreach ($orderedCats as $idx => $c) {
+      $i = $idx + 1;
+      echo "#tab-$i:checked ~ .panels #panel-$i{display:block;}";
+    }
+  ?>
+  </style>
 </head>
 <body class="theme-walrus-cream">
-  <!-- Header (LAAT IK STAAN) -->
+  <!-- Header (laat staan) -->
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
@@ -82,7 +92,7 @@ $firstCat = $orderedCats[0] ?? null;
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">
-    <!-- Pagina titel (LAAT IK STAAN) -->
+    <!-- Pagina titel -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
       <h1 class="title-text">MENUKAART</h1>
@@ -102,20 +112,15 @@ $firstCat = $orderedCats[0] ?? null;
     <!-- ======= STAGE (crème buiten) + BOARD (groen krijtbord binnen) ======= -->
     <section class="menu-stage">
       <div class="menu-wrap">
-        <!-- Linker kolom: categorieën -->
+        <!-- Linker kolom: categorieën (labels i.p.v. anchors; geen scroll) -->
         <aside class="menu-side" aria-label="Categorieën">
           <div class="menu-side-inner">
             <ul class="menu-cat-nav" role="tablist" aria-orientation="vertical">
-              <?php foreach ($orderedCats as $c): 
-                $id = 'cat-'.md5($c);
-                $isActive = ($c === $firstCat) ? 'true' : 'false';
+              <?php foreach ($orderedCats as $idx => $c):
+                $i = $idx + 1;
               ?>
                 <li>
-                  <a class="cat-link <?= $c===$firstCat?'active':'' ?>"
-                     role="tab"
-                     aria-selected="<?= $isActive ?>"
-                     data-target="#<?= e($id) ?>"
-                     href="#<?= e($id) ?>"><?= e($c) ?></a>
+                  <label class="cat-link <?= ($c===$firstCat)?'active':'' ?>" for="tab-<?= $i ?>"><?= e($c) ?></label>
                 </li>
               <?php endforeach; ?>
             </ul>
@@ -124,16 +129,22 @@ $firstCat = $orderedCats[0] ?? null;
 
         <!-- Rechter kolom: groene krijtbord content -->
         <div class="menu-board" role="region" aria-live="polite">
-          <?php foreach ($orderedCats as $c):
-            if (empty($byCat[$c])) continue;
-            $id = 'cat-'.md5($c);
-            $isActive = ($c === $firstCat);
+          <!-- Verborgen radio's die de zichtbare panelen sturen (CSS-only tabs) -->
+          <?php foreach ($orderedCats as $idx => $c):
+            $i = $idx + 1;
+            $checked = ($c === $firstCat) ? 'checked' : '';
           ?>
-            <section id="<?= e($id) ?>"
-                     class="menu-category <?= $isActive?'is-active':'' ?>"
-                     role="tabpanel"
-                     aria-labelledby="h-<?= e($id) ?>">
-              <h3 id="h-<?= e($id) ?>" class="menu-cat-title"><?= e($c) ?></h3>
+            <input type="radio" name="cat" id="tab-<?= $i ?>" class="cat-radio" <?= $checked ?> />
+          <?php endforeach; ?>
+
+          <!-- Panelen -->
+          <div class="panels">
+          <?php foreach ($orderedCats as $idx => $c):
+            if (empty($byCat[$c])) continue;
+            $i = $idx + 1;
+          ?>
+            <section id="panel-<?= $i ?>" class="menu-category" role="tabpanel" aria-labelledby="h-panel-<?= $i ?>">
+              <h3 id="h-panel-<?= $i ?>" class="menu-cat-title"><?= e($c) ?></h3>
               <ul class="menu-items">
                 <?php foreach ($byCat[$c] as $it): ?>
                   <li class="menu-item">
@@ -157,13 +168,14 @@ $firstCat = $orderedCats[0] ?? null;
               <p>Geen menu-items gevonden.</p>
             </div>
           <?php endif; ?>
+          </div>
         </div>
       </div>
     </section>
     <!-- ======= EINDE STAGE + BOARD ======= -->
   </main>
 
-  <!-- Footer (LAAT IK STAAN) -->
+  <!-- Footer (laat staan) -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 
@@ -226,31 +238,5 @@ $firstCat = $orderedCats[0] ?? null;
       <span class="grandcafe">— GRAND CAFÉ —</span>
     </div>
   </footer>
-
-  <!-- Mini script: één categorie tegelijk zichtbaar -->
-  <script>
-    (function(){
-      const links = document.querySelectorAll('.cat-link');
-      const panels = document.querySelectorAll('.menu-category');
-      function show(targetSel){
-        panels.forEach(p => p.classList.remove('is-active'));
-        links.forEach(l => l.classList.remove('active'));
-        const panel = document.querySelector(targetSel);
-        const link = Array.from(links).find(a => a.dataset.target === targetSel);
-        if(panel){ panel.classList.add('is-active'); }
-        if(link){ link.classList.add('active'); link.setAttribute('aria-selected','true'); }
-        window.setTimeout(()=>panel?.scrollIntoView({behavior:'smooth', block:'start'}), 50);
-      }
-      links.forEach(a=>{
-        a.addEventListener('click', (e)=>{
-          e.preventDefault();
-          const t = a.getAttribute('data-target');
-          links.forEach(l=>l.setAttribute('aria-selected','false'));
-          show(t);
-          history.replaceState(null, '', t); // nette URL-anchor
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
