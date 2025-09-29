@@ -1,99 +1,90 @@
-/* ===============================
-   Variabelen
-   =============================== */
+/* =============================== Variabelen =============================== */
 :root{
   --header-h: clamp(48px, 8.2vw, 84px);
-
-  /* oude logo-kaart variabelen (ongebruikt) */
-  --logo-bg: #f5e7d9;
-  --logo-w-start: 300px;
-  --logo-w-end:   360px;
-  --logo-shrink-range: 200px;
-  --logo-drop-max: 24px;
-
-  --logo-text-scale: 1;
-  --walrus-factor: 0.52;
-  --grand-factor:  0.22;
 
   --brand-gold: #c29c1e;
   --brand-gold-dark: #b6911a;
   --ink: #0b2140;
+
+  /* Chalkboard palette */
+  --chalk-green: #204d2a;      /* basis groen */
+  --chalk-green-deep: #1b4418; /* donkere randen/schaduw */
+  --chalk-text: #f7f6f2;       /* krijt-wit */
+  --chalk-muted: #e7e3d9;      /* zachte accentkleur */
 }
 
+/* Reset/basis */
 *{ box-sizing:border-box; }
-
 html, body{
-  margin:0;
-  padding:0;
-  height:100%;
+  margin:0; padding:0; height:100%;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:#fff;
-  color:#111;
-  line-height:1.4;
-
-  max-width:100%;
-  overflow-x:hidden;
+  color:#111; line-height:1.45; max-width:100%; overflow-x:hidden;
 }
 
 /* Ruimte onder fixed header */
 .header-gap{ height: calc(var(--header-h) + 8px); }
 
-/* Midden content */
+/* =============================== Buitenkant: CRÈME THEMA =============================== */
+.theme-walrus-cream{
+  background-color: #fbf5ea;
+  background-image:
+    radial-gradient(80% 50% at 50% -10%, #f5e7d9 0%, #fbf5ea 45%, #ffffff 80%),
+    radial-gradient(900px 500px at 50% 115%, rgba(194,156,30,0.06), rgba(255,255,255,0) 60%),
+    radial-gradient(rgba(11,33,64,0.035) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px;
+  background-position: center top, center bottom, 0 0;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+/* Content breedte */
 .page-content{
-  max-width: 1500px;
+  /* KLEINER en cleaner */
+  max-width: 1160px;           /* was 1500px -> slanker */
   margin: 0 auto;
-  padding: 24px 20px 60px;
+  padding: 20px 18px 56px;
   min-height: calc(100vh - var(--header-h) + 320px);
   overflow-x: clip;
 }
 
 /* ===============================
-   Header / Navbar (exact Bedankt.css)
+   Header / Navbar (laat zoals het was)
    =============================== */
 header{
-  position:fixed;
-  inset:0 0 auto 0;
-  height:var(--header-h);
+  position:fixed; inset:0 0 auto 0; height:var(--header-h);
   background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
-  z-index:2000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  z-index:2000; display:flex; align-items:center; justify-content:center;
   padding:0 clamp(8px,3vw,24px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.534);
 }
 .topnav{
-  width:100%;
-  max-width:1500px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  column-gap:32px;
+  width:100%; max-width:1500px; margin:0 auto;
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center; column-gap:32px;
   height:100%;
 }
-.nav-left,
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:22px;
-}
+.nav-left, .nav-right{ display:flex; align-items:center; gap:22px; }
 .nav-left{ justify-content:flex-end; }
 .nav-right{ justify-content:flex-start; }
 
+/* Logo */
+.logo{
+  grid-column:2; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:transparent; width:auto; height:auto; padding:0; border-radius:0; box-shadow:none;
+  text-decoration:none; text-align:center;
+}
+.logo .walrus{
+  font-family:'Alex Brush', cursive; color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.25);
+  font-size: clamp(28px, 4vw, 48px); line-height:.95; font-weight:700; letter-spacing:.5px; margin:0;
+}
+.logo .grandcafe{
+  font-family:Georgia, serif; color:#e9d7bf; letter-spacing:.22em; text-transform:uppercase;
+  font-weight:900; margin-top:4px; font-size: clamp(10px, 1.4vw, 14px);
+}
+
 /* Nav-knoppen */
 .nav-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 12px;
-  background:transparent;
-  color:#fff;
-  border:1px solid transparent;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-  white-space:nowrap;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:8px 12px; background:transparent; color:#fff;
+  border:1px solid transparent; border-radius:10px; font-weight:700; text-decoration:none; white-space:nowrap;
   transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 .nav-btn:hover{
@@ -104,57 +95,129 @@ header{
 .btn-solliciteren, .btn-reserveren{ background: var(--brand-gold); color:#fff; border-color:transparent; }
 .btn-solliciteren:hover, .btn-reserveren:hover{ background: var(--brand-gold-dark); box-shadow:0 6px 16px rgba(0,0,0,.18); transform: translateY(-1px); }
 
-/* Logo plain */
-.logo{
-  grid-column:2;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  background:transparent; width:auto; height:auto; padding:0; border-radius:0; box-shadow:none;
-  text-decoration:none; text-align:center;
-}
-.logo .walrus{
-  font-family:'Alex Brush', cursive; font-size: clamp(28px, 4vw, 48px);
-  color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.25);
-  line-height:.95; font-weight:700; letter-spacing:.5px; margin:0;
-}
-.logo .grandcafe{
-  font-family:Georgia, serif; font-size: clamp(10px, 1.4vw, 14px);
-  letter-spacing:.22em; color:#e9d7bf; text-transform:uppercase; display:block; margin-top:4px; font-weight:900;
-}
-
-/* ===============================
-   Pagina-titel (exact Bedankt.css)
-   =============================== */
+/* =============================== Titel boven de kaart =============================== */
 .page-title{
-  display:flex; align-items:center; justify-content:center;
-  gap: clamp(12px, 2.5vw, 28px);
-  margin: 4px 0 20px;
+  display:flex; align-items:center; justify-content:center; gap: clamp(12px, 2.5vw, 28px); margin: 4px 0 10px;
 }
 .title-text{
-  margin:0;
-  font-family:'Playfair Display', serif;
-  font-weight:700; color:var(--ink);
-  text-transform:uppercase; letter-spacing:.04em;
-  font-size: clamp(26px, 4.2vw, 44px);
+  margin:0; font-family:'Playfair Display', serif; font-weight:700; color:var(--ink);
+  text-transform:uppercase; letter-spacing:.04em; font-size: clamp(26px, 4.2vw, 44px);
 }
-.title-line{
-  display:block; height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9;
-}
+.title-line{ display:block; height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9; }
 @media (max-width:600px){ .title-line{ display:none; } }
 
+/* =============================== Tabs (DINER / SALADES / SOEPEN / LUNCH) =============================== */
+.menu-tabs{
+  display:flex; gap:22px; justify-content:center; align-items:center; margin: 6px 0 16px;
+}
+.menu-tab{
+  /* Zelfde font als paginatitel — kleur blijft exact zoals was */
+  font-family:'Playfair Display', serif;
+  font-weight:900;
+  letter-spacing:.02em;
+  position:relative;
+  text-decoration:none;
+  color:#7a2d1a;
+}
+.menu-tab.active::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:3px; background:#7a2d1a; border-radius:3px;
+}
+
+/* =============================== STAGE (crème rand) =============================== */
+.menu-stage{ padding: 12px; }
+
+/* Layout binnen de stage: side + board */
+.menu-wrap{
+  display:grid; grid-template-columns: 240px 1fr; gap:20px; align-items:start;
+  max-width: 980px;           /* nog compacter op de pagina */
+  margin: 0 auto;
+}
+
+/* Linker kolom (categorieën) */
+.menu-side{ position:sticky; top: calc(var(--header-h) + 16px); align-self:start; }
+.menu-side-inner{
+  background: #ffffffd0;
+  border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.07);
+}
+.menu-cat-nav{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.menu-cat-nav a{
+  display:block; padding:10px 12px; border-radius:10px; text-decoration:none; text-transform:uppercase;
+  font-family:'Playfair Display', serif; font-weight:900; color:#333; letter-spacing:.04em;
+  background: rgba(0,0,0,.04);
+}
+.menu-cat-nav a:hover{ background: rgba(0,0,0,.07); }
+.menu-cat-nav a.active{ outline:2px solid rgba(0,0,0,.16); background: rgba(0,0,0,.08); }
+
+/* =============================== BOARD (groen krijtbord BINNEN) =============================== */
+.menu-board{
+  /* 1) Groen vlak  2) textuur  3) highlights/vegen  */
+  background:
+    radial-gradient(900px 260px at 50% 0%, rgba(255,255,255,.06) 0%, transparent 70%),
+    url('https://imgs.search.brave.com/F5G0WJVm4F8gv3j-RnWpPCqwCQ2alcf9Klu5vNSrf38/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9hYnN0cmFjdGUt/a3JpanQtZ2V3cmV2/ZW4tb3AtYm9yZC1v/Zi1rcmlqdGJvcmQt/dGV4dHV1ci1zY2hv/b24tc2Nob29sYm9y/ZC12b29yLWFjaHRl/cmdyb25kLW9mLWtv/cGllZXJydWltdGUt/dm9vci1oZXQtdG9l/dm9lZ2VuLXZhbi10/ZWtzdGJvb2RzY2hh/cC1hY2h0ZXJncm9u/ZC12YW4tb25kZXJ3/aWpzY29uY2VwdGVu/XzQzNDI5LTQ5MTgu/anBnP3NlbXQ9YWlz/X2h5YnJpZCZ3PTc0/MA'),
+    var(--chalk-green);
+  background-blend-mode: normal, overlay, normal;
+  border-radius:20px;
+  box-shadow:
+    inset 0 0 0 2px rgba(0,0,0,.15),
+    0 14px 40px rgba(0,0,0,.25);
+  padding: 22px 22px 28px; color: var(--chalk-text); position:relative;
+}
+
+/* extra subtiele vegen en korrel */
+.menu-board::before{
+  content:""; position:absolute; inset:0; border-radius:20px; pointer-events:none;
+  background:
+    radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,.07) 0, transparent 60%),
+    radial-gradient(2px 2px at 84% 66%, rgba(255,255,255,.05) 0, transparent 60%),
+    radial-gradient(800px 140px at 50% 0%, rgba(255,255,255,.05) 0, transparent 85%);
+}
+
+/* Categorie titel op het bord */
+.menu-cat-title{
+  font-family:'Playfair Display', serif; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+  font-size: clamp(17px, 2vw, 24px); color: var(--chalk-muted); margin: 2px 0 6px;
+  border-bottom: 1px dashed rgba(255,255,255,.25); padding-bottom:8px;
+}
+
+/* Items (geïnspireerd door beige kaart: strakke regel, duidelijke prijs) */
+.menu-items{ list-style:none; margin:0 0 10px 0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.menu-item{ padding:8px 2px 6px; border-bottom:1px dashed rgba(255,255,255,.14); }
+.mi-head{ display:flex; gap:10px; align-items:baseline; justify-content:space-between; }
+.mi-name{
+  font-family:'Playfair Display', serif; font-weight:700; font-size: clamp(15px, 1.8vw, 19px); color: var(--chalk-text);
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+.mi-price{
+  font-family:'Playfair Display', serif; font-weight:700; font-size: clamp(14px, 1.6vw, 18px); color: var(--chalk-muted);
+}
+.mi-desc{
+  margin:4px 0 2px; font-family:'Playfair Display', serif; font-weight:400;
+  font-size: clamp(13px, 1.45vw, 16px); color: rgba(255,255,255,.92);
+}
+
+/* Alleen de actieve categorie tonen */
+.menu-category{ display:block; }
+.menu-category:not(.is-active){ display:none; }
+
+/* Leeg state */
+.menu-empty{
+  background: rgba(0,0,0,.25); border: 1px dashed rgba(255,255,255,.35); padding:18px; border-radius:12px; color:var(--chalk-muted);
+}
+
 /* ===============================
-   Infobar
+   Infobar (LAAT IK STAAN)
    =============================== */
 .infobar{
-  position:relative;
-  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  position:relative; background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   color:#fff; padding:12px 20px 18px; margin-top:0;
   box-shadow: 0 -14px 32px rgba(0, 0, 0, 0.534);
 }
 .infobar-top-text{ font-family:'Alex Brush', cursive; text-align:center; font-size:22px; margin-bottom:8px; }
 .info-content{ max-width:1300px; margin:0 auto; display:flex; justify-content:flex-start; align-items:center; gap:12px; }
 .info-section{ flex:0 0 auto; min-width:220px; }
-.info-section h4{ font-size:22px; margin-bottom:4px; }
-.info-section p{ font-size:14px; line-height:1.4; }
+.info-section h4{ font-size:22px; margin:0 0 4px; }
+.info-section p{ font-size:14px; line-height:1.5; margin:0; }
 .info-section a{ color:#fff; text-decoration:underline; text-decoration-color:#fff; }
 .info-section a:hover{ opacity:.85; }
 .socials{ margin-top:8px; }
@@ -163,22 +226,9 @@ header{
 
 .right-side{ text-align:center; margin-left:auto; padding-left:12px; }
 .infobar-right-text{ font-family:'Alex Brush', cursive; font-size:22px; margin:0 0 10px; }
-
-.city-images{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-  margin-top:0;
-}
+.city-images{ display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:0; }
 .city-images img{
-  width:320px;
-  max-width:100%;
-  height:auto;
-  border-radius:6px;
-  box-shadow:0 3px 8px rgba(0,0,0,.3);
-  transition:transform .25s ease;
-  cursor:pointer;
+  width:320px; max-width:100%; height:auto; border-radius:6px; box-shadow:0 3px 8px rgba(0,0,0,.3); transition:transform .25s ease; cursor:pointer;
 }
 .city-images img:hover{ transform:scale(1.04); }
 
@@ -186,38 +236,16 @@ header{
 .infobar-brand .walrus{ font-family:'Alex Brush', cursive; font-size:22px; color:#fff; line-height:1; display:block; }
 .infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
 
-/* ===== THEME: Walrus Cream ===== */
-.theme-walrus-cream{
-  background-color: #fbf5ea;
-  background-image:
-    radial-gradient(80% 50% at 50% -10%, #f5e7d9 0%, #fbf5ea 45%, #ffffff 80%),
-    radial-gradient(900px 500px at 50% 115%, rgba(194,156,30,0.06), rgba(255,255,255,0) 60%),
-    radial-gradient(rgba(11,33,64,0.035) 1px, transparent 1px);
-  background-size:
-    auto, auto, 44px 44px;
-  background-position:
-    center top, center bottom, 0 0;
-  background-repeat: no-repeat, no-repeat, repeat;
+/* =============================== Responsive =============================== */
+@media (max-width: 980px){
+  .menu-wrap{ grid-template-columns: 1fr; }
+  .menu-side{ position:static; order:2; }
+  .menu-board{ order:1; }
 }
-.theme-walrus-cream .apply-form,
-.theme-walrus-cream .section{
-  background:#ffffff;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-}
-.theme-walrus-cream .title-text{ color: var(--ink); }
-.theme-walrus-cream .title-line{ opacity:.9; filter:none; }
 
-/* ===============================
-   Responsive
-   =============================== */
-@media (max-width:960px){
-  .page-content{ padding:20px 16px 56px; }
-}
 @media (max-width:780px){
+  .page-content{ padding:18px 14px 52px; }
   .topnav{ grid-template-columns:1fr; row-gap:8px; }
   .logo{ order:-1; justify-self:center; }
   .nav-left, .nav-right{ justify-content:center; flex-wrap:wrap; }
-  .info-content{ flex-direction:column; gap:14px; align-items:flex-start; }
-  .right-side{ text-align:left; margin-left:0; padding-left:0; }
-  .city-images img{ width:280px; }
 }
