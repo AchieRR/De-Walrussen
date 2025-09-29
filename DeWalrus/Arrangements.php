@@ -63,7 +63,7 @@
             <p>Zoete en hartige lekkernijen met diverse theesoorten.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="hightea.php">Meer info</a>
+              <a class="btn" href="Arrangementen/hightea.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -77,7 +77,7 @@
             <p>Diverse kleine gangen, ideaal voor groepen.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="walkingdiner.php">Meer info</a>
+              <a class="btn" href="Arrangementen/walkingdiner.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -91,7 +91,7 @@
             <p>Onze chefs bereiden jouw gerechten live aan station.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="livecooking.php">Meer info</a>
+              <a class="btn" href="Arrangementen/livecooking.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -105,7 +105,7 @@
             <p>Selectie ambachtelijke bieren met bijpassende hapjes.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="bierarrangement.php">Meer info</a>
+              <a class="btn" href="Arrangementen/bier.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -119,7 +119,7 @@
             <p>Wijnproeverij met bijpassende bites.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="highwine.php">Meer info</a>
+              <a class="btn" href="Arrangementen/highwine.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -133,7 +133,7 @@
             <p>Rustige ruimtes met techniek en catering-opties.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="dinermenu.php">Meer info</a>
+              <a class="btn" href="Arrangementen/dinermenu.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -147,7 +147,7 @@
             <p>Rondvaart met hapjes en drankjes aan boord.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="bootborrel.php">Meer info</a>
+              <a class="btn" href="Arrangementen/bootborrel.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -161,7 +161,7 @@
             <p>Film kijken met een borrelplank en drankjes.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="bioscoop.php">Meer info</a>
+              <a class="btn" href="Arrangementen/bioscoop.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -175,7 +175,7 @@
             <p>Diner en voorstelling in Theater Sneek.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="theatersneek.php">Meer info</a>
+              <a class="btn" href="Arrangementen/theatersneek.php">Meer info</a>
             </div>
           </div>
         </article>

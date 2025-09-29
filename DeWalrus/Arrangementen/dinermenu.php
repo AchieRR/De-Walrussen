@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bier Arrangement</title>
+    <title>Dinermenu Arrangement</title>
 </head>
 <body>
-    
+    meer info
 </body>
 </html>
