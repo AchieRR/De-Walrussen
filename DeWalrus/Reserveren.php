@@ -53,7 +53,7 @@
         Mailen kan ook: vul hieronder het formulier in.
       </p>
 
-      <form action="Bedankt.php" method="post">
+      <form action="Bedankt/Reserverenbedankt.php" method="post">
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
@@ -86,7 +86,7 @@
               name="telefoon"
               autocomplete="tel"
               inputmode="tel"
-              pattern="^(?:0\\d{9}|(?:\\+|00)31\\d{9})$"
+              pattern="^(?:0\d{9}|(?:\+|00)31\d{9})$"
               placeholder="0612345678, +31612345678 of 0031612345678"
               required
               title="Voer 0612345678, +31612345678 of 0031612345678 in.">
