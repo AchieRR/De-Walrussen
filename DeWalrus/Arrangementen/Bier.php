@@ -43,9 +43,17 @@
       <h1 class="title-text">BIER PROEVERIJ</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
+
+    <div class="page-description" aria-hidden="true">
+      <p>Ontdek de rijke smaken van verschillende bieren in onze unieke bierproeverij. Geniet van een selectie van ambachtelijke bieren, zorgvuldig gekozen door onze experts.</p>
+    </div>
   </main>
 
+
+
   <div class="section-divider" aria-hidden="true"></div>
+
+
 
   <!-- Infobar / Footer -->
   <footer class="infobar">
