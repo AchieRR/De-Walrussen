@@ -2,7 +2,7 @@
 :root {
   --header-h: clamp(48px, 8.2vw, 84px);
 
-  --brand-gold: #c29c1e;
+  <<<<<<< HEAD=======>>>>>>>388872ff638bcb5c13da4605559947c37a97d512 --brand-gold: #c29c1e;
   --brand-gold-dark: #b6911a;
   --ink: #0b2140;
 
@@ -547,4 +547,3 @@ header {
     justify-content: center;
     flex-wrap: wrap;
   }
-}
