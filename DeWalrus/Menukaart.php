@@ -1,5 +1,5 @@
 <?php
-// DeWalrus/Menukaart.php — Menukaart met crème buitenrand en groen krijtbord binnen (HTML/PHP/SQL/CSS only)
+// DeWalrus/Menukaart.php — Menukaart met crème buitenrand en groen krijtbord binnen (-)
 require __DIR__ . '/db.php';
 
 function e($v){ return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }

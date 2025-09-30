@@ -1,6 +1,6 @@
 <?php
 // DeWalrus/Reserveren.php
-// Formulier met CSRF-token + honeypot.
+// Formulier met (_)
 
 session_start();
 if (empty($_SESSION['csrf'])) {
