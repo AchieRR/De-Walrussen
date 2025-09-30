@@ -4,16 +4,6 @@
 :root{
   --header-h: clamp(48px, 8.2vw, 84px);
 
-  /* oude logo-kaart variabelen (ongebruikt) */
-  --logo-bg: #f5e7d9;
-  --logo-w-start: 300px;
-  --logo-w-end:   360px;
-  --logo-shrink-range: 200px;
-  --logo-drop-max: 24px;
-
-  --logo-text-scale: 1;
-  --walrus-factor: 0.52;
-  --grand-factor:  0.22;
 
   --brand-gold: #c29c1e;
   --brand-gold-dark: #b6911a;
@@ -221,3 +211,6 @@ header{
   .right-side{ text-align:left; margin-left:0; padding-left:0; }
   .city-images img{ width:280px; }
 }
+
+
+

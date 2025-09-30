@@ -45,6 +45,27 @@
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
     </div>
 
+ 
+   <div class="menu-items">
+    <div class="Diner">
+      <p>Dessert<p>
+         <div class="Diner">
+      <p>Vegetarische Gerechten<p>
+         <div class="Diner">
+          <p>Vis Gerechten<p>
+             <div class="Diner">
+              <p>VleesGerechten<p>
+                <p>VoorGerechten<p>
+                  <p>KidsMenu<p>
+      
+      
+
+</div>
+
+
+
+
+
   </main>
   <!-- einde midden -->
 
