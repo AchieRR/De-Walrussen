@@ -121,7 +121,7 @@
         <h4>De Walrus Leeuwarden</h4>
         <br>
         <p>
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
+          <a href="https://maps.app.goo.gl/et95Syd9dZWNj1GJ8" target="_blank" rel="noopener">
             Gouverneursplein 37<br>
             8911 HH Leeuwarden
           </a><br><br>
@@ -143,7 +143,7 @@
         <h4>De Walrus Sneek</h4>
         <br>
         <p>
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
+          <a href="https://maps.app.goo.gl/i8CJM3hCyei7eCMG7" target="_blank" rel="noopener">
             Leeuwenburg 11<br>
             8601 CG Sneek
           </a><br><br>
@@ -164,10 +164,10 @@
       <div class="right-side">
         <div class="infobar-right-text">Leuk dat je bent geweest</div>
         <div class="city-images">
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
+          <a href="https://maps.app.goo.gl/et95Syd9dZWNj1GJ8" target="_blank" rel="noopener">
             <img src="https://res.cloudinary.com/laad-media-b-v/image/upload/s--J6Q_KcqC--/c_scale,dpr_auto,f_auto,q_auto:best/v1/Afbeeldingen%20knooppunten/266-8911/Grand-Caf%C3%A9_De_Walrus_Leeuwarden" alt="De Walrus Leeuwarden">
           </a>
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
+          <a href="https://maps.app.goo.gl/i8CJM3hCyei7eCMG7" target="_blank" rel="noopener">
             <img src="https://res.cloudinary.com/laad-media-b-v/image/upload/s--dLwzwzgP--/c_scale,dpr_auto,f_auto,q_auto:best/v1/Afbeeldingen%20knooppunten/513-8601/Grand-Caf%C3%A9_De_Walrus_Sneek" alt="De Walrus Sneek">
           </a>
         </div>
