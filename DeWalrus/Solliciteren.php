@@ -195,16 +195,6 @@
 
         <!-- Over jezelf -->
         <h3 class="form-subtitle">Over jezelf</h3>
-        <div class="form-row">
-          <div class="form-field">
-            <label for="geslacht">Geslacht*</label>
-            <select id="geslacht" name="geslacht" required>
-              <option value="" disabled selected>Kies een optie</option>
-              <option>Man</option>
-              <option>Vrouw</option>
-              <option>Anders of zeg ik liever niet</option>
-            </select>
-          </div>
           <div class="form-field">
             <label for="leeftijd">Leeftijd*</label>
             <input
