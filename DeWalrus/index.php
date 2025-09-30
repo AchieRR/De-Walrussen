@@ -60,9 +60,16 @@
             <p>Klassiekers en moderne gerechten — vers en met zorg.</p>
           </div>
         </li>
+        <li class="slide slide-4">
+          <img src="https://www.dewalrus.nl/mediadepot/4905b5653616/610/740/min/NHLStedenShootBig-13-1024x683.jpg" alt="Gezellige boottocht met borrel">
+          <div class="caption">
+            <h3>Boot&Borrel</h3>
+            <p>gezellige boot tochtje verzorgt door lekker drankjes.</p>
+          </div>
+        </li>
       </ul>
 
-      <label for="slide-3" class="control prev ctrl-1" aria-label="Vorige">
+      <label for="slide-4" class="control prev ctrl-1" aria-label="Vorige">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
       <label for="slide-2" class="control next ctrl-1" aria-label="Volgende">
@@ -79,6 +86,13 @@
       <label for="slide-2" class="control prev ctrl-3" aria-label="Vorige">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
+      <label for="slide-4" class="control next ctrl-3" aria-label="Volgende">
+        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
+      </label>
+            
+      <label for="slide-3" class="control prev ctrl-3" aria-label="Vorige">
+        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
+      </label>
       <label for="slide-1" class="control next ctrl-3" aria-label="Volgende">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
       </label>
@@ -87,6 +101,7 @@
         <label for="slide-1" class="dot d1"></label>
         <label for="slide-2" class="dot d2"></label>
         <label for="slide-3" class="dot d3"></label>
+        <label for="slide-4" class="dot d4"></label>
       </div>
     </div>
   </section>

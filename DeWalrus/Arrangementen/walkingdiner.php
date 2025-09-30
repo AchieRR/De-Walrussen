@@ -40,7 +40,7 @@
         <!-- TITEL: links/rechts lijn, midden tekst -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
-      <h1 class="title-text">WALKING DINNER</h1>
+      <h1 class="title-text">WALKING DINNER                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
   </main>

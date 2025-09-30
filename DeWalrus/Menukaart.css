@@ -1,6 +1,4 @@
-/* ===============================
-   Variabelen
-   =============================== */
+/* =============================== Variabelen =============================== */
 :root {
   --header-h: clamp(48px, 8.2vw, 84px);
 
@@ -15,9 +13,7 @@
   --chalk-muted: #e7e3d9;
 }
 
-/* ===============================
-   Reset / basis
-   =============================== */
+/* Reset/basis */
 * {
   box-sizing: border-box;
 }
@@ -39,9 +35,7 @@ body {
   height: calc(var(--header-h) + 8px);
 }
 
-/* ===============================
-   Buitenkant: CRÈME THEMA
-   =============================== */
+/* =============================== Buitenkant: CRÈME THEMA =============================== */
 .theme-walrus-cream {
   background-color: #fbf5ea;
   background-image:
@@ -55,21 +49,20 @@ body {
 
 /* Content breedte — BREEDER */
 .page-content {
-  max-width: 1580px; /* was 1160px */
+  max-width: 1580px;
+  /* was 1160px */
   margin: 0 auto;
   padding: 20px 18px 56px;
   min-height: calc(100vh - var(--header-h) + 320px);
   overflow-x: clip;
 }
 
-/* ===============================
-   Header / Nav
-   =============================== */
+/* =============================== Header/Nav (ongewijzigd) =============================== */
 header {
   position: fixed;
   inset: 0 0 auto 0;
   height: var(--header-h);
-  background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center / cover no-repeat;
+  background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -146,11 +139,7 @@ header {
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  transition:
-    background .15s ease,
-    border-color .15s ease,
-    transform .15s ease,
-    box-shadow .15s ease;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 
 .nav-btn:hover {
@@ -161,21 +150,19 @@ header {
 
 .btn-solliciteren,
 .btn-reserveren {
-  background: var(--brand-gold);
+  background: #c29c1e;
   color: #fff;
   border-color: transparent;
 }
 
 .btn-solliciteren:hover,
 .btn-reserveren:hover {
-  background: var(--brand-gold-dark);
+  background: #b6911a;
   box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
   transform: translateY(-1px);
 }
 
-/* ===============================
-   Titel
-   =============================== */
+/* =============================== Titel =============================== */
 .page-title {
   display: flex;
   align-items: center;
@@ -201,15 +188,13 @@ header {
   opacity: .9;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .title-line {
     display: none;
   }
 }
 
-/* ===============================
-   Top Tabs (DINER/SOEPEN/…)
-   =============================== */
+/* =============================== Top Tabs (DINER/SOEPEN/...) =============================== */
 .menu-tabs {
   display: flex;
   gap: 22px;
@@ -238,19 +223,20 @@ header {
   border-radius: 3px;
 }
 
-/* ===============================
-   Stage
-   =============================== */
+/* =============================== Stage =============================== */
 .menu-stage {
   padding: 12px;
 }
 
 .menu-wrap {
   display: grid;
-  grid-template-columns: 280px 1fr; /* was 240px + 1fr */
-  gap: 24px; /* iets royaler */
+  grid-template-columns: 280px 1fr;
+  /* was 240px + 1fr */
+  gap: 24px;
+  /* iets royaler */
   align-items: start;
-  max-width: 1500px; /* was 1040px */
+  max-width: 1500px;
+  /* was 1040px */
   margin: 0 auto;
 }
 
@@ -301,23 +287,20 @@ header {
   background: rgba(0, 0, 0, .08);
 }
 
-/* ===============================
-   Board (groen krijtbord)
-   =============================== */
+/* =============================== Board (groen krijtbord) =============================== */
 .menu-board {
   background:
     radial-gradient(900px 280px at 50% 0%, rgba(255, 255, 255, .06) 0%, transparent 70%),
-    url('https://imgs.search.brave.com/F5G0WJVm4F8gv3j-RnWpPCqwCQ2alcf9Klu5vNSrf38/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9hYnN0cmFjdGUt/a3JpanQtZ2V3cmV2/ZW4tb3AtYm9yZC1v/Zi1rcmlqdGJvcmQt/dGV4dHV1ci1zY2hv/b24tc2Nob29sYm9y/ZC12b29yLWFjaHRl/cmdyb25kLW9mLWtv/cGllZXJydWltdGUt/dm9vci1oZXQtdG9l/dm9lZ2VuLXZhbi10/ZWtzdGJvb2RzY2hh/cC1hY2h0ZXJncm9u/ZC12YW4tb25kZXJ3/aWpzY29uY2VwdGVu/XzQzNDI5LTQ5MTgu/anBnP3NlbXQ9YWlz/X2h5YnJpZCZ3PTc0/MA'),
-    var(--chalk-green);
+    url('https://media.istockphoto.com/id/522279843/nl/vector/green-chalkboard-background.jpg?s=612x612&w=0&k=20&c=EC6Wf38aK8V5Z9uyzZEtyuYi72RXZLWZL-6BzmjOaRs='),
+    #204d2a;
   background-blend-mode: normal, overlay, normal;
   border-radius: 20px;
-  box-shadow:
-    inset 0 0 0 2px rgba(0, 0, 0, .15),
-    0 14px 40px rgba(0, 0, 0, .25);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .15), 0 14px 40px rgba(0, 0, 0, .25);
   padding: 22px 24px 28px;
   color: var(--chalk-text);
   position: relative;
-  min-height: 900px; /* lengte behouden */
+  min-height: 900px;
+  /* lengte behouden */
 }
 
 /* Radio's verbergen */
@@ -402,12 +385,10 @@ header {
   color: var(--chalk-muted);
 }
 
-/* ===============================
-   Infobar
-   =============================== */
+/* =============================== Infobar =============================== */
 .infobar {
   position: relative;
-  background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center / cover no-repeat;
+  background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   color: #fff;
   padding: 12px 20px 18px;
   margin-top: 0;
@@ -529,9 +510,7 @@ header {
   margin-top: 2px;
 }
 
-/* ===============================
-   Responsive
-   =============================== */
+/* =============================== Responsive =============================== */
 @media (max-width: 1100px) {
   .menu-wrap {
     grid-template-columns: 1fr;
@@ -549,7 +528,7 @@ header {
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width:780px) {
   .page-content {
     padding: 18px 14px 52px;
   }
