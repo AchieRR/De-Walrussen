@@ -1,41 +1,42 @@
-<!DOCTYPE html> <!-- Code taal HTML -->
-<html lang="nl"> <!-- pagina taal NL -->
+<!DOCTYPE html>
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>De Walrus</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&display=swap" rel="stylesheet"> <!-- Playfair font -->
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet"> <!-- Alex Brush Font -->
-  <link rel="stylesheet" href="Homepage.css" />  <!-- krijgt info van Homepage.css -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Homepage.css" />
 </head>
 
 <body>
   <header>
-    <nav class="topnav" role="navigation" aria-label="Hoofdmenu"> <!-- navigatie bar -->
-      <div class="nav-left"> <!-- links zijde -->
+    <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
+      <div class="nav-left">
         <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
         <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
         <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
       </div>
 
-      <a href="index.php" class="logo" aria-label="De Walrus Homepage"> <!-- midden logo  -->
+      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
         <span class="walrus">De Walrus</span>
         <span class="grandcafe">— GRAND CAFÉ —</span>
       </a>
 
-      <div class="nav-right"> <!-- rechts zijde -->
+      <div class="nav-right">
         <a href="Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
         <a href="Contact.php" class="nav-btn btn-contact">Contact</a>
         <a href="Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
       </div>
     </nav>
   </header>
-  
 
   <section class="slider-wrap" id="galerij" aria-label="Fotogalerij">
+    <!-- Radios (state) -->
     <input type="radio" name="slides" id="slide-1" checked>
     <input type="radio" name="slides" id="slide-2">
     <input type="radio" name="slides" id="slide-3">
+    <input type="radio" name="slides" id="slide-4">
 
     <div class="slider">
       <ul class="slides">
@@ -46,40 +47,61 @@
             <p>Geniet aan het Gouverneursplein — dagelijks open tot 01:00.</p>
           </div>
         </li>
+
         <li class="slide slide-2">
           <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/8d/3d/98/de-walrus-sneek-voorzijde.jpg?w=900&h=500&s=1" alt="De Walrus Sneek — gezellig in de binnenstad">
           <div class="caption">
             <h3>De Walrus Sneek</h3>
-            <p>Sfeervol in de hart van Sneek — zeven dagen per week.</p>
+            <p>Sfeervol in het hart van Sneek — zeven dagen per week.</p>
           </div>
         </li>
+
         <li class="slide slide-3">
-          <img src="https://imgs.search.brave.com/sI0xZ5irLFuk9JECfMG_7MS16py96nfzzZsP6QST1As/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vdGYtbGFiL2lt/YWdlL3VwbG9hZC9y/ZXN0YXVyYW50LzNl/OGZiYzBhLTQzY2Yt/NGJhZC04YjdjLTZm/ZTI2NTk5MGVhYS9k/Y2RmOWZjMy1kOTM2/LTQzNDEtYmUwYi1j/YTg5MWRjYjBkOTUu/anBn" alt="Sfeervol diner met kaarslicht">
+          <img src="https://imgs.search.brave.com/sI0xZ5irLFuk9JECfMG_7MS16py96nfzzZsP6QST1As/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vdGYtbGFiL2lt/YWdlL3VwbG9hZC9y/ZXN0YXVyYW50LzNl/OGZiYzBhLTQzY2Yt/NGJhZC04YjdjLTZm/ZTI2NTk5MGVhYS9k/Y2RmOWZjMy1kOTM2/LTQzNDEtYmUwYi1j/YTg5MWRjYjBkOTUu/anBn" alt="Sfeervol diner bij kaarslicht">
           <div class="caption">
             <h3>Sfeervol Diner</h3>
             <p>Klassiekers en moderne gerechten — vers en met zorg.</p>
           </div>
         </li>
+
+        <li class="slide slide-4">
+          <img src="https://www.dewalrus.nl/mediadepot/4905b5653616/610/740/min/NHLStedenShootBig-13-1024x683.jpg" alt="Boottocht met borrel arrangement">
+          <div class="caption">
+            <h3>Boot & Borrel</h3>
+            <p>Gezellig boottochtje, verzorgd met lekkere drankjes.</p>
+          </div>
+        </li>
       </ul>
 
-      <label for="slide-3" class="control prev ctrl-1" aria-label="Vorige">
+      <!-- Controls for Slide 1 -->
+      <label for="slide-4" class="control prev ctrl-1" aria-label="Vorige dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
-      <label for="slide-2" class="control next ctrl-1" aria-label="Volgende">
+      <label for="slide-2" class="control next ctrl-1" aria-label="Volgende dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
       </label>
 
-      <label for="slide-1" class="control prev ctrl-2" aria-label="Vorige">
+      <!-- Controls for Slide 2 -->
+      <label for="slide-1" class="control prev ctrl-2" aria-label="Vorige dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
-      <label for="slide-3" class="control next ctrl-2" aria-label="Volgende">
+      <label for="slide-3" class="control next ctrl-2" aria-label="Volgende dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
       </label>
 
-      <label for="slide-2" class="control prev ctrl-3" aria-label="Vorige">
+      <!-- Controls for Slide 3 -->
+      <label for="slide-2" class="control prev ctrl-3" aria-label="Vorige dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
-      <label for="slide-1" class="control next ctrl-3" aria-label="Volgende">
+      <label for="slide-4" class="control next ctrl-3" aria-label="Volgende dia">
+        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
+      </label>
+
+      <!-- Controls for Slide 4 -->
+      <label for="slide-3" class="control prev ctrl-4" aria-label="Vorige dia">
+        <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
+      </label>
+      <label for="slide-1" class="control next ctrl-4" aria-label="Volgende dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
       </label>
 
@@ -87,6 +109,7 @@
         <label for="slide-1" class="dot d1"></label>
         <label for="slide-2" class="dot d2"></label>
         <label for="slide-3" class="dot d3"></label>
+        <label for="slide-4" class="dot d4"></label>
       </div>
     </div>
   </section>
