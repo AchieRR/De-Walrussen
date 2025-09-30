@@ -46,7 +46,27 @@
     </div>
 
 
-<!-- beginnen met wat je wilt -->
+<!-- beginnen met wat je wilt-->
+
+
+
+
+
+<img src="https://res.cloudinary.com/tf-lab/image/upload/restaurant/c8eb54b1-e746-4a1e-8cb0-8e677bac8197/1ea6f09b-dbdb-409f-bc79-3d266b0bb929.jpg" alt="" width="750" height="333">
+
+<img src="" alt="" width="750" height="333" 
+
+
+
+
+
+
+
+
+
+
+
+
 
      <!-- FORMULIER -->
     <section class="apply-form" aria-labelledby="sollicitatie-titel">
