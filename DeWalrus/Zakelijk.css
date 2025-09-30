@@ -24,6 +24,18 @@ html, body{
   overflow-x:hidden; 
 }
 
+a{ color:inherit; }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid #7cb6ff;
+  outline-offset: 2px;
+}
+
+
+
 /* Ruimte onder fixed header */
 .header-gap{ height: calc(var(--header-h) + 8px); } /* content offset */
 
@@ -87,6 +99,19 @@ header{
   white-space:nowrap;
   transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease; /* micro-animaties */
 }
+
+.btn-Arrangements {
+    /* voorbeeldstijl */
+    color: rgba(193, 241, 0, 0.83);
+    background-color: #007BFF;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+
+
+
+
 .nav-btn:hover{
   background: rgba(255,255,255,.12);
   border-color: rgba(255,255,255,.22);
@@ -113,6 +138,7 @@ header{
   letter-spacing:.22em; color:#e9d7bf; text-transform:uppercase; display:block; margin-top:4px; font-weight:900;
 }
 
+
 /* ===============================
    Pagina-titel (exact Bedankt.css)
    =============================== */
@@ -135,6 +161,15 @@ header{
 
 
 /* hier beginne met tekst */
+
+
+
+
+
+
+
+
+
 
 
 

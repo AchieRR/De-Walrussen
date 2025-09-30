@@ -52,16 +52,44 @@
 
 
 
-<img src="https://res.cloudinary.com/tf-lab/image/upload/restaurant/c8eb54b1-e746-4a1e-8cb0-8e677bac8197/1ea6f09b-dbdb-409f-bc79-3d266b0bb929.jpg" alt="" width="750" height="333">
+<h><img src="https://res.cloudinary.com/tf-lab/image/upload/restaurant/c8eb54b1-e746-4a1e-8cb0-8e677bac8197/1ea6f09b-dbdb-409f-bc79-3d266b0bb929.jpg" alt="" width="750" height="333"></h>
 
-<img src="" alt="" width="750" height="333" 
+<h><img src="https://vmn-missethoreca.imgix.net/uploads/2022/06/de-walrus-sneek.jpg?auto=compress%2Cformat&q=50&w=600"></h>
+
+<h1>Vergaderen, maar wel even weg uit de sleur van ‘het kantoor’?</h1>
+<p1>Dan wil je vergaderen op een mooie locatie die niet aanvoelt als je kantoor! Bij De Walrus kun je het noodzakelijke met het aangename combineren. Want in ons Grand Café in Leeuwarden en Sneek ontmoet je elkaar op een toegankelijke manier, heb je andere gesprekken en kun je gelijk blijven lunchen, dineren of borrelen.</p1>
+
+<h1>Vergaderen in Sneek of Leeuwarden? De feiten op een rij:</h1>
+
+<p>-Vergaderarrangement vanaf €13,75 per persoon!</p>
+<p>-Meerdere (prive)ruimtes tot 100 personen beschikbaar</p>
+<p>-Beide restaurants liggen in hartje centrum</p>
+<p>-Combineer jouw meeting met een lunch, diner of borrel. Alles onder één dak</p>
+<p>-Alle zakelijke benodigdheden: van pennen tot beamers en van flipovers tot statafels</p>
+<p>-Ook jouw presentatie, brainstorm, receptie en jubileum bij De Walrus</p>
+
+
+<h1>Vergadering met lunch, diner of borrel in Sneek of Leeuwarden?</h1>
+
+
+<p>Net als bij elke locatie voor vergaderingen en zakelijke evenementen kun je bij ons ook privé-ruimtes reserveren. Of, pak met je collega’s een tafel in één van de gezellige hoeken in het restaurant in Sneek of Leeuwarden.
+</p>
+
+<p>We hebben alvast verschillende arrangementen samengesteld, maar denken ook graag met je mee. Bitterballen na 30 minuten of Gin-Tonics bij het vragenrondje? Alles kan en alles mag. En de zakelijke benodigdheden? Die hebben we ook: van pennen tot beamers en van flipovers tot statafels.
+</p>
+
+<p>Voor groepen tot vijftig hebben we diverse arrangementen samengesteld. Is de groep groter of heb je andere wensen? Geen probleem! Neem contact op voor een arrangement op maat.</p>
+
+
+<h1>Bekijk de arrangementen</h1>
+
+<p><a href="Arrangements.php" class="nav-btn btn-Arrangements">Arrangements</a>
+  
 
 
 
 
-
-
-
+</p>
 
 
 
