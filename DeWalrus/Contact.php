@@ -1,18 +1,22 @@
+<?php
+// DeWalrus/Contact.php
+session_start();
+if (empty($_SESSION['csrf'])) {
+  $_SESSION['csrf'] = bin2hex(random_bytes(32));
+}
+$csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>De Walrus — Solliciteren</title>
+  <title>De Walrus — Contact</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="Contact.css" />
 </head>
-<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
-  <!-- Header / Navbar -->
+<body class="theme-walrus-cream">
   <header>
     <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
       <div class="nav-left">
@@ -37,14 +41,12 @@
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">
-        <!-- TITEL: links/rechts lijn, midden tekst -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
       <h1 class="title-text">CONTACT</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
 
-    <!-- FORMULIER -->
     <section class="apply-form" aria-labelledby="sollicitatie-titel">
       <h2 id="sollicitatie-titel">Neem contact met ons op!</h2>
       <p class="form-intro">
@@ -54,7 +56,17 @@
         Een mailtje sturen mag natuurlijk ook! Vul daarvoor het formulier hieronder in.
       </p>
 
-      <form action="Bedankt.php" method="post"  novalidate>
+      <!-- FIXED: forward slash in action; client-side validatie aan (geen novalidate) -->
+      <form action="Bedankt/Contactbedankt.php" method="post">
+        <!-- CSRF -->
+        <input type="hidden" name="csrf" value="<?= $csrf ?>">
+
+        <!-- Honeypot (bots vullen dit in) -->
+        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+          <label for="website">Laat dit veld leeg</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
@@ -119,7 +131,6 @@
           <textarea id="bericht" name="bericht" rows="8" placeholder="Algemene informatie…" required></textarea>
         </div>
 
-
         <div class="form-actions">
           <button type="submit" class="btn-submit">Versturen</button>
         </div>
@@ -127,10 +138,8 @@
     </section>
   </main>
 
-  <!-- DIVIDER TUSSEN FORMULIER EN /// -->
   <div class="section-divider" aria-hidden="true"></div>
 
-  <!-- Infobar / Footer -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 
@@ -195,6 +204,5 @@
       <span class="grandcafe">— GRAND CAFÉ —</span>
     </div>
   </footer>
-
 </body>
 </html>
