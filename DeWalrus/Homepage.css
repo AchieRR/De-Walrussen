@@ -5,16 +5,6 @@
   --header-h: clamp(48px, 8.2vw, 84px);
 
   /* oude logo-kaart variabelen (ongebruikt) */
-  --logo-bg: #f5e7d9;
-  --logo-w-start: 300px;
-  --logo-w-end:   360px;
-  --logo-shrink-range: 200px;
-  --logo-drop-max: 24px;
-
-  --logo-text-scale: 1;
-  --walrus-factor: 0.52;
-  --grand-factor:  0.22;
-
   --brand-gold: #c29c1e;
   --brand-gold-dark: #b6911a;
   --ink: #0b2140;
@@ -48,7 +38,7 @@ html, body{
 }
 
 /* ===============================
-   Header / Navbar (exact Bedankt.css)
+   Header / Navbar
    =============================== */
 header{
   position:fixed;
@@ -131,7 +121,7 @@ header{
 }
 
 /* ===============================
-   Slider (ongewijzigd)
+   Slider
    =============================== */
 .slider-wrap{ max-width:100%; margin:0 auto; }
 .slider-wrap>input[type="radio"]{ position:absolute; opacity:0; pointer-events:none; }
@@ -169,10 +159,13 @@ header{
   text-shadow: 0 3px 12px rgba(0,0,0,.7);
 }
 
+/* SHOW the active slide (now includes slide-4) */
 #slide-1:checked ~ .slider .slide-1,
 #slide-2:checked ~ .slider .slide-2,
-#slide-3:checked ~ .slider .slide-3{ opacity:1; }
+#slide-3:checked ~ .slider .slide-3,
+#slide-4:checked ~ .slider .slide-4{ opacity:1; }
 
+/* Controls */
 .control{
   position:absolute; top:50%; transform:translateY(-50%);
   background:rgba(0,0,0,.4); border-radius:50%; padding:8px; cursor:pointer;
@@ -183,10 +176,13 @@ header{
 .control:hover{ background:rgba(0,0,0,.6); transform:translateY(-50%) scale(1.06); }
 .prev{ left:12px; } .next{ right:12px; }
 
+/* SHOW the proper controls for the active slide (now includes ctrl-4) */
 #slide-1:checked ~ .slider .ctrl-1,
 #slide-2:checked ~ .slider .ctrl-2,
-#slide-3:checked ~ .slider .ctrl-3{ display:flex; }
+#slide-3:checked ~ .slider .ctrl-3,
+#slide-4:checked ~ .slider .ctrl-4{ display:flex; }
 
+/* Dots */
 .dots{
   position:absolute; left:0; right:0; bottom:10px;
   display:flex; justify-content:center; gap:8px; z-index:3;
@@ -194,7 +190,8 @@ header{
 .dot{ width:9px; height:9px; border-radius:50%; background:#bdbdbd; border:0; cursor:pointer; }
 #slide-1:checked ~ .slider .d1,
 #slide-2:checked ~ .slider .d2,
-#slide-3:checked ~ .slider .d3{ background:#fff; transform:scale(1.2); }
+#slide-3:checked ~ .slider .d3,
+#slide-4:checked ~ .slider .d4{ background:#fff; transform:scale(1.2); }
 
 /* ===============================
    Infobar
