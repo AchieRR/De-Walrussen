@@ -99,31 +99,6 @@ $firstCat = $orderedCats[0] ?? null;
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
     </div>
 
-<<<<<<< HEAD
- 
-   <div class="menu-items">
-    <div class="Diner">
-      <p>Dessert<p>
-         <div class="Diner">
-      <p>Vegetarische Gerechten<p>
-         <div class="Diner">
-          <p>Vis Gerechten<p>
-             <div class="Diner">
-              <p>VleesGerechten<p>
-                <p>VoorGerechten<p>
-                  <p>KidsMenu<p>
-      
-      
-
-</div>
-
-
-
-
-
-  </main>
-  <!-- einde midden -->
-=======
     <!-- Subcategory tabs -->
     <div class="menu-tabs" role="tablist" aria-label="Menukaart secties">
       <?php foreach ($subTabs as $t): ?>
@@ -133,7 +108,6 @@ $firstCat = $orderedCats[0] ?? null;
            href="?s=<?= urlencode($t) ?>"><?= strtoupper($t) ?></a>
       <?php endforeach; ?>
     </div>
->>>>>>> 388872ff638bcb5c13da4605559947c37a97d512
 
     <!-- ======= STAGE (crème buiten) + BOARD (groen krijtbord binnen) ======= -->
     <section class="menu-stage">

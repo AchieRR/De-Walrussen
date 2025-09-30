@@ -2,7 +2,7 @@
 :root {
   --header-h: clamp(48px, 8.2vw, 84px);
 
-  <<<<<<< HEAD=======>>>>>>>388872ff638bcb5c13da4605559947c37a97d512 --brand-gold: #c29c1e;
+  --brand-gold: #c29c1e;
   --brand-gold-dark: #b6911a;
   --ink: #0b2140;
 
@@ -531,19 +531,20 @@ header {
   .page-content {
     padding: 18px 14px 52px;
   }
+}
 
-  .topnav {
-    grid-template-columns: 1fr;
-    row-gap: 8px;
-  }
+.topnav {
+  grid-template-columns: 1fr;
+  row-gap: 8px;
+}
 
-  .logo {
-    order: -1;
-    justify-self: center;
-  }
+.logo {
+  order: -1;
+  justify-self: center;
+}
 
-  .nav-left,
-  .nav-right {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+.nav-left,
+.nav-right {
+  justify-content: center;
+  flex-wrap: wrap;
+}
