@@ -1,5 +1,4 @@
--- DeWalrus/sql/create_reservations.sql
--- Nieuwe tabel voor reserveringen
+
 -- log in je PHPMYADMIN en maak een nieuwe database met de naam walrus ( kleine letters ) en daarna als je op die walrus klikt zie je boven in t midden ong SQL staan dan klik je daarop en plak je de code hier onder helemaal er in en daarna druk je op GO
 CREATE DATABASE IF NOT EXISTS walrus
   DEFAULT CHARACTER SET utf8mb4
@@ -25,10 +24,7 @@ CREATE TABLE IF NOT EXISTS reservations (
   reservation_date  DATE             NOT NULL,
   reservation_time  TIME             NOT NULL,
   guests            TINYINT UNSIGNED NOT NULL,
-
-  user_agent        VARCHAR(255)     NULL,
-  ip_address        VARBINARY(16)    NULL,
-
+  
   INDEX idx_date_time (reservation_date, reservation_time),
   INDEX idx_email_date (email, reservation_date)
 ) ENGINE=InnoDB

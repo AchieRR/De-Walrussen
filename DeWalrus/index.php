@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -9,28 +10,14 @@
   <link rel="stylesheet" href="Homepage.css" />
 </head>
 
-<body>
-  <header>
-    <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
-      <div class="nav-left">
-        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
-        <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
-      </div>
+<body class="theme-walrus-cream">
 
-      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
-        <span class="walrus">De Walrus</span>
-        <span class="grandcafe">— GRAND CAFÉ —</span>
-      </a>
+  <!-- ============== HEADER / NAV ============== -->
+<?php require_once __DIR__ . '/nav.php'; ?>
 
-      <div class="nav-right">
-        <a href="Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
-        <a href="Contact.php" class="nav-btn btn-contact">Contact</a>
-        <a href="Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
-      </div>
-    </nav>
-  </header>
 
+
+  <!-- ============== HERO / SLIDER ============== -->
   <section class="slider-wrap" id="galerij" aria-label="Fotogalerij">
     <!-- Radios (state) -->
     <input type="radio" name="slides" id="slide-1" checked>
@@ -41,15 +28,15 @@
     <div class="slider">
       <ul class="slides">
         <li class="slide slide-1">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f4/46/74/sfeerimpressie.jpg?w=900&h=500&s=1" alt="De Walrus Leeuwarden — terras aan het Gouverneursplein">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f4/46/74/sfeerimpressie.jpg?w=900&h=600&s=1" alt="De Walrus Leeuwarden — terras aan het Gouverneursplein">
           <div class="caption">
             <h3>De Walrus Leeuwarden</h3>
-            <p>Geniet aan het Gouverneursplein — dagelijks open tot 01:00.</p>
+            <p>Geniet aan het Gouverneursplein — dagelijks open tot laat.</p>
           </div>
         </li>
 
         <li class="slide slide-2">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/8d/3d/98/de-walrus-sneek-voorzijde.jpg?w=900&h=500&s=1" alt="De Walrus Sneek — gezellig in de binnenstad">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/8d/3d/98/de-walrus-sneek-voorzijde.jpg?w=900&h=600&s=1" alt="De Walrus Sneek — gezellig in de binnenstad">
           <div class="caption">
             <h3>De Walrus Sneek</h3>
             <p>Sfeervol in het hart van Sneek — zeven dagen per week.</p>
@@ -57,7 +44,7 @@
         </li>
 
         <li class="slide slide-3">
-          <img src="https://imgs.search.brave.com/sI0xZ5irLFuk9JECfMG_7MS16py96nfzzZsP6QST1As/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vdGYtbGFiL2lt/YWdlL3VwbG9hZC9y/ZXN0YXVyYW50LzNl/OGZiYzBhLTQzY2Yt/NGJhZC04YjdjLTZm/ZTI2NTk5MGVhYS9k/Y2RmOWZjMy1kOTM2/LTQzNDEtYmUwYi1j/YTg5MWRjYjBkOTUu/anBn" alt="Sfeervol diner bij kaarslicht">
+          <img src="https://res.cloudinary.com/dfav3rj8t/image/upload/v1727712345/walrus-diner.jpg" alt="Sfeervol diner bij kaarslicht">
           <div class="caption">
             <h3>Sfeervol Diner</h3>
             <p>Klassiekers en moderne gerechten — vers en met zorg.</p>
@@ -67,13 +54,13 @@
         <li class="slide slide-4">
           <img src="https://www.dewalrus.nl/mediadepot/4905b5653616/610/740/min/NHLStedenShootBig-13-1024x683.jpg" alt="Boottocht met borrel arrangement">
           <div class="caption">
-            <h3>Boot & Borrel</h3>
+            <h3>Boot &amp; Borrel</h3>
             <p>Gezellig boottochtje, verzorgd met lekkere drankjes.</p>
           </div>
         </li>
       </ul>
 
-      <!-- Controls for Slide 1 -->
+      <!-- Controls -->
       <label for="slide-4" class="control prev ctrl-1" aria-label="Vorige dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
@@ -81,7 +68,6 @@
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
       </label>
 
-      <!-- Controls for Slide 2 -->
       <label for="slide-1" class="control prev ctrl-2" aria-label="Vorige dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
@@ -89,7 +75,6 @@
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
       </label>
 
-      <!-- Controls for Slide 3 -->
       <label for="slide-2" class="control prev ctrl-3" aria-label="Vorige dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
@@ -97,7 +82,6 @@
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-right.png" alt="">
       </label>
 
-      <!-- Controls for Slide 4 -->
       <label for="slide-3" class="control prev ctrl-4" aria-label="Vorige dia">
         <img src="https://img.icons8.com/ios-filled/80/ffffff/chevron-left.png" alt="">
       </label>
@@ -114,6 +98,56 @@
     </div>
   </section>
 
+  <!-- ============== CONTENT ============== -->
+  <main class="page-content">
+    <section class="section intro">
+      <h2 class="title-text">Welkom bij De Walrus</h2>
+      <p class="lead">
+        Grand café met twee locaties: <strong>Leeuwarden</strong> (Gouverneursplein) en <strong>Sneek</strong> (Leeuwenburg).
+        Kom voor koffie met taart, lunch, borrel of een uitgebreid diner. We zijn 7 dagen per week open tot laat.
+      </p>
+    </section>
+
+    <section class="section features">
+      <div class="feature">
+        <h3>Menukaart</h3>
+        <p>Van burgers en salades tot seizoensgerechten. Kindermenu en vegetarische opties aanwezig.</p>
+        <a class="link-arrow" href="Menukaart.php">Bekijk menukaart</a>
+      </div>
+      <div class="feature">
+        <h3>Arrangementen</h3>
+        <p>High tea, borrel, boottochten en groepsmenu’s. Ideaal voor verjaardagen, teamuitjes of familie.</p>
+        <a class="link-arrow" href="Arrangements.php">Alle arrangementen</a>
+      </div>
+      <div class="feature">
+        <h3>Zakelijk</h3>
+        <p>Vergaderen, presenteren of borrelen? We denken mee over opstelling, techniek en catering.</p>
+        <a class="link-arrow" href="Zakelijk.php">Zakelijke mogelijkheden</a>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="split-text">
+        <h3>Over De Walrus</h3>
+        <p>
+          De Walrus is een laagdrempelig grand café met een warme sfeer. We houden van
+          <em>goed eten, gastvrijheid</em> en een gezellige borrel. Overdag een fijne plek om af te spreken;
+          ’s avonds schuif je aan voor diner of een drankje op het terras.
+        </p>
+        <ul class="bullets">
+          <li>Dagelijks open, keuken de hele dag in bedrijf</li>
+          <li>Groepen welkom – van 8 tot ±100 personen</li>
+          <li>Centrale locaties in binnenstad Leeuwarden &amp; Sneek</li>
+        </ul>
+        <a class="btn-primary" href="Reserveren.php">Tafel reserveren</a>
+      </div>
+      <div class="split-media">
+        <img src="https://res.cloudinary.com/dfav3rj8t/image/upload/v1727712452/walrus-interieur.jpg" alt="Sfeervol interieur van De Walrus">
+      </div>
+    </section>
+  </main>
+
+  <!-- ============== INFOBAR (ongemoeid) ============== -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
     <div class="info-content">

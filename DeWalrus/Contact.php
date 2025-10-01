@@ -13,42 +13,23 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>De Walrus — Contact</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Contact.css" />
 </head>
 <body class="theme-walrus-cream">
-  <header>
-    <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
-      <div class="nav-left">
-        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
-        <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
-      </div>
-
-      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
-        <span class="walrus">De Walrus</span>
-        <span class="grandcafe">— GRAND CAFÉ —</span>
-      </a>
-
-      <div class="nav-right">
-        <a href="Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
-        <a href="Contact.php" class="nav-btn btn-contact">Contact</a>
-        <a href="Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
-      </div>
-    </nav>
-  </header>
-
-  <div class="header-gap" aria-hidden="true"></div>
+  <!-- NAV zoals homepage -->
+  <?php require __DIR__ . '/nav.php'; ?>
 
   <main class="page-content">
+    <!-- Titel (NIET AANRAKEN) -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
       <h1 class="title-text">CONTACT</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
 
-    <section class="apply-form" aria-labelledby="sollicitatie-titel">
-      <h2 id="sollicitatie-titel">Neem contact met ons op!</h2>
+    <section class="apply-form" aria-labelledby="contact-titel">
+      <h2 id="contact-titel">Neem contact met ons op!</h2>
       <p class="form-intro">
         Onze telefoon staat bíjna altijd aan en je kan ons bereiken in Leeuwarden op 
         <a href="tel:0582137740">058 213 7740</a> of in Sneek op
@@ -56,18 +37,17 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
         Een mailtje sturen mag natuurlijk ook! Vul daarvoor het formulier hieronder in.
       </p>
 
-      <!-- FIXED: forward slash in action; client-side validatie aan (geen novalidate) -->
       <form action="Bedankt/Contactbedankt.php" method="post">
         <!-- CSRF -->
         <input type="hidden" name="csrf" value="<?= $csrf ?>">
 
-        <!-- Honeypot (bots vullen dit in) -->
+        <!-- Honeypot -->
         <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
           <label for="website">Laat dit veld leeg</label>
           <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
         </div>
 
-        <!-- Persoonlijk -->
+        <!-- Persoonlijke gegevens -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
           <div class="form-field">
@@ -99,10 +79,10 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
               name="telefoon"
               autocomplete="tel"
               inputmode="tel"
-              pattern="^(?:0\d{9}|(?:\+?31)\d{9})$"
-              placeholder="0612345678 of +31612345678"
+              pattern="^(?:0\d{9}|(?:\+|00)31\d{9})$"
+              placeholder="0612345678, +31612345678 of 0031612345678"
               required
-              title="Voer 0612345678 in of +31612345678.">
+              title="Voer 0612345678, +31612345678 of 0031612345678 in.">
           </div>
         </div>
 
@@ -136,10 +116,11 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
         </div>
       </form>
     </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
   </main>
 
-  <div class="section-divider" aria-hidden="true"></div>
-
+  <!-- INFOBAR (NIET AANRAKEN) -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 

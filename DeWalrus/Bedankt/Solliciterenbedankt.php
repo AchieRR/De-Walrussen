@@ -4,7 +4,7 @@
 
 require __DIR__ . '/../db.php';
 
-// Vereiste velden (zonder geslacht; met leeftijd)
+// Vereiste velden ()
 $required = [
   'voornaam','achternaam','email','telefoon',
   'straat','huisnummer','postcode','woonplaats',

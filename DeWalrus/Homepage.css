@@ -2,12 +2,9 @@
    Variabelen
    =============================== */
 :root{
-  --header-h: clamp(48px, 8.2vw, 84px);
-
-  /* oude logo-kaart variabelen (ongebruikt) */
-  --brand-gold: #c29c1e;
-  --brand-gold-dark: #b6911a;
+  --header-h: clamp(56px, 7vw, 86px);
   --ink: #0b2140;
+  --nav-max: 1300px;
 }
 
 *{ box-sizing:border-box; }
@@ -19,21 +16,20 @@ html, body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:#fff;
   color:#111;
-  line-height:1.4;
-
+  line-height:1.45;
   max-width:100%;
   overflow-x:hidden;
 }
 
 /* Ruimte onder fixed header */
-.header-gap{ height: calc(var(--header-h) + 8px); }
+.header-gap{ height: var(--header-h); }
 
 /* Midden content */
 .page-content{
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 24px 20px 60px;
-  min-height: calc(100vh - var(--header-h) + 320px);
+  padding: 28px 20px 64px;
+  min-height: calc(100vh - var(--header-h));
   overflow-x: clip;
 }
 
@@ -48,35 +44,62 @@ header{
   z-index:2000;
   display:flex;
   align-items:center;
-  justify-content:center;
-  padding:0 clamp(8px,3vw,24px);
+  padding:0 clamp(10px,3vw,22px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.75);
 }
 .topnav{
   width:100%;
-  max-width:1500px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  column-gap:32px;
-  height:100%;
-}
-.nav-left,
-.nav-right{
+  max-width: var(--nav-max);   
+  margin: 0 auto;              
   display:flex;
   align-items:center;
-  gap:22px;
+  gap:18px;
 }
-.nav-left{ justify-content:flex-end; }
-.nav-right{ justify-content:flex-start; }
+.logo{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  text-decoration:none;
+  margin-right:4px;
+}
+.logo .walrus{
+  font-family:'Alex Brush', cursive;
+  font-size: clamp(28px, 4vw, 42px);
+  color:#fff;
+  text-shadow:0 2px 6px rgba(0,0,0,.25);
+  line-height:.95; font-weight:700; letter-spacing:.4px; margin:0;
+}
+.logo .grandcafe{
+  font-family:Georgia, serif;
+  font-size: clamp(10px, 1.2vw, 13px);
+  letter-spacing:.22em;
+  color:#e9d7bf;
+  text-transform:uppercase;
+  display:block; margin-top:2px; font-weight:900;
+}
 
-/* Nav-knoppen */
+/* Nav list */
+.nav-list{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0;
+  padding:0;
+  flex:1;
+}
+.nav-list .push-right{
+  margin-left:auto;
+  display:flex;
+  gap:8px;
+}
+
+/* Nav-knoppen — overal zelfde stijl, géén gele varianten meer */
 .nav-btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:8px 12px;
+  padding:9px 12px;
   background:transparent;
   color:#fff;
   border:1px solid transparent;
@@ -86,38 +109,12 @@ header{
   white-space:nowrap;
   transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
-.nav-btn:hover{
+.nav-btn:hover,
+.nav-btn.active{                           /* actief = zelfde als hover */
   background: rgba(255,255,255,.12);
   border-color: rgba(255,255,255,.22);
   transform: translateY(-1px);
-}
-.btn-solliciteren, .btn-reserveren{ background: var(--brand-gold); color:#fff; border-color:transparent; }
-.btn-solliciteren:hover, .btn-reserveren:hover{ background: var(--brand-gold-dark); box-shadow:0 6px 16px rgba(0,0,0,.18); transform: translateY(-1px); }
-
-/* Logo plain */
-.logo{
-  grid-column:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background:transparent; width:auto; height:auto; padding:0; border-radius:0; box-shadow:none;
-  text-decoration:none; text-align:center;
-}
-.logo .walrus{
-  font-family:'Alex Brush', cursive;
-  font-size: clamp(28px, 4vw, 48px);
-  color:#fff;
-  text-shadow:0 2px 6px rgba(0,0,0,.25);
-  line-height:.95; font-weight:700; letter-spacing:.5px; margin:0;
-}
-.logo .grandcafe{
-  font-family:Georgia, serif;
-  font-size: clamp(10px, 1.4vw, 14px);
-  letter-spacing:.22em;
-  color:#e9d7bf;
-  text-transform:uppercase;
-  display:block; margin-top:4px; font-weight:900;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
 }
 
 /* ===============================
@@ -127,7 +124,10 @@ header{
 .slider-wrap>input[type="radio"]{ position:absolute; opacity:0; pointer-events:none; }
 
 .slider{
-  position:relative; width:100%; height:100vh;
+  position:relative;
+  width:100%;
+  height:70vh;                 /* korter, zodat er content zichtbaar is */
+  min-height:420px;
   margin:0; padding:0; border-radius:0; overflow:hidden;
 }
 .slides{
@@ -135,31 +135,33 @@ header{
   margin:0; padding:0; width:100%; height:100%;
 }
 .slide{ position:absolute; inset:0; opacity:0; transition:opacity .55s ease; }
+.slide::after{                                  /* zachte gradient over foto */
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.15));
+}
 .slide img{ width:100%; height:100%; object-fit:cover; display:block; }
 
 .caption{
   position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
   text-align:center; color:#fff; text-shadow:0 3px 12px rgba(0,0,0,.7);
-  padding:0 16px;
+  padding:0 16px; z-index:1;
 }
-
 .caption h3{
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: clamp(42px, 6.5vw, 72px);
-  margin: 0 0 14px;
+  font-size: clamp(38px, 6vw, 70px);
+  margin: 0 0 12px;
   color: #fff;
-  text-shadow: 0 4px 14px rgba(0,0,0,.75);
 }
 .caption p{
   font-weight: 525;
-  font-size: clamp(20px, 3vw, 28px);
+  font-size: clamp(18px, 2.6vw, 26px);
   margin: 0;
   color: #fff;
-  text-shadow: 0 3px 12px rgba(0,0,0,.7);
 }
 
-/* SHOW the active slide (now includes slide-4) */
+/* SHOW the active slide */
 #slide-1:checked ~ .slider .slide-1,
 #slide-2:checked ~ .slider .slide-2,
 #slide-3:checked ~ .slider .slide-3,
@@ -176,7 +178,7 @@ header{
 .control:hover{ background:rgba(0,0,0,.6); transform:translateY(-50%) scale(1.06); }
 .prev{ left:12px; } .next{ right:12px; }
 
-/* SHOW the proper controls for the active slide (now includes ctrl-4) */
+/* SHOW the proper controls for the active slide */
 #slide-1:checked ~ .slider .ctrl-1,
 #slide-2:checked ~ .slider .ctrl-2,
 #slide-3:checked ~ .slider .ctrl-3,
@@ -194,7 +196,91 @@ header{
 #slide-4:checked ~ .slider .d4{ background:#fff; transform:scale(1.2); }
 
 /* ===============================
-   Infobar
+   Sections
+   =============================== */
+.section{
+  background:#fff;
+  border-radius:16px;
+  padding:28px 22px;
+  margin: 24px 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+.intro .title-text{
+  font-family:'Playfair Display', serif;
+  font-size: clamp(26px, 3.6vw, 34px);
+  margin:0 0 8px;
+  color: var(--ink);
+}
+.lead{
+  font-size: 18px;
+  margin:0;
+}
+.features{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:16px;
+}
+.features .feature{
+  background:#fbfbfb;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:18px;
+}
+.features .feature h3{ margin: 0 0 6px; font-size: 20px; }
+.link-arrow{
+  display:inline-block;
+  margin-top:8px;
+  text-decoration:none;
+  font-weight:700;
+  color:#0b2140;
+  border-bottom:2px solid #0b2140;
+  padding-bottom:2px;
+}
+.link-arrow:hover{ opacity:.8; }
+
+.split{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:22px;
+  align-items:center;
+}
+.split .split-text h3{ margin:0 0 8px; font-size:22px; }
+.bullets{ margin:10px 0 16px 18px; }
+.bullets li{ margin:6px 0; }
+.btn-primary{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:12px;
+  text-decoration:none;
+  background:#0b2140;
+  color:#fff;
+  font-weight:700;
+}
+.btn-primary:hover{ opacity:.9; transform: translateY(-1px); }
+.split-media img{
+  width:100%; height:auto; border-radius:14px; display:block;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+/* ===== THEME: Walrus Cream ===== */
+.theme-walrus-cream{
+  background-color: #fbf5ea;
+  background-image:
+    radial-gradient(80% 50% at 50% -10%, #f5e7d9 0%, #fbf5ea 45%, #ffffff 80%),
+    radial-gradient(900px 500px at 50% 115%, rgba(194,156,30,0.06), rgba(255,255,255,0) 60%),
+    radial-gradient(rgba(11,33,64,0.035) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px;
+  background-position: center top, center bottom, 0 0;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+.theme-walrus-cream .section{
+  background:#ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+.theme-walrus-cream .title-text{ color: var(--ink); }
+
+/* ===============================
+   Infobar (ongewijzigd)
    =============================== */
 .infobar{
   position:relative;
@@ -212,7 +298,6 @@ header{
 .socials{ margin-top:8px; }
 .social-icon{ width:24px; height:24px; margin-right:6px; filter:invert(1); transition:transform .2s ease; }
 .social-icon:hover{ transform:scale(1.15); }
-
 .right-side{ text-align:center; margin-left:auto; padding-left:12px; }
 .infobar-right-text{ font-family:'Alex Brush', cursive; font-size:22px; margin:0 0 10px; }
 .city-images{ display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:0; }
@@ -222,39 +307,15 @@ header{
 .infobar-brand .walrus{ font-family:'Alex Brush', cursive; font-size:22px; color:#fff; line-height:1; display:block; }
 .infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
 
-/* ===== THEME: Walrus Cream ===== */
-.theme-walrus-cream{
-  background-color: #fbf5ea;
-  background-image:
-    radial-gradient(80% 50% at 50% -10%, #f5e7d9 0%, #fbf5ea 45%, #ffffff 80%),
-    radial-gradient(900px 500px at 50% 115%, rgba(194,156,30,0.06), rgba(255,255,255,0) 60%),
-    radial-gradient(rgba(11,33,64,0.035) 1px, transparent 1px);
-  background-size:
-    auto, auto, 44px 44px;
-  background-position:
-    center top, center bottom, 0 0;
-  background-repeat: no-repeat, no-repeat, repeat;
-}
-.theme-walrus-cream .apply-form,
-.theme-walrus-cream .section{
-  background:#ffffff;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-}
-.theme-walrus-cream .title-text{ color: var(--ink); }
-.theme-walrus-cream .title-line{ opacity:.9; filter:none; }
-
 /* ===============================
    Responsive
    =============================== */
-@media (max-width:960px){
-  .slides{ min-height:360px; }
-  .city-images img{ width:280px; }
+@media (max-width:1000px){
+  .features{ grid-template-columns: 1fr 1fr; }
+  .split{ grid-template-columns: 1fr; }
 }
 @media (max-width:780px){
-  .topnav{ grid-template-columns: 1fr; row-gap: 8px; }
-  .logo{ order: -1; justify-self: center; }
-  .nav-left, .nav-right{ justify-content: center; flex-wrap: wrap; }
-  .info-content{ flex-direction:column; gap:14px; align-items:flex-start; }
-  .right-side{ text-align:left; margin-left:0; padding-left:0; }
-  .city-images{ align-items:flex-start; }
+  .nav-list{ flex-wrap:wrap; }
+  .slider{ height:56vh; min-height:380px; }
+  .features{ grid-template-columns: 1fr; }
 }

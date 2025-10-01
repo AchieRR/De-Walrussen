@@ -2,22 +2,18 @@
    Variabelen
    =============================== */
 :root{
-  --header-h: clamp(48px, 8.2vw, 84px);
-
-  /* (oude logo-kaart variabelen gelaten voor compat, ongebruikt) */
-  --logo-bg: #f5e7d9;
-  --logo-w-start: 300px;
-  --logo-w-end:   360px;
-  --logo-shrink-range: 200px;
-  --logo-drop-max: 24px;
-
-  --logo-text-scale: 1;
-  --walrus-factor: 0.52;
-  --grand-factor:  0.22;
+  /* Matcht Contact.css exact */
+  --header-h: clamp(56px, 7vw, 86px);
 
   --brand-gold: #c29c1e;
   --brand-gold-dark: #b6911a;
   --ink: #0b2140;
+
+  /* Walrus rood voor in-page links/knoppen */
+  --walrus-red: #7a2d1a;
+
+  /* NAV breedte altijd */
+  --nav-max: 1300px;
 }
 
 /* ===============================
@@ -28,12 +24,8 @@ html, body{
   margin:0; padding:0; height:100%;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:#fff; color:#111; line-height:1.4;
-
-  /* geen horizontale scroll (zoals Bedankt.css) */
-  max-width:100%;
-  overflow-x:hidden;
+  max-width:100%; overflow-x:hidden;
 }
-/* Links / Focus */
 a{ color:inherit; }
 a:focus-visible,
 button:focus-visible,
@@ -44,70 +36,86 @@ textarea:focus-visible{
   outline-offset: 2px;
 }
 
-
-/* ruimte onder fixed header */
-.header-gap{ height: calc(var(--header-h) + 8px); }
-
-/* midden content */
+/* midden content — identiek gedrag als Contact.css */
 .page-content{
   max-width: 1500px;
   margin: 0 auto;
   padding: 24px 20px 60px;
-  min-height: calc(100vh - var(--header-h) + 320px);
-  overflow-x: clip; /* safeguard */
+  padding-top: calc(var(--header-h) + 12px); /* ruimte onder fixed header */
+  min-height: calc(100vh - var(--header-h));
+  overflow-x: clip;
 }
 
 /* ===============================
-   Header / Navbar (exact als Bedankt.css)
+   Header / Navbar (matcht Contact.css)
    =============================== */
 header{
   position:fixed; inset:0 0 auto 0; height:var(--header-h);
   background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   z-index:2000; display:flex; align-items:center; justify-content:center;
   padding:0 clamp(8px,3vw,24px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.534);
+  /* zelfde schaduw als Contact */
+  box-shadow:0 12px 25px rgba(0,0,0,.75);
 }
-.topnav{
-  width:100%; max-width:1500px; margin:0 auto;
-  display:grid; grid-template-columns:1fr auto 1fr; align-items:center; column-gap:32px;
-  height:100%;
-}
-.nav-left, .nav-right{ display:flex; align-items:center; gap:22px; }
-.nav-left{ justify-content:flex-end; }
-.nav-right{ justify-content:flex-start; }
 
-/* Logo plain */
+.topnav{
+  width:100%; max-width: var(--nav-max); margin:0 auto;
+  display:flex; align-items:center; gap:18px;
+}
+
+/* LOGO */
 .logo{
-  grid-column:2; display:flex; flex-direction:column; align-items:center; justify-content:center;
-  background:transparent; width:auto; height:auto; padding:0; border-radius:0; box-shadow:none;
-  text-decoration:none; text-align:center;
+  display:flex; flex-direction:column; text-decoration:none; margin-inline:auto;
 }
 .logo .walrus{
-  font-family:'Alex Brush', cursive; color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.25);
-  font-size: clamp(28px, 4vw, 48px); line-height:.95; font-weight:700; letter-spacing:.5px; margin:0;
+  font-family:'Alex Brush', cursive; color:#fff;
+  text-shadow:0 2px 6px rgba(0,0,0,.25);
+  /* gelijkgetrokken met Contact look */
+  font-size: clamp(28px, 4vw, 42px);
+  line-height:.95; font-weight:700; margin:0;
 }
 .logo .grandcafe{
-  font-family:Georgia, serif; color:#e9d7bf; letter-spacing:.22em; text-transform:uppercase;
-  font-weight:900; margin-top:4px; font-size: clamp(10px, 1.4vw, 14px);
+  font-family:Georgia, serif; font-size: clamp(10px, 1.2vw, 13px);
+  letter-spacing:.22em; color:#e9d7bf; text-transform:uppercase; font-weight:900; margin-top:2px;
 }
 
-/* Nav-knoppen */
+/* NAV containers */
+.nav-left, .nav-right{ display:flex; align-items:center; gap:10px; }
+.nav-left{ margin-right:12px; }
+.nav-right{ margin-left:12px; }
+
+/* ul.nav-list (nav.php) */
+.nav-list{
+  list-style:none; margin:0; padding:0;
+  display:flex; align-items:center; gap:8px;
+  flex:1;
+}
+.nav-list .push-right{ margin-left:auto; display:flex; gap:8px; }
+
+/* Buttons in de NAV – Playfair */
 .nav-btn{
   display:inline-flex; align-items:center; justify-content:center;
-  padding:8px 12px; background:transparent; color:#fff;
-  border:1px solid transparent; border-radius:10px; font-weight:700; text-decoration:none; white-space:nowrap;
+  padding:9px 12px; background:transparent; color:#fff; border:1px solid transparent;
+  border-radius:10px; text-decoration:none; white-space:nowrap;
+  font-family:'Playfair Display', serif; font-weight:800; letter-spacing:.01em;
   transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
-.nav-btn:hover{
+.nav-btn:hover,
+.nav-btn.active{
   background: rgba(255,255,255,.12);
   border-color: rgba(255,255,255,.22);
   transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
 }
 .btn-solliciteren, .btn-reserveren{ background: var(--brand-gold); color:#fff; border-color:transparent; }
-.btn-solliciteren:hover, .btn-reserveren:hover{ background: var(--brand-gold-dark); box-shadow:0 6px 16px rgba(0,0,0,.18); transform: translateY(-1px); }
+.btn-solliciteren:hover, .btn-reserveren:hover{
+  background: var(--brand-gold-dark);
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+  transform: translateY(-1px);
+}
 
 /* ===============================
-   Pagina-titel (exact als Bedankt.css)
+   Pagina-titel
    =============================== */
 .page-title{
   display:flex; align-items:center; justify-content:center;
@@ -126,11 +134,8 @@ header{
    Secties / kaartjes
    =============================== */
 .section{
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:12px;
-  padding:20px;
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  background:#fff; border:1px solid #eee; border-radius:12px;
+  padding:20px; box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
 .section + .section{ margin-top:18px; }
 
@@ -139,9 +144,7 @@ header{
   font-size: clamp(22px, 3.2vw, 34px);
   margin:0 0 8px; color:var(--ink); text-align:left;
 }
-.section .lead{
-  margin:0 0 18px; color:#333;
-}
+.section .lead{ margin:0 0 18px; color:#333; }
 
 /* grid */
 .arr-grid{
@@ -169,23 +172,61 @@ header{
 }
 .arr-card img{
   display:block; width:100%; height:auto;
-  aspect-ratio: 16 / 9; object-fit: cover;
+  aspect-ratio: 16 / 9; object-fit: cover; object-position: center;
 }
 .arr-card-content{ padding:14px 14px 16px; }
-.arr-card h3{ margin:0 0 6px; font-size:20px; color:var(--ink); }
+.arr-card h3{ margin:0 0 6px; font-size:20px; color:var(--ink); font-family:'Playfair Display', serif; }
 .arr-card .meta{ font-size:14px; color:#555; margin-bottom:10px; }
 .arr-card p{ margin:0 0 12px; color:#333; }
 
-.cta{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
-.btn{
-  appearance:none; border:0; cursor:pointer;
-  padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none;
-  background:#f6f6f6; color:#111;
-  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+/* Foto-crop fix: 3 kaarten iets lager zodat gezichten in beeld zijn */
+.arr-card img[alt="Live Cooking Buffet"],
+.arr-card img[alt="Bier Arrangement"],
+.arr-card img[alt="High Wine"]{
+  object-position: center 25%;
 }
-.btn:hover{ background:#eee; transform:translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
-.btn-primary{ background:var(--brand-gold); color:#fff; }
-.btn-primary:hover{ background:var(--brand-gold-dark); }
+
+/* CTA knoppen */
+.cta{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
+
+/* Basisknop (outline rood) */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  appearance:none; cursor:pointer; text-decoration:none;
+  padding:10px 18px;
+  border-radius:12px;
+  font-weight:800;
+  font-family:'Playfair Display', serif;
+  font-size:16px; line-height:1.2;
+
+  background:transparent;
+  color: var(--walrus-red);
+  border:2px solid var(--walrus-red);
+
+  transition:transform .18s ease, filter .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+
+/* Primaire knop (gevuld rood: Reserveren) */
+.btn-primary{
+  background: var(--walrus-red);
+  color:#fff;
+  border-color: var(--walrus-red);
+}
+
+/* Hovers */
+.btn:hover{
+  background: rgba(122,45,26,0.06);
+  transform: translateY(-1px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+.btn-primary:hover{
+  background: var(--walrus-red) !important;
+  color:#fff !important;
+  border-color: var(--walrus-red) !important;
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
 
 /* Divider */
 .section-divider{ height:1px; background:#eee; margin:36px auto; max-width:1200px; }
@@ -256,10 +297,6 @@ header{
   .page-content{ padding:20px 16px 56px; }
 }
 @media (max-width:780px){
-  .topnav{ grid-template-columns:1fr; row-gap:8px; }
-  .logo{ order:-1; justify-self:center; }
-  .nav-left, .nav-right{ justify-content:center; flex-wrap:wrap; }
-  .info-content{ flex-direction:column; gap:14px; align-items:flex-start; }
-  .right-side{ text-align:left; margin-left:0; padding-left:0; }
-  .city-images img{ width:280px; }
+  .topnav{ flex-wrap:wrap; }
+  .logo{ order:-1; }
 }

@@ -1,5 +1,6 @@
 <?php
-// (optioneel) PHP-logica later; nu puur markup.
+// DeWalrus/Arrangementen.php
+// (nu puur markup; later kun je hier PHP-logic toevoegen)
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -9,49 +10,31 @@
   <title>De Walrus — Arrangementen</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="Arrengements.css" />
 </head>
-<body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
-  <!-- Header / Navbar -->
-  <header>
-    <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
-      <div class="nav-left">
-        <a href="Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
-        <a href="Menukaart.php" class="nav-btn btn-menukaart">Menukaart</a>
-        <a href="Arrangements.php" class="nav-btn btn-arrangementen">Arrangementen</a>
-      </div>
-
-      <a href="index.php" class="logo" aria-label="De Walrus Homepage">
-        <span class="walrus">De Walrus</span>
-        <span class="grandcafe">— GRAND CAFÉ —</span>
-      </a>
-
-      <div class="nav-right">
-        <a href="Zakelijk.php" class="nav-btn btn-zakelijk">Zakelijk</a>
-        <a href="Contact.php" class="nav-btn btn-contact">Contact</a>
-        <a href="Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ruimte onder fixed header -->
-  <div class="header-gap" aria-hidden="true"></div>
+<body class="theme-walrus-cream">
+  <!-- NAV identiek aan homepage -->
+  <?php require __DIR__ . '/nav.php'; ?>
 
   <main class="page-content">
-    <!-- Titel met lijnen links/rechts -->
+    <!-- Titel (NIET AANRAKEN) -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
-      <h1 class="title-text">Arrangementen</h1>
+      <h1 class="title-text">ARRANGEMENTEN</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">
     </div>
 
     <!-- Intro + grid met kaarten -->
     <section class="section">
-      <h2>Onze arrangementen</h2>
-      <p class="lead">Kies wat past bij je gezelschap. Alle arrangementen zijn te boeken in Leeuwarden <a href="tel:0582137740">058 213 7740</a> en Sneek <a href="tel:0515438100">0515 438 100</a>.</p>
+      <h2>Onze Arrangementen</h2>
+      <p class="lead">
+        Kies wat past bij je gezelschap. Alle arrangementen zijn te boeken in Leeuwarden
+        <a href="tel:0582137740">058 213 7740</a> en Sneek
+        <a href="tel:0515438100">0515 438 100</a>.
+      </p>
 
       <div class="arr-grid">
         <!-- High Tea -->
@@ -59,11 +42,11 @@
           <img src="https://www.dewalrus.nl/mediadepot/392b5b14c0c/610/740/min/WalrusLeeuwardenLR11.jpg" alt="High Tea">
           <div class="arr-card-content">
             <h3>High Tea</h3>
-            <div class="meta">Leeuwarden/Sneek</div>
+            <div class="meta">Leeuwarden / Sneek</div>
             <p>Zoete en hartige lekkernijen met diverse theesoorten.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/hightea.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/hightea.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -73,11 +56,11 @@
           <img src="https://www.dewalrus.nl/mediadepot/1861375e626/610/740/min/WalrusLeeuwardenLR85.jpg" alt="Walking Diner Buffet">
           <div class="arr-card-content">
             <h3>Walking Diner Buffet</h3>
-            <div class="meta">Leeuwarden/Sneek</div>
+            <div class="meta">Leeuwarden / Sneek</div>
             <p>Diverse kleine gangen, ideaal voor groepen.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/walkingdiner.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/walkingdiner.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -91,21 +74,21 @@
             <p>Onze chefs bereiden jouw gerechten live aan station.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/livecooking.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/livecooking.php">Meer info</a>
             </div>
           </div>
         </article>
 
-        <!-- Bierproeverij -->
+        <!-- Bier Arrangement -->
         <article class="arr-card">
           <img src="https://www.dewalrus.nl/mediadepot/179a8514be2/610/740/min/kleinLucasKemperWalrusSneekLR-370-.jpg" alt="Bier Arrangement">
           <div class="arr-card-content">
             <h3>Bier Arrangement</h3>
-            <div class="meta">Leeuwarden/Sneek</div>
+            <div class="meta">Leeuwarden / Sneek</div>
             <p>Selectie ambachtelijke bieren met bijpassende hapjes.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/bier.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/bier.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -115,30 +98,30 @@
           <img src="https://www.dewalrus.nl/mediadepot/194a6a4e3b4/610/740/min/LucasKemperWalrusSneekLR-297.jpg" alt="High Wine">
           <div class="arr-card-content">
             <h3>High Wine</h3>
-            <div class="meta">Leeuwarden/Sneek</div>
+            <div class="meta">Leeuwarden / Sneek</div>
             <p>Wijnproeverij met bijpassende bites.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/highwine.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/highwine.php">Meer info</a>
             </div>
           </div>
         </article>
 
         <!-- Dinermenu's voor groepen -->
         <article class="arr-card">
-          <img src="https://www.dewalrus.nl/mediadepot/183782fa5e0/610/740/min/LucasKemperWalrusSneekLR-173.jpg" alt="Dinermenus voor groepen">
+          <img src="https://www.dewalrus.nl/mediadepot/183782fa5e0/610/740/min/LucasKemperWalrusSneekLR-173.jpg" alt="Dinermenu's voor groepen">
           <div class="arr-card-content">
             <h3>Dinermenu's voor groepen</h3>
-            <div class="meta">Leeuwarden/Sneek</div>
+            <div class="meta">Leeuwarden / Sneek</div>
             <p>Rustige ruimtes met techniek en catering-opties.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/dinermenu.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/dinermenu.php">Meer info</a>
             </div>
           </div>
         </article>
 
-        <!-- boot & borrel -->
+        <!-- Boot & Borrel -->
         <article class="arr-card">
           <img src="https://www.dewalrus.nl/mediadepot/4905b5653616/610/740/min/NHLStedenShootBig-13-1024x683.jpg" alt="Boot & Borrel">
           <div class="arr-card-content">
@@ -147,7 +130,7 @@
             <p>Rondvaart met hapjes en drankjes aan boord.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/bootborrel.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/bootborrel.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -157,16 +140,16 @@
           <img src="https://www.dewalrus.nl/mediadepot/3918629cddd/610/740/min/DEWALRUSfinal-selectie173.jpg" alt="Bioscoop Arrangement">
           <div class="arr-card-content">
             <h3>Bioscoop Arrangement</h3>
-            <div class="meta">Leeuwarden/Sneek</div>
+            <div class="meta">Leeuwarden / Sneek</div>
             <p>Film kijken met een borrelplank en drankjes.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/bioscoop.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/bioscoop.php">Meer info</a>
             </div>
           </div>
         </article>
 
-        <!-- Theater Sneek - Arrangement -->
+        <!-- Theater Sneek Arrangement -->
         <article class="arr-card">
           <img src="https://www.dewalrus.nl/mediadepot/48951c007943/610/740/min/theater-sneek-zaal4183119197.jpg" alt="Theater Sneek Arrangement">
           <div class="arr-card-content">
@@ -175,7 +158,7 @@
             <p>Diner en voorstelling in Theater Sneek.</p>
             <div class="cta">
               <a class="btn btn-primary" href="Reserveren.php">Reserveren</a>
-              <a class="btn" href="Arrangementen/theatersneek.php">Meer info</a>
+              <a class="btn btn-ghost" href="Arrangementen/theatersneek.php">Meer info</a>
             </div>
           </div>
         </article>
@@ -185,7 +168,7 @@
     <div class="section-divider" aria-hidden="true"></div>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (NIET AANRAKEN) -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
 
@@ -201,11 +184,11 @@
           <strong>Email:</strong> <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a>
         </p>
         <div class="socials">
-          <a href="https://www.facebook.com/DeWalrusLeeuwarden/?locale=nl_NL" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="Facebook">
+          <a href="https://www.facebook.com/DeWalrusLeeuwarden/?locale=nl_NL" target="_blank" rel="noopener" aria-label="Facebook Leeuwarden">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="">
           </a>
-          <a href="https://www.instagram.com/dewalrusleeuwarden/" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="Instagram">
+          <a href="https://www.instagram.com/dewalrusleeuwarden/" target="_blank" rel="noopener" aria-label="Instagram Leeuwarden">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="">
           </a>
         </div>
       </div>
@@ -213,7 +196,7 @@
       <div class="info-section">
         <h4>De Walrus Sneek</h4>
         <p>
-          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener">
+          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
             Leeuwenburg 11<br>8601 CG Sneek
           </a><br><br>
           Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
@@ -221,11 +204,11 @@
           <strong>Email:</strong> <a href="mailto:info@dewalrussneek.nl">info@dewalrussneek.nl</a>
         </p>
         <div class="socials">
-          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="Facebook">
+          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener" aria-label="Facebook Sneek">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="">
           </a>
-          <a href="https://www.instagram.com/dewalrussneek/" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="Instagram">
+          <a href="https://www.instagram.com/dewalrussneek/" target="_blank" rel="noopener" aria-label="Instagram Sneek">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="">
           </a>
         </div>
       </div>
