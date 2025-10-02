@@ -1,236 +1,118 @@
 /* ===============================
-  Variabelen
-  =============================== */
-:root {
-    --header-h: clamp(48px, 8.2vw, 84px);
+   Variabelen
+   =============================== */
+:root{
+  --header-h: clamp(56px, 7vw, 86px);
+  --ink: #0b2140;
 
-    /* oude logo-kaart variabelen (ongebruikt) */
-    --logo-bg: #f5e7d9;
-    --logo-w-start: 300px;
-    --logo-w-end: 360px;
-    --logo-shrink-range: 200px;
-    --logo-drop-max: 24px;
+  /* NAV breedte ALTIJD 1300px */
+  --nav-max: 1300px;
 
-    --logo-text-scale: 1;
-    --walrus-factor: 0.52;
-    --grand-factor: 0.22;
+  /* Focuskleur zoals Sollicitatie.css */
+  --focus: #7cb6ff;
 
-    --brand-gold: #c29c1e;
-    --brand-gold-dark: #b6911a;
-    --ink: #0b2140;
+  /* Bedankt-cta kleuren */
+  --brand-gold: #c29c1e;
+  --brand-gold-dark: #b6911a;
 }
 
-/* Reset basics */
-* {
-    box-sizing: border-box;
+/* ===============================
+   Basis
+   =============================== */
+*{ box-sizing:border-box; }
+html, body{
+  margin:0; padding:0; height:100%;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:#fff; color:#111; line-height:1.45;
+  max-width:100%; overflow-x:hidden;   /* geen horizontale scroll */
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    background: #fff;
-    color: #111;
-    line-height: 1.4;
-
-    /* kill horizontale scroll */
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Links */
-a {
-    color: inherit;
-}
-
+/* Links / Focus */
+a{ color:inherit; }
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #7cb6ff;
-    outline-offset: 2px;
+textarea:focus-visible{
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
 
-/* Ruimte onder fixed header */
-.header-gap {
-    height: calc(var(--header-h) + 8px);
-}
-
-/* Midden content */
-.page-content {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 24px 20px 60px;
-    min-height: calc(100vh - var(--header-h) + 320px);
-    overflow-x: clip;
+/* Content wrapper */
+.page-content{
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  padding-top: calc(var(--header-h) + 12px); /* zelfde ruimte als Sollicitatie */
+  min-height: calc(100vh - var(--header-h));
+  overflow-x: clip;
 }
 
 /* ===============================
-  Header / Navbar (exact Bedankt.css)
-  =============================== */
-header {
-    position: fixed;
-    inset: 0 0 auto 0;
-    height: var(--header-h);
-    background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 clamp(8px, 3vw, 24px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.534);
+   Header / Navbar (zoals Sollicitatie.css)
+   =============================== */
+header{
+  position:fixed; inset:0 0 auto 0; height:var(--header-h);
+  background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  z-index:2000; display:flex; align-items:center; padding:0 clamp(8px,3vw,24px);
+  box-shadow:0 12px 25px rgba(0,0,0,.75);
+}
+.topnav{ width:100%; max-width: var(--nav-max); margin:0 auto; display:flex; align-items:center; gap:18px; }
+.logo{ display:flex; flex-direction:column; text-decoration:none; }
+.logo .walrus{
+  font-family:'Alex Brush', cursive; font-size: clamp(28px, 4vw, 42px);
+  color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.25); line-height:.95; font-weight:700; margin:0;
+}
+.logo .grandcafe{
+  font-family:Georgia, serif; font-size: clamp(10px, 1.2vw, 13px);
+  letter-spacing:.22em; color:#e9d7bf; text-transform:uppercase; font-weight:900; margin-top:2px;
+}
+.nav-list{ list-style:none; display:flex; align-items:center; gap:8px; margin:0; padding:0; flex:1; }
+.nav-list .push-right{ margin-left:auto; display:flex; gap:8px; }
+
+/* Nav-knoppen – zelfde font/hover als Sollicitatie.css */
+.nav-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:9px 12px; background:transparent; color:#fff; border:1px solid transparent;
+  border-radius:10px; text-decoration:none; white-space:nowrap;
+  font-family:'Playfair Display', serif; font-weight:800; letter-spacing:.01em; text-transform:none;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.nav-btn:hover,
+.nav-btn.active{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
 }
 
-.topnav {
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    column-gap: 32px;
-    height: 100%;
+/* Groepen zoals gebruikt in HTML */
+.topnav .nav-left,
+.topnav .nav-right{
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
-
-.nav-left,
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-}
-
-.nav-left {
-    justify-content: flex-end;
-}
-
-.nav-right {
-    justify-content: flex-start;
-}
-
-/* Logo plain */
-.logo {
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    width: auto;
-    height: auto;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    text-decoration: none;
-    text-align: center;
-}
-
-.logo .walrus {
-    font-family: 'Alex Brush', cursive;
-    color: #fff;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, .25);
-    font-size: clamp(28px, 4vw, 48px);
-    line-height: .95;
-    font-weight: 700;
-    letter-spacing: .5px;
-    margin: 0;
-}
-
-.logo .grandcafe {
-    font-family: Georgia, serif;
-    color: #e9d7bf;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    font-weight: 900;
-    margin-top: 4px;
-    font-size: clamp(10px, 1.4vw, 14px);
-}
-
-/* Nav-knoppen */
-.nav-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;
-    background: transparent;
-    color: #fff;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
-}
-
-.nav-btn:hover {
-    background: rgba(255, 255, 255, .12);
-    border-color: rgba(255, 255, 255, .22);
-    transform: translateY(-1px);
-}
-
-.btn-solliciteren,
-.btn-reserveren {
-    background: var(--brand-gold);
-    color: #fff;
-    border-color: transparent;
-}
-
-.btn-solliciteren:hover,
-.btn-reserveren:hover {
-    background: var(--brand-gold-dark);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
-    transform: translateY(-1px);
-}
+.topnav .logo{ margin: 0 auto; }
 
 /* ===============================
-  Pagina-titel (exact Bedankt.css)
-  =============================== */
-.page-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(12px, 2.5vw, 28px);
-    margin: 4px 0 20px;
-
-    /* BELANGRIJK: niet laten afbreken zodat lijnen ruimte krijgen */
-    flex-wrap: nowrap;
+   Pagina-titel (zoals Sollicitatie.css)
+   =============================== */
+.page-title{
+  display:flex; align-items:baseline; justify-content:center;
+  gap: clamp(12px, 2.5vw, 28px);
+  margin: 4px 0 20px;
+  flex-wrap: nowrap;
 }
-
-.title-text {
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--ink);
-    text-transform: uppercase;
-    letter-spacing: .04em;
-    font-size: clamp(26px, 4.2vw, 44px);
-
-    /* houd titel op één regel zodat de lijnen lang blijven */
-    white-space: nowrap;
-    word-break: keep-all;
-    overflow-wrap: normal;
+.title-text{
+  margin:0; font-family:'Playfair Display', serif; font-weight:700;
+  color:var(--ink); text-transform:uppercase; letter-spacing:.04em;
+  font-size: clamp(26px, 4.2vw, 44px);
+  display: inline; white-space: nowrap;
 }
+.title-line{ height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9; display: inline; white-space: nowrap; }
+@media (max-width:600px){ .title-line{ display:none; } }
 
-.title-line {
-    display: block;
-    /* Laat de images de resterende ruimte vullen */
-    flex: 1 1 0;
-    min-width: 0;
-    width: 100%;
-
-    height: clamp(10px, 1.6vw, 16px);
-    object-fit: cover;
-    /* vul zonder lelijk squish; beetje croppen mag */
-    opacity: .9;
-}
-
-@media (max-width:600px) {
-    .title-line {
-        display: none;
-    }
-}
 
 /* ===============================
   Formulier

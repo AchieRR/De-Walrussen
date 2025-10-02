@@ -11,8 +11,10 @@
 <body class="theme-walrus-cream">
 <?php require dirname(__DIR__) . '/nav.php'; ?>
 
-  <div class="header-gap" aria-hidden="true"></div>
-
+<?php
+  $BASE = '/'; 
+  require dirname(__DIR__) . '/nav.php';
+?>
   <main class="page-content">
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="">

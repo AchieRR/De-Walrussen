@@ -110,26 +110,11 @@ if (strpos($telDisplay, '+31') === 0) $telDisplay = '+31 ' . substr($telDisplay,
   <link rel="stylesheet" href="Bedankt.css" />
 </head>
 <body class="theme-walrus-cream">
-  <header>
-    <nav class="topnav" role="navigation" aria-label="Hoofdmenu">
-      <div class="nav-left">
-        <a href="../Solliciteren.php" class="nav-btn btn-solliciteren">Solliciteren</a>
-        <a href="../Menukaart.php" class="nav-btn">Menukaart</a>
-        <a href="../Arrangements.php" class="nav-btn">Arrangementen</a>
-      </div>
+ <?php
+  $BASE = '/'; 
+  require dirname(__DIR__) . '/nav.php';
+?>
 
-      <a href="../index.php" class="logo" aria-label="De Walrus Homepage">
-        <span class="walrus">De Walrus</span>
-        <span class="grandcafe">— GRAND CAFÉ —</span>
-      </a>
-
-      <div class="nav-right">
-        <a href="../Zakelijk.php" class="nav-btn">Zakelijk</a>
-        <a href="../Contact.php" class="nav-btn">Contact</a>
-        <a href="../Reserveren.php" class="nav-btn btn-reserveren">Reserveren</a>
-      </div>
-    </nav>
-  </header>
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">

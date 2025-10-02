@@ -103,16 +103,20 @@ header{
   Pagina-titel (NIET AANRAKEN)
   =============================== */
 .page-title{
-  display:flex; align-items:center; justify-content:center;
+  display:flex; align-items:baseline; justify-content:center;
   gap: clamp(12px, 2.5vw, 28px);
   margin: 4px 0 20px;
+  flex-wrap: nowrap;
 }
 .title-text{
   margin:0; font-family:'Playfair Display', serif; font-weight:700;
   color:var(--ink); text-transform:uppercase; letter-spacing:.04em;
   font-size: clamp(26px, 4.2vw, 44px);
+  display: inline; white-space: nowrap;
 }
-.title-line{ display:block; height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9; }
+.title-line{ height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9; display: inline; white-space: nowrap; }
+
+
 @media (max-width:600px){ .title-line{ display:none; } }
 
 /* ===============================

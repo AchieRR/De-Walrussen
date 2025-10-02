@@ -73,7 +73,7 @@ header{
   font-family:Georgia, serif;
   font-size: clamp(10px, 1.2vw, 13px);
   letter-spacing:.22em;
-  color:#e9d7bf;
+  color:#d2ba52;
   text-transform:uppercase;
   display:block; margin-top:2px; font-weight:900;
 }

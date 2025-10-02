@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="Sollicitatie.css" />
 </head>
 <body class="theme-walrus-cream">
-<?php require dirname(__DIR__) . '/nav.php'; ?>
-
+<?php
+  $BASE = '/'; 
+  require dirname(__DIR__) . '/nav.php';
+?>
   <div class="header-gap" aria-hidden="true"></div>
 
   <main class="page-content">

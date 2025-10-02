@@ -11,7 +11,10 @@
 </head>
 <body class="theme-walrus-cream">
 
-<?php require dirname(__DIR__) . '/nav.php'; ?>
+<?php
+  $BASE = '/'; 
+  require dirname(__DIR__) . '/nav.php';
+?>
 
 <main class="page-content">
   <div class="page-title" aria-hidden="true">
