@@ -13,7 +13,12 @@
 </head>
 <body class="theme-walrus-cream"> <!-- foto-achtergrond ingeschakeld -->
   
-<?php require dirname(__DIR__) . '/nav.php'; ?>
+<?php
+  $BASE = '/'; 
+  require dirname(__DIR__) . '/nav.php';
+?>
+  <div class="header-gap" aria-hidden="true"></div>
+
 
   <div class="header-gap" aria-hidden="true"></div>
 

@@ -9,9 +9,6 @@
   --brand-gold-dark: #b6911a;
   --ink: #0b2140;
 
-  /* Walrus rood voor in-page links/knoppen */
-  --walrus-red: #7a2d1a;
-
   /* NAV breedte altijd */
   --nav-max: 1300px;
 }
@@ -189,43 +186,56 @@ header{
 /* CTA knoppen */
 .cta{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
 
-/* Basisknop (outline rood) */
+/* ===== Buttons (gold variant) ===== */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  appearance:none; cursor:pointer; text-decoration:none;
-  padding:10px 18px;
-  border-radius:12px;
-  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   font-family:'Playfair Display', serif;
-  font-size:16px; line-height:1.2;
-
+  font-weight:800;
+  line-height:1;
+  padding:12px 18px;
+  border-radius:12px;
+  border:2px solid var(--brand-gold);
   background:transparent;
-  color: var(--walrus-red);
-  border:2px solid var(--walrus-red);
-
-  transition:transform .18s ease, filter .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+  color:var(--brand-gold);
+  text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
 }
 
-/* Primaire knop (gevuld rood: Reserveren) */
-.btn-primary{
-  background: var(--walrus-red);
-  color:#fff;
-  border-color: var(--walrus-red);
-}
-
-/* Hovers */
-.btn:hover{
-  background: rgba(122,45,26,0.06);
+/* Outline hover */
+.btn:hover,
+.btn:focus-visible{
+  background: rgba(194,156,30,0.08);
+  color: var(--brand-gold-dark);
+  border-color: var(--brand-gold-dark);
   transform: translateY(-1px);
-  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  outline: none;
 }
-.btn-primary:hover{
-  background: var(--walrus-red) !important;
+
+/* Gevulde knop */
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited{
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible{
+  background: var(--brand-gold-dark);
+  border-color: var(--brand-gold-dark);
   color:#fff !important;
-  border-color: var(--walrus-red) !important;
-  filter: brightness(0.95);
   transform: translateY(-1px);
   box-shadow:0 8px 24px rgba(0,0,0,.12);
+  outline:none;
+}
+
+/* Disabled */
+.btn[disabled],
+.btn-primary[disabled]{
+  opacity:.55; pointer-events:none; transform:none; box-shadow:none;
 }
 
 /* Divider */
@@ -251,8 +261,8 @@ header{
 .info-section p{ font-size:14px; line-height:1.5; margin:0; }
 .info-section a{ color:#fff; text-decoration:underline; text-decoration-color:#fff; }
 .info-section a:hover{ opacity:.85; }
-.socials{ margin-top:8px; }
-.social-icon{ width:24px; height:24px; margin-right:6px; filter:invert(1); transition:transform .2s ease; }
+.socials{ margin-top:8px; display:flex; gap:12px; }
+.social-icon{ width:24px; height:24px; filter:invert(1); transition:transform .2s ease; }
 .social-icon:hover{ transform:scale(1.15); }
 
 .right-side{ text-align:center; margin-left:auto; padding-left:12px; }
