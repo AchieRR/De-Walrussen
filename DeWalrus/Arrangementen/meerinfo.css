@@ -231,6 +231,9 @@ label span[aria-hidden="true"] {
 /* ===============================
   Infobar
   =============================== */
+/* ===============================
+  Infobar
+  =============================== */
 .infobar {
     position: relative;
     background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
