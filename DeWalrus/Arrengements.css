@@ -163,6 +163,7 @@ header {
   transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 
+\55
 .nav-btn:hover,
 .nav-btn.active {
   background: rgba(255, 255, 255, .12);
