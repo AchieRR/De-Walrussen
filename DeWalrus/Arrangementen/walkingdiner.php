@@ -26,7 +26,7 @@
       <h1 class="title-text">WALKING DINNER                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
       <p class="title-description">Een culinaire reis door onze verschillende gangen en sferen.</p>
-      
+    
     </div>
   </main>
 

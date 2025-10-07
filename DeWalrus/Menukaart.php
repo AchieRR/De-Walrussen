@@ -5,7 +5,7 @@ require __DIR__ . '/db.php';
 function e($v){ return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
 function euro($x){ return '€ ' . number_format((float)$x, 2, ',', '.'); }
 
-/* Tabs bovenaan */
+/* Tabs bovenaan */ 
 $subTabs = ['Diner','Maaltijdsalades','Soepen','Lunch'];
 $currentSub = (isset($_GET['s']) && in_array($_GET['s'], $subTabs, true)) ? $_GET['s'] : 'Diner';
 
