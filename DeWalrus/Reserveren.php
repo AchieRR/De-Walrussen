@@ -1,10 +1,22 @@
 <?php
-// DeWalrus/Reserveren.php — Reserveringsformulier
+// DeWalrus/Reserveren.php — Reserveringsformulier (deep-link & lock locatie)
 session_start();
 if (empty($_SESSION['csrf'])) {
   $_SESSION['csrf'] = bin2hex(random_bytes(32));
 }
 $csrf = $_SESSION['csrf'];
+
+// Voorkeurslocatie via ?loc=... (whitelist + normalisatie)
+$allowedLocs = ['Leeuwarden','Sneek'];
+$prefLoc = null;
+if (isset($_GET['loc'])) {
+  $raw = trim((string)$_GET['loc']);
+  $norm = ucfirst(strtolower($raw)); // 'sneek' -> 'Sneek'
+  if (in_array($norm, $allowedLocs, true)) {
+    $prefLoc = $norm;
+  }
+}
+$lockLoc = ($prefLoc !== null);
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -24,7 +36,7 @@ $csrf = $_SESSION['csrf'];
 <?php require_once __DIR__ . '/nav.php'; ?>
 
 <main class="page-content">
-  <!-- Pagina titel (NIET AANRAKEN) -->
+  <!-- Titel -->
   <div class="page-title" aria-hidden="true">
     <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     <h1 class="title-text">Reserveren</h1>
@@ -91,11 +103,22 @@ $csrf = $_SESSION['csrf'];
       <div class="form-row">
         <div class="form-field">
           <label for="locatie">Voorkeurslocatie<span aria-hidden="true">*</span></label>
-          <select id="locatie" name="locatie" required>
-            <option value="" disabled selected>Kies een locatie</option>
-            <option value="Leeuwarden">De Walrus Leeuwarden</option>
-            <option value="Sneek">De Walrus Sneek</option>
-          </select>
+
+          <?php if ($lockLoc): ?>
+            <!-- Locked: disabled select voor UX, hidden field voor POST -->
+            <select id="locatie" name="locatie_disabled" disabled>
+              <option <?= $prefLoc==='Leeuwarden'?'selected':''; ?>>De Walrus Leeuwarden</option>
+              <option <?= $prefLoc==='Sneek'?'selected':''; ?>>De Walrus Sneek</option>
+            </select>
+            <input type="hidden" name="locatie" value="<?= htmlspecialchars($prefLoc, ENT_QUOTES, 'UTF-8') ?>">
+          <?php else: ?>
+            <!-- Vrij te kiezen -->
+            <select id="locatie" name="locatie" required>
+              <option value="" disabled selected>Kies een locatie</option>
+              <option value="Leeuwarden">De Walrus Leeuwarden</option>
+              <option value="Sneek">De Walrus Sneek</option>
+            </select>
+          <?php endif; ?>
         </div>
 
         <div class="form-field">
@@ -119,7 +142,7 @@ $csrf = $_SESSION['csrf'];
         </div>
       </div>
 
-      <!-- Datum | Aantal | Tijd -->
+      <!-- Datum & tijd -->
       <h3 class="form-subtitle">Datum & tijd</h3>
       <div class="form-row-3">
         <div class="form-field">
@@ -157,7 +180,7 @@ $csrf = $_SESSION['csrf'];
   <div class="section-divider" aria-hidden="true"></div>
 </main>
 
-<!-- INFOBAR (NIET AANRAKEN) -->
+<!-- INFOBAR (ongewijzigd) -->
 <footer class="infobar">
   <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
   <div class="info-content">

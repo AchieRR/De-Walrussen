@@ -1,29 +1,26 @@
-<?php
-// index.php
-// NAV en INFOBAR blijven ongemoeid.
-?>
+<?php // index.php — NAV gelijk aan Menukaart; slider zonder JS; Reserveer-knoppen met ?loc=... ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>De Walrus</title>
+
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Raleway:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="Homepage.css" />
+
   <meta name="description" content="Grand-Café De Walrus in Leeuwarden & Sneek. Lunch, borrel, diner, arrangementen en groepen. Dagelijks open van 10:00–01:00 uur."/>
 </head>
-
 <body class="theme-walrus-cream">
 
-  <!-- ============== HEADER / NAV (ONGEWIJZIGD) ============== -->
+  <!-- HEADER / NAV (ongewijzigd via nav.php) -->
   <?php require_once __DIR__ . '/nav.php'; ?>
 
-  <!-- ============== CONTENT ============== -->
   <main class="page-content">
-
-    <!-- 1) WELKOM BOVENIN -->
+    <!-- Welkom -->
     <section class="section intro">
       <h2 class="title-text">Welkom bij De Walrus</h2>
       <p class="lead">
@@ -37,7 +34,7 @@
       </div>
     </section>
 
-    <!-- SLIDER (2 slides, autoplay 5s, clickable) -->
+    <!-- Slider (2 slides, CSS-only) -->
     <section class="slider-wrap" id="galerij" aria-label="Fotogalerij">
       <!-- Radios (state) -->
       <input type="radio" name="slides" id="slide-1" checked>
@@ -66,20 +63,20 @@
           </li>
         </ul>
 
-        <!-- Controls -->
-        <!-- Voor slide-1 -->
-        <label for="slide-2" class="control prev ctrl-1" aria-label="Vorige dia">
+        <!-- Controls — twee pijlen per actieve slide -->
+        <!-- Als slide-1 actief is -->
+        <label for="slide-2" class="control prev ctrl-1-prev" aria-label="Vorige dia">
           <img src="https://img.icons8.com/ios-filled/96/ffffff/chevron-left.png" alt="">
         </label>
-        <label for="slide-2" class="control next ctrl-1" aria-label="Volgende dia">
+        <label for="slide-2" class="control next ctrl-1-next" aria-label="Volgende dia">
           <img src="https://img.icons8.com/ios-filled/96/ffffff/chevron-right.png" alt="">
         </label>
 
-        <!-- Voor slide-2 -->
-        <label for="slide-1" class="control prev ctrl-2" aria-label="Vorige dia">
+        <!-- Als slide-2 actief is -->
+        <label for="slide-1" class="control prev ctrl-2-prev" aria-label="Vorige dia">
           <img src="https://img.icons8.com/ios-filled/96/ffffff/chevron-left.png" alt="">
         </label>
-        <label for="slide-1" class="control next ctrl-2" aria-label="Volgende dia">
+        <label for="slide-1" class="control next ctrl-2-next" aria-label="Volgende dia">
           <img src="https://img.icons8.com/ios-filled/96/ffffff/chevron-right.png" alt="">
         </label>
 
@@ -90,7 +87,7 @@
       </div>
     </section>
 
-    <!-- 2) MENUKAART / ARRANGEMENTEN / ZAKELIJK -->
+    <!-- Menukaart / Arrangementen / Zakelijk -->
     <section class="section features">
       <div class="feature">
         <h3>Menukaart</h3>
@@ -109,7 +106,7 @@
       </div>
     </section>
 
-    <!-- 3) KIES JE LOCATIE -->
+    <!-- Kies je locatie -->
     <section class="section locations" id="locaties" aria-labelledby="locaties-title">
       <h3 id="locaties-title" class="section-title">Kies je locatie</h3>
       <div class="location-grid">
@@ -124,7 +121,7 @@
               <strong>E-mail:</strong> <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a>
             </p>
             <div class="loc-actions">
-              <a class="btn-primary" href="Reserveren.php">Reserveer</a>
+              <a class="btn-primary" href="Reserveren.php?loc=Leeuwarden">Reserveer</a>
               <a class="btn" href="https://maps.app.goo.gl/et95Syd9dZWNj1GJ8" target="_blank" rel="noopener">Route</a>
             </div>
           </div>
@@ -141,7 +138,7 @@
               <strong>E-mail:</strong> <a href="mailto:info@dewalrussneek.nl">info@dewalrussneek.nl</a>
             </p>
             <div class="loc-actions">
-              <a class="btn-primary" href="Reserveren.php">Reserveer</a>
+              <a class="btn-primary" href="Reserveren.php?loc=Sneek">Reserveer</a>
               <a class="btn" href="https://maps.app.goo.gl/i8CJM3hCyei7eCMG7" target="_blank" rel="noopener">Route</a>
             </div>
           </div>
@@ -150,7 +147,7 @@
       <p class="small subtle">Privéruimtes: Leeuwarden tot ±50 personen, Sneek tot ±100 personen.</p>
     </section>
 
-    <!-- 4) ARRANGEMENTEN — 9 tegels -->
+    <!-- Arrangementen -->
     <section class="section gallery" aria-labelledby="gal-title">
       <h3 id="gal-title" class="section-title">Arrangementen</h3>
       <p class="lead" style="margin-bottom:12px;">Klik op een tegel voor details &amp; reserveren.</p>
@@ -160,34 +157,42 @@
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/179a8514be2/610/740/min/kleinLucasKemperWalrusSneekLR-370-.jpg" alt="Bier Arrangement">
           <div class="arr-caption"><h4>Bier Arrangement</h4><p>Leeuwarden / Sneek</p></div>
         </a>
+
         <a class="arr-tile" href="Arrangementen/bioscoop.php">
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/3918629cddd/610/740/min/DEWALRUSfinal-selectie173.jpg" alt="Bioscoop Arrangement">
           <div class="arr-caption"><h4>Bioscoop</h4><p>Leeuwarden / Sneek</p></div>
         </a>
+
         <a class="arr-tile" href="Arrangementen/bootborrel.php">
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/4905b5653616/610/740/min/NHLStedenShootBig-13-1024x683.jpg" alt="Boot & Borrel">
           <div class="arr-caption"><h4>Boot &amp; Borrel</h4><p>Leeuwarden</p></div>
         </a>
+
         <a class="arr-tile" href="Arrangementen/dinermenu.php">
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/183782fa5e0/610/740/min/LucasKemperWalrusSneekLR-173.jpg" alt="Dinermenu">
           <div class="arr-caption"><h4>Dinermenu</h4><p>Leeuwarden / Sneek</p></div>
         </a>
+
         <a class="arr-tile" href="Arrangementen/hightea.php">
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/392b5b14c0c/610/740/min/WalrusLeeuwardenLR11.jpg" alt="High Tea">
           <div class="arr-caption"><h4>High Tea</h4><p>Leeuwarden / Sneek</p></div>
         </a>
+
         <a class="arr-tile" href="Arrangementen/highwine.php">
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/194a6a4e3b4/610/740/min/LucasKemperWalrusSneekLR-297.jpg" alt="High Wine">
           <div class="arr-caption"><h4>High Wine</h4><p>Leeuwarden / Sneek</p></div>
         </a>
+
         <a class="arr-tile" href="Arrangementen/livecooking.php">
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/184ff8d30f0/610/740/min/LucasKemperWalrusSneekLR-172.jpg" alt="Live Cooking Buffet">
           <div class="arr-caption"><h4>Live Cooking</h4><p>Leeuwarden / Sneek</p></div>
         </a>
+
         <a class="arr-tile" href="Arrangementen/theatersneek.php">
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/48951c007943/610/740/min/theater-sneek-zaal4183119197.jpg" alt="Theater Sneek arrangement">
           <div class="arr-caption"><h4>Theater Sneek</h4><p>Sneek</p></div>
         </a>
+
         <a class="arr-tile" href="Arrangementen/walkingdiner.php">
           <img loading="lazy" src="https://www.dewalrus.nl/mediadepot/1861375e626/610/740/min/WalrusLeeuwardenLR85.jpg" alt="Walking Diner">
           <div class="arr-caption"><h4>Walking Diner</h4><p>Leeuwarden / Sneek</p></div>
@@ -200,13 +205,11 @@
       </div>
     </section>
 
-    <!-- 5) OVER DE WALRUS -->
+    <!-- Over de Walrus -->
     <section class="section split">
       <div class="split-text">
         <h3>Over De Walrus</h3>
-        <p>
-          Laagdrempelig grand-café met warme sfeer. Overdag afspreken, ’s avonds dineren of borrelen.
-        </p>
+        <p>Laagdrempelig grand-café met warme sfeer. Overdag afspreken, ’s avonds dineren of borrelen.</p>
         <ul class="bullets">
           <li>Dagelijks open, keuken de hele dag in bedrijf</li>
           <li>Privéruimtes: Leeuwarden tot ±50 p., Sneek tot ±100 p.</li>
@@ -220,22 +223,7 @@
     </section>
   </main>
 
-  <!-- ============== INFOBAR (ONGEWIJZIGD) ============== -->
+  <!-- INFOBAR -->
   <?php include __DIR__ . '/_footer.inc.html'; ?>
-
-  <!-- Autoplay 5s + reset bij handmatige bediening -->
-  <script>
-  (function() {
-    const ids = ['slide-1','slide-2'];
-    let i = 0, timer = null;
-    const set = n => { document.getElementById(ids[n]).checked = true; i = n; };
-    const next = () => set((i + 1) % ids.length);
-    const start = () => { if (timer) clearInterval(timer); timer = setInterval(next, 5000); };
-    start();
-    document.querySelectorAll('.control,.dot').forEach(el => {
-      el.addEventListener('click', start);
-    });
-  })();
-  </script>
 </body>
 </html>

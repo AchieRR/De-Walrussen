@@ -1,26 +1,20 @@
-/* ===============================
-   Variabelen
-   =============================== */
+/* =============================== Variabelen =============================== */
 :root{
   --header-h: clamp(56px, 7vw, 86px);
   --ink: #0b2140;
   --nav-max: 1300px;
-
   --brand-gold: #b6911a;
   --brand-gold-dark: #b6911a;
 }
 
-/* ===============================
-   Reset & basis
-   =============================== */
+/* Reset & basis */
 *{ box-sizing:border-box; }
-
 html, body{
   margin:0; padding:0; height:100%;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:#fff; color:#111; line-height:1.45; max-width:100%; overflow-x:hidden;
+  background:#fff; color:#111; line-height:1.45;
+  max-width:100%; overflow-x:hidden;
 }
-
 a{ color:inherit; }
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
   outline:3px solid #7cb6ff; outline-offset:2px;
@@ -28,7 +22,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* Midden content */
 .page-content{
-  max-width: 1500px;  /* vaste breedte zoals gevraagd */
+  max-width: 1500px;
   margin: 0 auto;
   padding: 24px 20px 64px;
   padding-top: calc(var(--header-h) + 12px);
@@ -36,57 +30,46 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   overflow-x: clip;
 }
 
-/* ===============================
-   Header / Navbar (ONGEWIJZIGD)
-   =============================== */
+/* Header / NAV — identiek aan Menukaart */
 header{
   position:fixed; inset:0 0 auto 0; height:var(--header-h);
   background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
-  z-index:2000; display:flex; align-items:center; justify-content:center;
-  padding:0 clamp(8px,3vw,24px); box-shadow: 0 12px 25px rgba(0,0,0,.75);
+  z-index:2000; display:flex; align-items:center;
+  padding:0 clamp(10px,3vw,22px);
+  box-shadow:0 12px 25px rgba(0,0,0,.75);
 }
 .topnav{ width:100%; max-width: var(--nav-max); margin:0 auto; display:flex; align-items:center; gap:18px; }
 .logo{ display:flex; flex-direction:column; text-decoration:none; margin-inline:auto; }
-.logo .walrus{
-  font-family:'Alex Brush', cursive; color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.25);
-  font-size: clamp(28px, 4vw, 42px); line-height:.95; font-weight:700; margin:0;
-}
-.logo .grandcafe{
-  font-family:Georgia, serif; font-size: clamp(10px, 1.2vw, 13px); letter-spacing:.22em; color:#e9d7bf; text-transform:uppercase; font-weight:900; margin-top:2px;
-}
-
-/* ul.nav-list */
+.logo .walrus{ font-family:'Alex Brush', cursive; color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.25); font-size: clamp(28px, 4vw, 42px); line-height:.95; font-weight:700; margin:0; }
+.logo .grandcafe{ font-family:Georgia, serif; font-size: clamp(10px, 1.2vw, 13px); letter-spacing:.22em; color:#e9d7bf; text-transform:uppercase; font-weight:900; margin-top:2px; }
 .nav-list{ list-style:none; display:flex; align-items:center; gap:8px; flex:1; margin:0; padding:0; }
 .nav-list .push-right{ margin-left:auto; display:flex; gap:8px; }
-
-/* Nav buttons NIET aanpassen qua look */
 .nav-btn{
-  display:inline-flex; align-items:center; justify-content:center; padding:9px 12px; background:transparent; color:#fff;
-  border:1px solid transparent; border-radius:10px; text-decoration:none; white-space:nowrap;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:9px 12px; background:transparent; color:#fff;
+  border:1px solid transparent; border-radius:10px;
+  font-family:'Playfair Display', serif; font-weight:800; letter-spacing:.01em;
+  text-transform:none; text-decoration:none; white-space:nowrap;
   transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 .nav-btn:hover, .nav-btn.active{
-  background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.22);
-  transform: translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.18);
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
 }
 
-/* ===============================
-   Sections & headings
-   =============================== */
+/* Sections & headings */
 .section{
   background:#fff; border-radius:16px; padding:28px 22px; margin: 24px 0;
   box-shadow: 0 8px 24px rgba(0,0,0,.06);
 }
-.page-content h1, .page-content h2, .page-content h3, .page-content h4{
-  font-family:'Playfair Display', serif; color: var(--ink);
-}
+.page-content h1, .page-content h2, .page-content h3, .page-content h4{ font-family:'Playfair Display', serif; color: var(--ink); }
 .intro .title-text{ font-family:'Playfair Display', serif; font-weight:800; font-size: clamp(28px, 3.8vw, 38px); margin:0 0 8px; }
 .lead{ font-size: 18px; margin:0; }
 .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
 
-/* ===============================
-   Buttons — Arrangements.css look
-   =============================== */
+/* Buttons */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   font-family:'Playfair Display', serif; font-weight:800; line-height:1;
@@ -95,9 +78,8 @@ header{
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
 }
 .btn:hover, .btn:focus-visible{
-  background: rgba(194,156,30,0.08); color: var(--brand-gold-dark);
-  border-color: var(--brand-gold-dark); transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.08); outline:none;
+  background: rgba(194,156,30,0.08); color: var(--brand-gold-dark); border-color: var(--brand-gold-dark);
+  transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.08); outline:none;
 }
 .btn-primary, .btn-primary:link, .btn-primary:visited{
   display:inline-flex; align-items:center; justify-content:center;
@@ -108,37 +90,17 @@ header{
 }
 .btn-primary:hover, .btn-primary:focus-visible{
   background: var(--brand-gold-dark); border-color: var(--brand-gold-dark);
-  color:#fff !important; transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.12); outline:none;
+  color:#fff !important; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.12); outline:none;
 }
 
-/* Tekstlinks met “lijn schuift in” */
-.link-arrow{
-  position:relative;
-  display:inline-block;
-  font-family:'Playfair Display', serif;
-  font-weight:800;
-  color:var(--brand-gold);
-  text-decoration:none;
-  padding-bottom:2px;
-}
-.link-arrow::after{
-  content:"";
-  position:absolute; left:0; bottom:-2px;
-  width:0; height:2px;
-  background:var(--brand-gold);
-  transition: width .22s ease;
-}
+/* Link underline anim */
+.link-arrow{ position:relative; display:inline-block; font-family:'Playfair Display', serif; font-weight:800; color:var(--brand-gold); text-decoration:none; padding-bottom:2px; }
+.link-arrow::after{ content:""; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand-gold); transition: width .22s ease; }
 .link-arrow:hover::after{ width:100%; }
 
-/* ===============================
-   SLIDER (2 slides)
-   =============================== */
-.slider-wrap{
-  max-width: 1500px; margin: 12px auto 24px; padding: 0 8px;
-}
+/* Slider (CSS-only) */
+.slider-wrap{ max-width: 1500px; margin: 12px auto 24px; padding: 0 8px; }
 .slider-wrap>input[type="radio"]{ position:absolute; opacity:0; pointer-events:none; }
-
 .slider{
   position:relative; width:100%; height:64vh; min-height:420px; margin:0 auto;
   border-radius:22px; overflow:hidden; box-shadow: 0 18px 46px rgba(0,0,0,.18); background:#111;
@@ -147,22 +109,16 @@ header{
 .slide{ position:absolute; inset:0; opacity:0; transition:opacity .6s ease; }
 .slide::after{ content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.18)); }
 .slide img{ width:100%; height:100%; object-fit:cover; display:block; animation: kb-zoom 16s ease-in-out infinite; }
-
-/* Klikbare overlay */
-.slide .slide-link{
-  position:absolute; inset:0; z-index:1; display:block;
-}
+.slide .slide-link{ position:absolute; inset:0; z-index:1; display:block; }
 .caption{
   position:absolute; left:50%; bottom:20px; transform:translateX(-50%);
-  text-align:center; color:#fff; text-shadow:0 3px 12px rgba(0,0,0,.7);
-  padding:0 24px; z-index:2; max-width:min(90%, 980px);
+  text-align:center; color:#fff; text-shadow:0 3px 12px rgba(0,0,0,.7); padding:0 24px; z-index:2; max-width:min(90%, 980px);
 }
 .caption h3{ font-family:'Playfair Display', serif; font-weight:800; font-size: clamp(34px, 5.6vw, 64px); margin:0 0 8px; color:#fff; }
 .caption p{ font-weight:600; font-size: clamp(16px, 2.2vw, 24px); margin:0; color:#fff; }
-
 @keyframes kb-zoom{ 0%{ transform: scale(1.02);} 50%{ transform: scale(1.08);} 100%{ transform: scale(1.02);} }
 
-/* SHOW active slide */
+/* Actieve slide tonen */
 #slide-1:checked ~ .slider .slide-1,
 #slide-2:checked ~ .slider .slide-2{ opacity:1; }
 
@@ -176,9 +132,14 @@ header{
 }
 .control img{ width:36px; height:36px; display:block; }
 .control:hover{ background:rgba(0,0,0,.65); transform:translateY(-50%) scale(1.06); }
-.prev{ left:18px; } .next{ right:18px; }
-#slide-1:checked ~ .slider .ctrl-1,
-#slide-2:checked ~ .slider .ctrl-2{ display:flex; }
+.prev{ left:18px; }
+.next{ right:18px; }
+
+/* Toon twee pijlen per actieve slide */
+#slide-1:checked ~ .slider .ctrl-1-prev,
+#slide-1:checked ~ .slider .ctrl-1-next{ display:flex; }
+#slide-2:checked ~ .slider .ctrl-2-prev,
+#slide-2:checked ~ .slider .ctrl-2-next{ display:flex; }
 
 /* Dots */
 .dots{ position:absolute; left:0; right:0; bottom:12px; display:flex; justify-content:center; gap:10px; z-index:3; }
@@ -186,23 +147,16 @@ header{
 #slide-1:checked ~ .slider .d1,
 #slide-2:checked ~ .slider .d2{ background:#fff; transform:scale(1.22); }
 
-/* ===============================
-   Features
-   =============================== */
+/* Features */
 .features{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; }
 .features .feature{ background:#fbfbfb; border:1px solid #eee; border-radius:14px; padding:18px; }
 .features .feature h3{ margin: 0 0 6px; font-size: 20px; }
 
-/* ===============================
-   Locaties
-   =============================== */
+/* Locaties */
 .section-title{ font-size: clamp(20px, 2.6vw, 24px); margin:0 0 14px; }
 .locations .small.subtle{ color:#666; margin-top:12px; font-size:13px; }
 .location-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.location-card{
-  display:grid; grid-template-rows:auto 1fr; background:#fff; border:1px solid #eee; border-radius:14px; overflow:hidden;
-  box-shadow:0 10px 24px rgba(0,0,0,.06);
-}
+.location-card{ display:grid; grid-template-rows:auto 1fr; background:#fff; border:1px solid #eee; border-radius:14px; overflow:hidden; box-shadow:0 10px 24px rgba(0,0,0,.06); }
 .location-card img{ width:100%; height:220px; object-fit:cover; display:block; }
 .loc-body{ padding:16px; }
 .loc-body h4{ margin:0 0 6px; font-size:20px; font-family:'Playfair Display', serif; }
@@ -210,51 +164,31 @@ header{
 .loc-meta a{ color:var(--brand-gold); text-decoration:underline; text-decoration-color:var(--brand-gold); }
 .loc-actions{ display:flex; gap:8px; margin-top:12px; }
 
-/* ===============================
-   Arrangement-tegels
-   =============================== */
+/* Arrangementen */
 .arr-tiles-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
-.arr-tile{
-  position:relative; display:block; overflow:hidden; border-radius:12px; border:1px solid #eee;
-  box-shadow:0 6px 18px rgba(0,0,0,.06); text-decoration:none;
-}
-/* force linkkleur wit, ook visited */
+.arr-tile{ position:relative; display:block; overflow:hidden; border-radius:12px; border:1px solid #eee; box-shadow:0 6px 18px rgba(0,0,0,.06); text-decoration:none; }
 .arr-tile, .arr-tile:link, .arr-tile:visited{ color:#fff; }
-
 .arr-tile img{ width:100%; height:100%; display:block; object-fit:cover; aspect-ratio: 16 / 10; transition: transform .25s ease; }
-
-/* >>> Crop fix – gezichten beter in beeld */
 .arr-tiles-grid img[alt="Bier Arrangement"],
 .arr-tiles-grid img[alt="High Wine"],
 .arr-tiles-grid img[alt="Live Cooking Buffet"]{ object-position: center 30%; }
-
-.arr-tile::after{
-  content:""; position:absolute; inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,.60), rgba(0,0,0,.15));
-  opacity:.95; transition: opacity .2s ease;
-}
-.arr-caption{
-  position:absolute; left:0; right:0; bottom:0; z-index:1;
-  padding:12px 14px; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.65);
-}
+.arr-tile::after{ content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.60), rgba(0,0,0,.15)); opacity:.95; transition: opacity .2s ease; }
+.arr-caption{ position:absolute; left:0; right:0; bottom:0; z-index:1; padding:12px 14px; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.65); }
 .arr-caption h4{ margin:0 0 2px; font-size:18px; font-family:'Playfair Display', serif; color:#fff; }
 .arr-caption p{ margin:0; font-size:14px; opacity:.98; color:#fff; }
 .arr-tile:hover img{ transform:scale(1.04); }
 .arr-tile:hover::after{ opacity:1; }
-
 .gallery-cta{ margin-top:12px; display:flex; gap:8px; }
 
-/* ===============================
-   Split (Over de Walrus) — groter
-   =============================== */
+/* Split */
 .split{ display:grid; grid-template-columns: 1.2fr .8fr; gap:22px; align-items:center; }
-.split .split-text h3{ margin:0 0 10px; font-size: clamp(28px, 3.2vw, 36px); } /* groter */
+.split .split-text h3{ margin:0 0 10px; font-size: clamp(28px, 3.2vw, 36px); }
 .split .split-text p{ font-size: 18.5px; }
 .bullets{ margin:12px 0 18px 18px; }
 .bullets li{ margin:7px 0; font-size: 16.5px; }
 .split-media img{ width:100%; height:auto; border-radius:14px; display:block; box-shadow:0 8px 20px rgba(0,0,0,.12); }
 
-/* ===== THEME ===== */
+/* Theme */
 .theme-walrus-cream{
   background-color: #fbf5ea;
   background-image:
@@ -267,38 +201,8 @@ header{
 }
 .theme-walrus-cream .section{ background:#ffffff; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
 
-/* ===============================
-   Infobar (ONGEWIJZIGD)
-   =============================== */
-.infobar{
-  position:relative; background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
-  color:#fff; padding:12px 20px 18px; margin-top:0; box-shadow: 0 -12px 25px rgba(0,0,0,.75);
-}
-.infobar-top-text{ font-family:'Alex Brush', cursive; text-align:center; font-size:22px; margin-bottom:8px; }
-.info-content{ max-width:1300px; margin:0 auto; display:flex; justify-content:flex-start; align-items:center; gap:12px; }
-.info-section{ flex:0 0 auto; min-width:220px; }
-.info-section h4{ font-size:22px; margin-bottom:4px; }
-.info-section p{ font-size:14px; line-height:1.4; }
-.info-section a{ color:#fff; text-decoration:underline; text-decoration-color:#fff; }
-.info-section a:hover{ opacity:.85; }
-.socials{ margin-top:8px; }
-.social-icon{ width:24px; height:24px; margin-right:6px; filter:invert(1); transition:transform .2s ease; }
-.social-icon:hover{ transform:scale(1.15); }
-.right-side{ text-align:center; margin-left:auto; padding-left:12px; }
-.infobar-right-text{ font-family:'Alex Brush', cursive; font-size:22px; margin:0 0 10px; }
-.city-images{ display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:0; }
-.city-images img{ width:320px; max-width:100%; height:auto; border-radius:6px; box-shadow:0 3px 8px rgba(0,0,0,.3); transition:transform .25s ease; cursor:pointer; }
-.city-images img:hover{ transform:scale(1.04); }
-.infobar-brand{ text-align:center; margin-top:12px; }
-.infobar-brand .walrus{ font-family:'Alex Brush', cursive; font-size:22px; color:#fff; line-height:1; display:block; }
-.infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
-
-/* ===============================
-   Responsive
-   =============================== */
-@media (max-width:1200px){
-  .slider-wrap{ padding: 0 12px; }
-}
+/* Responsive */
+@media (max-width:1200px){ .slider-wrap{ padding: 0 12px; } }
 @media (max-width:1000px){
   .features{ grid-template-columns: 1fr 1fr; }
   .split{ grid-template-columns: 1fr; }
