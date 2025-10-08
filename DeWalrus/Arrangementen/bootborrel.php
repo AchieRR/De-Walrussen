@@ -26,6 +26,36 @@
       <h1 class="title-text">BOOT & BORREL</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
+
+
+    <!-- Introductie: foto naast tekst -->
+    <div class="foto-naast-tekst" style="margin-bottom:32px;">
+      <img src="https://www.dewalrus.nl/mediadepot/4905b5653616/610/740/min/NHLStedenShootBig-13-1024x683.jpg" alt="Boot & Borrel Leeuwarden" style="width:320px;max-width:100%;border-radius:12px;margin-right:28px;" />
+      <div>
+        <h2>Ontdek Leeuwarden vanaf het water</h2>
+        <p>Ontdek Leeuwarden mét een rijkgevulde elektrische sloep. Vanuit de Prinsentuin (op wandelafstand van De Walrus Leeuwarden) wandel je met een lunchbox, borrelbox of een van onze andere arrangementen naar een van de sloepen van Bootverhuur Bonkevaart.</p>
+        <p>Ideaal voor uitjes met werk, familie of vrienden! Een smakelijk tochtje op het water met de sloepen, die zijn uitgerust met een zwemplateau. Op een volgeladen accu kun je tot negen uur varen, en je hebt geen vaarbewijs nodig om te sturen.</p>
+      </div>
+    </div>
+
+    <h3>Diverse opties voor je boottocht</h3>
+    <p>Afhankelijk van hoe lang je wilt varen, bieden we verschillende pakketten aan. Zit je optie er niet bij? Dan stellen we er samen een vast. Heb je vragen? Neem dan contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
+
+    <h3>Korte tot middellange tochten</h3>
+    <p>Begin je tocht in de Prinsentuin in Leeuwarden, vaar door de prachtige binnenstad, leg de boot weer aan en eindig weer bij De Walrus. Wij verzorgen graag de hapjes en drankjes voor, tijdens of na je uitje!</p>
+    <ul>
+      <li>Borrel-arrangement</li>
+      <li>3-gangen arrangement</li>
+      <li>Verschillende boxen</li>
+    </ul>
+    <p><strong><a class="btn btn-primary" href="/Reserveren.php">Reserveren</a></strong></p>
+
+    <h3>Middellange tot lange tochten</h3>
+    <p>Maak er een dagje van! Start bij ons in De Walrus met een ontvangst van koffie, thee en gebak. Vervolg je route via het centrum van Leeuwarden naar natuurgebied Grutte Wielen en geniet van een lunch bij onze partner Groote Wielen. Hier kun je bijvoorbeeld ook een buitenactiviteit doen. Vervolgens vaar je weer terug naar de Prinsentuin en je dag wordt bij ons afgesloten met een diner of een gezellige borrel.</p>
+    <ul>
+      <li>Arrangement naar eigen wens samenstellen</li>
+      <li>Optioneel inclusief schipper</li>
+    </ul>
   </main>
 
   <div class="section-divider" aria-hidden="true"></div>

@@ -26,9 +26,30 @@
       <h1 class="title-text">HIGH TEA</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
+   
+     
+
+  <div class="foto-naast-tekst" style="margin-bottom:32px;display:flex;align-items:center;gap:36px;">
+    <img src="https://www.dewalrus.nl/mediadepot/392b5b14c0c/610/740/min/WalrusLeeuwardenLR11.jpg" alt="High Tea De Walrus" style="width:360px;max-width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.10);" />
+    <div>
+      <h2>High Tea bij De Walrus</h2>
+      <p>Geniet van een uitgebreide High Tea met zoete en hartige lekkernijen, geserveerd met diverse theesoorten. Ideaal voor een gezellige middag met vrienden, familie of collega's in Leeuwarden of Sneek.</p>
+      <p>Onze High Tea is perfect voor verjaardagen, babyshowers, vriendinnendagen of gewoon zomaar. Je zit comfortabel in ons sfeervolle grand café en wordt volledig in de watten gelegd.</p>
+    </div>
+  </div>
+
+  <h3>Wat kun je verwachten?</h3>
+  <ul>
+    <li>Assortiment van zoete en hartige hapjes</li>
+    <li>Onbeperkt thee</li>
+    <li>Gezellige sfeer en mooie presentatie</li>
+    <li>Mogelijkheid tot uitbreiden met prosecco of extra lekkers</li>
+  </ul>
+  <p>Heb je speciale wensen of dieetwensen? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
+
+  <p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
   </main>
 
-  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Infobar / Footer -->
   <footer class="infobar">

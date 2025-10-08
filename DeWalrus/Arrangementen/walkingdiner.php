@@ -28,10 +28,31 @@
       <p class="title-description">Een culinaire reis door onze verschillende gangen en sferen.</p>
     
     </div>
+    
+
+  <div class="foto-naast-tekst" style="margin-bottom:32px;display:flex;align-items:center;gap:36px;">
+    <img src="https://www.dewalrus.nl/mediadepot/1861375e626/610/740/min/WalrusLeeuwardenLR85.jpg" alt="Walking Dinner De Walrus" style="width:360px;max-width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.10);" />
+    <div>
+      <h2>Walking Dinner bij De Walrus</h2>
+      <p>Maak een culinaire reis langs verschillende kleine gerechtjes, geserveerd in meerdere gangen. Ideaal voor groepen, bedrijfsuitjes of familiefeesten in Leeuwarden of Sneek. Je geniet van afwisselende smaken en een ontspannen sfeer.</p>
+      <p>Het Walking Dinner is perfect voor wie van variatie houdt en graag samen proeft en ontdekt. Je zit comfortabel in ons sfeervolle grand café en wordt volledig in de watten gelegd.</p>
+    </div>
+  </div>
+
+  <h3>Wat kun je verwachten?</h3>
+  <ul>
+    <li>Meerdere gangen met kleine gerechtjes</li>
+    <li>Vlees, vis en vegetarische opties</li>
+    <li>Gezellige sfeer en mooie presentatie</li>
+    <li>Mogelijkheid tot uitbreiden met extra gangen of drankarrangement</li>
+  </ul>
+  <p>Heb je speciale wensen of dieetwensen? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
+
+  <p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
+
   </main>
 
-  <div class="section-divider" aria-hidden="true"></div>
-
+  
   <!-- Infobar / Footer -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>

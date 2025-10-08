@@ -25,9 +25,27 @@
       <h1 class="title-text">BIOSCOOP ARRANGEMENT</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
-  </main>
+    <div>
+    <div class="page-description" aria-hidden="true">
+       <div class="foto-naast-tekst" style="margin-bottom:32px;">
+      <img src="https://www.dewalrus.nl/mediadepot/3918629cddd/610/740/min/DEWALRUSfinal-selectie173.jpg" alt="Bioscoop Arrangement" style="width:360px;max-width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.10);" />
+      <h2>Geniet van ons Bioscoop Arrangement</h2>
+      <p>Combineer een gezellige filmavond met een heerlijk diner of borrel bij De Walrus. Ideaal voor een uitje met vrienden, familie of collega's! Je begint of eindigt je bioscoopbezoek bij ons, waar wij zorgen voor een smakelijke plank en lekkere drankjes.</p>
+      <p>Het arrangement is te boeken in Leeuwarden en Sneek. Wij werken samen met de lokale bioscopen voor een complete beleving.</p>
+    </div>
 
-  <div class="section-divider" aria-hidden="true"></div>
+      <h3>Wat kun je verwachten?</h3>
+  <ul>
+    <li>Toegang tot de bioscoop (film naar keuze)</li>
+    <li>Borrelplank of diner vooraf of na afloop</li>
+    <li>Drankjes inbegrepen</li>
+    <li>Gezellige sfeer in ons grand café</li>
+  </ul>
+  <p>Heb je speciale wensen of wil je het arrangement uitbreiden? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
+
+  <p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
+  </div>
+  </main>
 
   <!-- Infobar / Footer -->
   <footer class="infobar">

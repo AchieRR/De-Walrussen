@@ -26,6 +26,26 @@
       <h1 class="title-text">LIVE COOKING</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
+
+    <div class="foto-naast-tekst" style="margin-bottom:40px;display:flex;align-items:center;gap:36px;">
+      <img src="https://www.dewalrus.nl/mediadepot/184ff8d30f0/610/740/min/LucasKemperWalrusSneekLR-172.jpg" alt="Live Cooking De Walrus" style="width:360px;max-width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.10);" />
+      <div>
+        <h2>Live Cooking bij De Walrus</h2>
+        <p>Beleef een unieke avond waarbij onze chefs live voor je koken. Geniet van verse ingrediënten, gegrild, gebakken en bereid waar je bij staat. Ideaal voor groepen, bedrijfsuitjes of familiefeesten in Leeuwarden of Sneek.</p>
+        <p>Je kiest uit diverse gerechten en ziet alles vers bereid. De sfeer is informeel en interactief, zodat iedereen kan genieten van een bijzondere culinaire ervaring.</p>
+      </div>
+    </div>
+
+    <h3>Wat kun je verwachten?</h3>
+    <ul>
+      <li>Live bereiding van gerechten door onze chefs</li>
+      <li>Ruime keuze uit vlees, vis en vegetarisch</li>
+      <li>Buffet met bijgerechten en salades</li>
+      <li>Gezellige sfeer en interactie met de koks</li>
+    </ul>
+    <p>Heb je speciale wensen of dieetwensen? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
+
+    <p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
   </main>
     
   <!-- DIVIDER TUSSEN FORMULIER EN /// -->

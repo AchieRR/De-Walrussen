@@ -26,9 +26,28 @@
       <h1 class="title-text">THEATER SNEEK ARRANGEMNT</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
+    <div class="foto-naast-tekst" style="margin-bottom:32px;display:flex;align-items:center;gap:40px;">
+    <img src="https://www.dewalrus.nl/mediadepot/48951c007943/610/740/min/theater-sneek-zaal4183119197.jpg" alt="Theater Sneek Arrangement" style="width:360px;max-width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.10);" />
+    <div>
+      <h2>Theater Sneek Arrangement</h2>
+      <p>Maak je theateravond compleet met een heerlijk diner of borrel bij De Walrus. Ideaal voor een uitje met vrienden, familie of collega's. Je begint of eindigt je bezoek aan Theater Sneek bij ons, waar wij zorgen voor een smakelijke plank en lekkere drankjes.</p>
+      <p>Het arrangement is te boeken in Sneek. Wij werken samen met Theater Sneek voor een complete beleving.</p>
+    </div>
+  </div>
+
+  <h3>Wat kun je verwachten?</h3>
+  <ul>
+    <li>Toegang tot een voorstelling in Theater Sneek</li>
+    <li>Borrelplank of diner vooraf of na afloop</li>
+    <li>Drankjes inbegrepen</li>
+    <li>Gezellige sfeer in ons grand café</li>
+  </ul>
+  <p>Heb je speciale wensen of wil je het arrangement uitbreiden? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
+
+  <p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
   </main>
 
-  <div class="section-divider" aria-hidden="true"></div>
+  
 
   <!-- Infobar / Footer -->
   <footer class="infobar">

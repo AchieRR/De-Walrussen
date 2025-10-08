@@ -26,9 +26,30 @@
       <h1 class="title-text">HIGH WINE</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
+   
+
+  <div class="foto-naast-tekst" style="margin-bottom:32px;display:flex;align-items:center;gap:36px;">
+    <img src="https://www.dewalrus.nl/mediadepot/194a6a4e3b4/610/740/min/LucasKemperWalrusSneekLR-297.jpg" alt="High Wine De Walrus" style="width:360px;max-width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.10);" />
+    <div>
+      <h2>High Wine bij De Walrus</h2>
+      <p>Laat je verrassen door een selectie van bijzondere wijnen, gecombineerd met verfijnde hapjes. Ideaal voor een gezellige middag of avond met vrienden, familie of collega's in Leeuwarden of Sneek.</p>
+      <p>Onze High Wine is perfect voor een speciale gelegenheid of gewoon om samen te genieten. Je zit comfortabel in ons sfeervolle grand café en wordt volledig in de watten gelegd.</p>
+    </div>
+  </div>
+
+  <h3>Wat kun je verwachten?</h3>
+  <ul>
+    <li>Proeverij van verschillende wijnen</li>
+    <li>Bijpassende luxe hapjes</li>
+    <li>Uitleg over de wijnen</li>
+    <li>Gezellige sfeer en mooie presentatie</li>
+  </ul>
+  <p>Heb je speciale wensen of dieetwensen? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
+
+  <p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
   </main>
 
-  <div class="section-divider" aria-hidden="true"></div>
+  
 
   <!-- Infobar / Footer -->
   <footer class="infobar">

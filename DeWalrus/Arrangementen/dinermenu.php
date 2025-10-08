@@ -26,9 +26,29 @@
       <h1 class="title-text">DINER MENU</h1>
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     </div>
+    
+  <div class="foto-naast-tekst" style="margin-bottom:32px;display:flex;align-items:center;gap:36px;">
+    <img src="JOUW-FOTO-URL-HIER" alt="Arrangement afbeelding" style="width:360px;max-width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.10);" />
+    <div>
+      <h2>Naam van het arrangement</h2>
+      <p>Korte beschrijving van het arrangement. Vertel wat het is, voor wie het geschikt is en waarom het bijzonder is.</p>
+      <p>Extra informatie, bijvoorbeeld locatie, samenstelling, of mogelijkheden tot combineren met andere opties.</p>
+    </div>
+  </div>
+
+  <h3>Wat kun je verwachten?</h3>
+  <ul>
+    <li>Mogelijkheid 1</li>
+    <li>Mogelijkheid 2</li>
+    <li>Mogelijkheid 3</li>
+    <li>Etc.</li>
+  </ul>
+  <p>Heb je speciale wensen of wil je het arrangement uitbreiden? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
+
+  <p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
   </main>
 
-  <div class="section-divider" aria-hidden="true"></div>
+  
 
   <!-- Infobar / Footer -->
   <footer class="infobar">

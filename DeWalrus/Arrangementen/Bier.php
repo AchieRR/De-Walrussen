@@ -31,11 +31,27 @@
     </div>
 
     <div class="page-description" aria-hidden="true">
-      <p>Ontdek de rijke smaken van verschillende bieren in onze unieke bierproeverij. Geniet van een selectie van ambachtelijke bieren, zorgvuldig gekozen door onze experts.</p>
-    </div>
-  </main>
+<div class="foto-naast-tekst" style="margin-bottom:40px;display:flex;align-items:center;gap:36px;">
+  <img src="https://www.dewalrus.nl/mediadepot/179a8514be2/610/740/min/kleinLucasKemperWalrusSneekLR-370-.jpg" alt="Bierproeverij De Walrus" style="width:360px;max-width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.10);" />
+  <div>
+    <h2>Ontdek onze Bierproeverij</h2>
+    <p>Proef een selectie van ambachtelijke bieren, zorgvuldig gekozen door onze experts. Tijdens de bierproeverij krijg je uitleg over de verschillende smaken, herkomst en het brouwproces. Ideaal voor een gezellige middag of avond met vrienden, familie of collega's!</p>
+    <p>Onze bierproeverij is te boeken in Leeuwarden en Sneek. Combineer de proeverij met een borrelplank of een passend diner voor een complete ervaring.</p>
+  </div>
+</div>
 
+<h3>Wat kun je verwachten?</h3>
+<ul>
+  <li>Proeverij van 4 tot 6 speciaalbieren</li>
+  <li>Uitleg door onze medewerkers</li>
+  <li>Bijpassende hapjes</li>
+  <li>Gezellige sfeer in ons grand café</li>
+</ul>
+<p>Heb je speciale wensen of wil je de proeverij uitbreiden? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
 
+<p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
+  </div>
+</main>
 
   <div class="section-divider" aria-hidden="true"></div>
 
