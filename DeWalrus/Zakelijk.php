@@ -83,7 +83,7 @@
         Mailen kan natuurlijk ook — vul het formulier hieronder in.
       </p>
 
-      <form action="Bedankt.php" method="post" novalidate>
+      <form action="Bedankt/Contactbedankt.php" method="post" novalidate>
         <!-- Persoonlijk -->
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">

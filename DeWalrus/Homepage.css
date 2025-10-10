@@ -188,6 +188,133 @@ header{
 .bullets li{ margin:7px 0; font-size: 16.5px; }
 .split-media img{ width:100%; height:auto; border-radius:14px; display:block; box-shadow:0 8px 20px rgba(0,0,0,.12); }
 
+/* ===============================
+  Infobar (NIET AANRAKEN)
+  =============================== */
+.infobar {
+  position: relative;
+  background: url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 12px 20px 18px;
+  margin-top: 0;
+  box-shadow: 0 -14px 32px rgba(0, 0, 0, .534);
+}
+
+.infobar-top-text {
+  font-family: 'Alex Brush', cursive;
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.info-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-section {
+  flex: 0 0 auto;
+  min-width: 220px;
+}
+
+.info-section h4 {
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.info-section p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.info-section a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+.info-section a:hover {
+  opacity: .85;
+}
+
+.socials {
+  margin-top: 8px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  filter: invert(1);
+  transition: transform .2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.15);
+}
+
+.right-side {
+  text-align: center;
+  margin-left: auto;
+  padding-left: 12px;
+}
+
+.infobar-right-text {
+  font-family: 'Alex Brush', cursive;
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.city-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.city-images img {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  transition: transform .25s ease;
+  cursor: pointer;
+}
+
+.city-images img:hover {
+  transform: scale(1.04);
+}
+
+.infobar-brand {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.infobar-brand .walrus {
+  font-family: 'Alex Brush', cursive;
+  font-size: 22px;
+  color: #fff;
+  line-height: 1;
+  display: block;
+}
+
+.infobar-brand .grandcafe {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+}
+
 /* Theme */
 .theme-walrus-cream{
   background-color: #fbf5ea;
