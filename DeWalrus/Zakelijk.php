@@ -71,6 +71,9 @@
       </p>
     </section>
 
+             <h3><img src="https://vmn-missethoreca.imgix.net/uploads/2015/10/42.jpg?auto=compress%2Cformat&q=50"></h3>
+           
+   
     <div class="section-divider" aria-hidden="true"></div>
 
     <!-- FORMULIER -->

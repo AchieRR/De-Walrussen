@@ -48,13 +48,13 @@
       <li>3-gangen arrangement</li>
       <li>Verschillende boxen</li>
     </ul>
-    <p><strong><a class="btn btn-primary" href="/Reserveren.php">Reserveren</a></strong></p>
-
+   
     <h3>Middellange tot lange tochten</h3>
     <p>Maak er een dagje van! Start bij ons in De Walrus met een ontvangst van koffie, thee en gebak. Vervolg je route via het centrum van Leeuwarden naar natuurgebied Grutte Wielen en geniet van een lunch bij onze partner Groote Wielen. Hier kun je bijvoorbeeld ook een buitenactiviteit doen. Vervolgens vaar je weer terug naar de Prinsentuin en je dag wordt bij ons afgesloten met een diner of een gezellige borrel.</p>
     <ul>
       <li>Arrangement naar eigen wens samenstellen</li>
       <li>Optioneel inclusief schipper</li>
+      <p><strong><a class="btn btn-primary" href="/Reserveren.php">Reserveren</a></strong></p>
     </ul>
   </main>
 
