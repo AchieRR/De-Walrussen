@@ -1,22 +1,73 @@
 <?php
-// DeWalrus/Reserveren.php — Reserveringsformulier (deep-link & lock locatie)
 session_start();
 if (empty($_SESSION['csrf'])) {
   $_SESSION['csrf'] = bin2hex(random_bytes(32));
 }
 $csrf = $_SESSION['csrf'];
 
-// Voorkeurslocatie via ?loc=... (whitelist + normalisatie)
+// vandaag (voor min/value van de date input)
+$todayHtml = (new DateTime('today'))->format('Y-m-d');
+
+// eerstvolgende 15-minuten tijdslot (voor selectie als de datum op vandaag staat)
+$now = new DateTime();
+$minsToAdd = (15 - ((int)$now->format('i') % 15)) % 15;
+if ($minsToAdd) { $now->modify("+$minsToAdd minutes"); }
+$defaultTime = $now->format('H:i');
+// buiten openingstijd afronden naar 10:00 (te vroeg) of geen preselectie (te laat)
+if ((int)$defaultTime < 10)         { $defaultTime = '10:00'; }
+if ((int)substr($defaultTime,0,2) > 23) { $defaultTime = ''; }
+
 $allowedLocs = ['Leeuwarden','Sneek'];
 $prefLoc = null;
 if (isset($_GET['loc'])) {
   $raw = trim((string)$_GET['loc']);
-  $norm = ucfirst(strtolower($raw)); // 'sneek' -> 'Sneek'
+  $norm = ucfirst(strtolower($raw));
   if (in_array($norm, $allowedLocs, true)) {
     $prefLoc = $norm;
   }
 }
 $lockLoc = ($prefLoc !== null);
+
+$allowedTypes = [
+  'high-wine'        => 'High wine',
+  'high-tea'         => 'High tea',
+  'borrel-boot'      => 'Borrel Boot',
+  'walking-diner'    => 'Walking Diner Buffet',
+  'live-cooking'     => 'Live Cooking Buffet',
+  'bier'             => 'Bier Arrangement',
+  'bioscoop'         => 'Bioscoop Arrangement',
+  'theater-sneek'    => 'Theater Sneek Arrangement',
+  'vergadering'      => 'Vergadering',
+  'workshop'         => 'Workshop',
+  'evenement'        => 'Evenement',
+  'diner'            => 'Diner',
+  'lunch'            => 'Lunch',
+];
+
+$slugify = function(string $s): string {
+  $s = strtolower(trim($s));
+  $s = preg_replace('/[^\p{L}\p{N}]+/u','-', $s);
+  $s = trim($s, '-');
+  $s = str_replace(['highwine','hightea'], ['high-wine','high-tea'], $s);
+  return $s;
+};
+
+$prefTypeLabel = null;
+if (isset($_GET['type'])) {
+  $raw = trim((string)$_GET['type']);
+  $key = $slugify($raw);
+  if (isset($allowedTypes[$key])) {
+    $prefTypeLabel = $allowedTypes[$key];
+  } else {
+    foreach ($allowedTypes as $slug => $label) {
+      if ($slugify($label) === $key) {
+        $prefTypeLabel = $label;
+        break;
+      }
+    }
+  }
+}
+$lockType = ($prefTypeLabel !== null);
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -24,19 +75,12 @@ $lockLoc = ($prefLoc !== null);
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>De Walrus — Reserveren</title>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="Reserveren.css" />
+  <link rel="stylesheet" href="reserveren.css" />
 </head>
 <body class="theme-walrus-cream">
-
 <?php require_once __DIR__ . '/nav.php'; ?>
-
 <main class="page-content">
-  <!-- Titel -->
   <div class="page-title" aria-hidden="true">
     <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
     <h1 class="title-text">Reserveren</h1>
@@ -51,19 +95,15 @@ $lockLoc = ($prefLoc !== null);
     </p>
 
     <form action="Bedankt/Reserverenbedankt.php" method="post" novalidate>
-      <!-- CSRF -->
       <input type="hidden" name="csrf" value="<?= htmlspecialchars($csrf, ENT_QUOTES, 'UTF-8') ?>">
-
-      <!-- Honeypot -->
       <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
         <label>Laat dit veld leeg: <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       </div>
 
-      <!-- Persoonlijk -->
       <h3 class="form-subtitle">Persoonlijke gegevens</h3>
       <div class="form-row-3">
         <div class="form-field">
-          <label for="voornaam">Voornaam<span aria-hidden="true">*</span></label>
+          <label for="voornaam">Voornaam<span aria-hidden="true" class="req">*</span></label>
           <input type="text" id="voornaam" name="voornaam" autocomplete="given-name" required>
         </div>
         <div class="form-field">
@@ -71,20 +111,19 @@ $lockLoc = ($prefLoc !== null);
           <input type="text" id="tussenvoegsel" name="tussenvoegsel" autocomplete="additional-name" placeholder="van, de, van der…">
         </div>
         <div class="form-field">
-          <label for="achternaam">Achternaam<span aria-hidden="true">*</span></label>
+          <label for="achternaam">Achternaam<span aria-hidden="true" class="req">*</span></label>
           <input type="text" id="achternaam" name="achternaam" autocomplete="family-name" required>
         </div>
       </div>
 
-      <!-- Contact -->
-      <h3 class="form-subtitle">Contact</h3>
+      <h3 class="form-subtitle">Contact (minstens één)</h3>
       <div class="form-row">
         <div class="form-field">
-          <label for="email">E-mail<span aria-hidden="true">*</span></label>
-          <input type="email" id="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.nl" required>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.nl">
         </div>
         <div class="form-field">
-          <label for="telefoon">Telefoon (NL)<span aria-hidden="true">*</span></label>
+          <label for="telefoon">Telefoon (NL)</label>
           <input
             type="tel"
             id="telefoon"
@@ -93,26 +132,21 @@ $lockLoc = ($prefLoc !== null);
             inputmode="tel"
             pattern="^(?:0\d{9}|(?:\+|00)31\d{9})$"
             placeholder="0612345678, +31612345678 of 0031612345678"
-            required
             title="Voer 0612345678, +31612345678 of 0031612345678 in.">
         </div>
       </div>
 
-      <!-- Locatie & Type -->
       <h3 class="form-subtitle">Locatie & type</h3>
       <div class="form-row">
         <div class="form-field">
-          <label for="locatie">Voorkeurslocatie<span aria-hidden="true">*</span></label>
-
+          <label for="locatie">Voorkeurslocatie<span aria-hidden="true" class="req">*</span></label>
           <?php if ($lockLoc): ?>
-            <!-- Locked: disabled select voor UX, hidden field voor POST -->
             <select id="locatie" name="locatie_disabled" disabled>
               <option <?= $prefLoc==='Leeuwarden'?'selected':''; ?>>De Walrus Leeuwarden</option>
               <option <?= $prefLoc==='Sneek'?'selected':''; ?>>De Walrus Sneek</option>
             </select>
             <input type="hidden" name="locatie" value="<?= htmlspecialchars($prefLoc, ENT_QUOTES, 'UTF-8') ?>">
           <?php else: ?>
-            <!-- Vrij te kiezen -->
             <select id="locatie" name="locatie" required>
               <option value="" disabled selected>Kies een locatie</option>
               <option value="Leeuwarden">De Walrus Leeuwarden</option>
@@ -122,52 +156,49 @@ $lockLoc = ($prefLoc !== null);
         </div>
 
         <div class="form-field">
-          <label for="type">Type reservering<span aria-hidden="true">*</span></label>
-          <select id="type" name="type" required>
-            <option value="" disabled selected>Kies een type</option>
-            <option>High wine</option>
-            <option>High tea</option>
-            <option>Borrel Boot</option>
-            <option>Walking Diner Buffet</option>
-            <option>Live Cooking Buffet</option>
-            <option>Bier Arrangement</option>
-            <option>Bioscoop Arrangement</option>
-            <option>Theater Sneek Arrangement</option>
-            <option>Vergadering</option>
-            <option>Workshop</option>
-            <option>Evenement</option>
-            <option>Diner</option>
-            <option>Lunch</option>
-          </select>
+          <label for="type">Type reservering<span aria-hidden="true" class="req">*</span></label>
+          <?php if ($lockType): ?>
+            <select id="type" name="type_disabled" disabled>
+              <?php foreach ($allowedTypes as $slug => $label): ?>
+                <option <?= $label===$prefTypeLabel?'selected':''; ?>><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></option>
+              <?php endforeach; ?>
+            </select>
+            <input type="hidden" name="type" value="<?= htmlspecialchars($prefTypeLabel, ENT_QUOTES, 'UTF-8') ?>">
+          <?php else: ?>
+            <select id="type" name="type" required>
+              <option value="" disabled selected>Kies een type</option>
+              <?php foreach ($allowedTypes as $slug => $label): ?>
+                <option><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></option>
+              <?php endforeach; ?>
+            </select>
+          <?php endif; ?>
         </div>
       </div>
 
-      <!-- Datum & tijd -->
       <h3 class="form-subtitle">Datum & tijd</h3>
       <div class="form-row-3">
         <div class="form-field">
-          <label for="date">Datum<span aria-hidden="true">*</span></label>
-          <input type="date" id="date" name="date" required>
+          <label for="date">Datum<span aria-hidden="true" class="req">*</span></label>
+          <input type="date" id="date" name="date" required min="<?= $todayHtml ?>" value="<?= $todayHtml ?>">
         </div>
-
         <div class="form-field">
-          <label for="guests">Aantal gasten<span aria-hidden="true">*</span></label>
-          <input type="number" id="guests" name="guests" min="1" max="15" required>
-        </div>
-
-        <div class="form-field">
-          <label for="time">Tijd<span aria-hidden="true">*</span></label>
+          <label for="time">Tijd<span aria-hidden="true" class="req">*</span></label>
           <select id="time" name="time" required>
             <option value="" disabled selected>Kies tijd</option>
             <?php
-              // 10:00 t/m 23:45 per 15 minuten
               for ($h=10; $h<=23; $h++) {
                 for ($m=0; $m<60; $m+=15) {
-                  printf('<option>%02d:%02d</option>', $h, $m);
+                  $t = sprintf('%02d:%02d', $h, $m);
+                  $sel = ($defaultTime && $t === $defaultTime && $todayHtml === $todayHtml) ? ' selected' : '';
+                  echo "<option$sel>$t</option>";
                 }
               }
             ?>
           </select>
+        </div>
+        <div class="form-field">
+          <label for="guests">Aantal gasten<span aria-hidden="true" class="req">*</span></label>
+          <input type="number" id="guests" name="guests" min="1" max="15" required>
         </div>
       </div>
 
@@ -180,7 +211,6 @@ $lockLoc = ($prefLoc !== null);
   <div class="section-divider" aria-hidden="true"></div>
 </main>
 
-<!-- INFOBAR (ongewijzigd) -->
 <footer class="infobar">
   <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
   <div class="info-content">
@@ -234,7 +264,6 @@ $lockLoc = ($prefLoc !== null);
       </div>
     </div>
   </div>
-
   <div class="infobar-brand">
     <span class="walrus">De Walrus</span>
     <span class="grandcafe">— GRAND CAFÉ —</span>

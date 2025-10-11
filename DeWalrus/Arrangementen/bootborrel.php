@@ -54,7 +54,8 @@
     <ul>
       <li>Arrangement naar eigen wens samenstellen</li>
       <li>Optioneel inclusief schipper</li>
-      <p><strong><a class="btn btn-primary" href="/Reserveren.php">Reserveren</a></strong></p>
+<a class="btn btn-primary" href="/reserveren.php?type=borrel-boot&loc=Leeuwarden">Reserveer nu</a>
+
     </ul>
   </main>
 

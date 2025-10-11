@@ -1,21 +1,16 @@
-/* =============================== Variabelen =============================== */
 :root{
   --header-h: clamp(56px, 7vw, 86px);
   --ink: #0b2140;
-
-  /* NAV breedte ALTIJD 1300px */
   --nav-max: 1300px;
 
-  /* Chalkboard palette */
   --chalk-green: #204d2a;
   --chalk-text: #f7f6f2;
   --chalk-muted: #e7e3d9;
 
-  /* Walrus-rood voor in-page links/knoppen */
-  --walrus-red: #7a2d1a;
+  --brand-gold: #b6911a;
+  --brand-gold-dark: #b6911a;
 }
 
-/* Reset/basis */
 *{ box-sizing: border-box; }
 html, body{
   margin:0; padding:0; height:100%;
@@ -23,10 +18,8 @@ html, body{
   color:#111; line-height:1.45; max-width:100%; overflow-x:hidden;
 }
 
-/* Ruimte onder fixed header */
 .header-gap{ height: var(--header-h); }
 
-/* =============================== Buitenkant: CRÈME THEMA =============================== */
 .theme-walrus-cream{
   background-color:#fbf5ea;
   background-image:
@@ -38,7 +31,6 @@ html, body{
   background-repeat:no-repeat, no-repeat, repeat;
 }
 
-/* Content breedte */
 .page-content{
   max-width: 1580px;
   margin:0 auto;
@@ -47,7 +39,6 @@ html, body{
   overflow-x: clip;
 }
 
-/* =============================== Header/Nav (zoals homepage) =============================== */
 header{
   position:fixed; inset:0 0 auto 0; height:var(--header-h);
   background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
@@ -71,12 +62,11 @@ header{
 .nav-list{ list-style:none; display:flex; align-items:center; gap:8px; margin:0; padding:0; flex:1; }
 .nav-list .push-right{ margin-left:auto; display:flex; gap:8px; }
 
-/* Nav-knoppen – alles gelijk; active = hover */
 .nav-btn{
   display:inline-flex; align-items:center; justify-content:center;
   padding:9px 12px; background:transparent; color:#fff; border:1px solid transparent;
   border-radius:10px;
-  font-family:'Playfair Display', serif;  /* <-- hier */
+  font-family:'Playfair Display', serif;
   font-weight:800;
   letter-spacing:.01em;
   text-transform:none;
@@ -90,7 +80,7 @@ header{
   transform: translateY(-1px);
   box-shadow:0 6px 16px rgba(0,0,0,.18);
 }
-/* =============================== Titel (NIET AANRAKEN) =============================== */
+
 .page-title{
   display:flex; align-items:center; justify-content:center;
   gap: clamp(12px, 2.5vw, 28px); margin:4px 0 10px;
@@ -103,27 +93,27 @@ header{
 .title-line{ display:block; height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9; }
 @media (max-width:600px){ .title-line{ display:none; } }
 
-/* =============================== Top Tabs (DINER/SOEPEN/...) =============================== */
+/* Tabs in goud met één underline; ook los van .page-content a */
 .menu-tabs{
   display:flex; gap:22px; justify-content:center; align-items:center; margin: 6px 0 16px;
 }
 .menu-tab{
   font-family:'Playfair Display', serif; font-weight:900; letter-spacing:.02em;
-  position:relative; text-decoration:none; color: var(--walrus-red);
+  position:relative; text-decoration:none; color: var(--brand-gold);
+  border-bottom:none !important;
 }
+.menu-tab::after{ content:none; }
 .menu-tab.active::after{
   content:""; position:absolute; left:0; right:0; bottom:-6px; height:3px;
-  background: var(--walrus-red); border-radius:3px;
+  background: var(--brand-gold); border-radius:3px;
 }
 
-/* =============================== Stage / Board =============================== */
 .menu-stage{ padding:12px; }
 .menu-wrap{
   display:grid; grid-template-columns: 280px 1fr; gap:24px; align-items:start;
   max-width: 1500px; margin:0 auto;
 }
 
-/* Linker kolom */
 .menu-side{ position:sticky; top: calc(var(--header-h) + 16px); align-self:start; }
 .menu-side-inner{
   background:#ffffffd0; border:1px solid rgba(0,0,0,.06); border-radius:14px;
@@ -136,9 +126,9 @@ header{
   color:#333; letter-spacing:.04em; background:rgba(0,0,0,.04); cursor:pointer;
 }
 .menu-cat-nav .cat-link:hover{ background:rgba(0,0,0,.07); }
+/* active styling wordt via inline CSS (radio checked) gezet; baseline hier */
 .menu-cat-nav .cat-link.active{ outline:2px solid rgba(0,0,0,.16); background:rgba(0,0,0,.08); }
 
-/* Board (groen krijtbord) */
 .menu-board{
   background:
     radial-gradient(900px 280px at 50% 0%, rgba(255,255,255,.06) 0%, transparent 70%),
@@ -149,30 +139,53 @@ header{
   padding:22px 24px 28px; color:var(--chalk-text); position:relative; min-height:900px;
 }
 
-/* Radio's verbergen */
 .cat-radio{ position:absolute; opacity:0; pointer-events:none; }
-
-/* Panel container */
 .panels{ position:relative; }
+.panels > .menu-category{ display:none; }
 
-/* Categorie titel en items */
-.menu-category{ display:none; }
-.menu-cat-title{
-  font-family:'Playfair Display', serif; font-weight:700; letter-spacing:.04em;
-  text-transform:uppercase; font-size: clamp(18px, 2.1vw, 26px);
-  color:var(--chalk-muted); margin:4px 0 8px; border-bottom:1px dashed rgba(255,255,255,.25); padding-bottom:8px;
+.menu-cat-title,
+.mi-name,
+.mi-price,
+.mi-desc{
+  font-family: 'Caveat', cursive, 'Playfair Display', serif;
+  letter-spacing: .02em;
 }
+.menu-cat-title{
+  font-weight:700;
+  text-transform:uppercase;
+  font-size: clamp(22px, 2.4vw, 30px);
+  color:var(--chalk-text);
+  margin:6px 0 12px;
+  border-bottom:1px dashed rgba(255,255,255,.28);
+  padding-bottom:8px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+
 .menu-items{ list-style:none; margin:0 0 12px 0; padding:0; display:flex; flex-direction:column; gap:12px; }
 .menu-item{ padding:8px 2px 6px; border-bottom:1px dashed rgba(255,255,255,.14); }
 .mi-head{ display:flex; gap:10px; align-items:baseline; justify-content:space-between; }
-.mi-name{ font-family:'Playfair Display', serif; font-weight:700; font-size: clamp(16px, 1.9vw, 20px); color:var(--chalk-text); text-shadow:0 1px 0 rgba(0,0,0,.15); }
-.mi-price{ font-family:'Playfair Display', serif; font-weight:700; font-size: clamp(15px, 1.7vw, 19px); color:var(--chalk-muted); }
-.mi-desc{ margin:4px 0 2px; font-family:'Playfair Display', serif; font-weight:400; font-size: clamp(13px, 1.5vw, 16px); color: rgba(255,255,255,.92); }
 
-/* Leeg state */
+.mi-name{
+  font-weight:700;
+  font-size: clamp(18px, 2.1vw, 24px);
+  color:#ffffff;
+  text-shadow: 0 1px 0 rgba(0,0,0,.3);
+}
+.mi-price{
+  font-weight:700;
+  font-size: clamp(17px, 1.9vw, 21px);
+  color:#ffffff; /* helder wit, geen grijs */
+  text-shadow:none;
+}
+.mi-desc{
+  margin:4px 0 2px;
+  font-weight:400;
+  font-size: clamp(15px, 1.7vw, 18px);
+  color: rgba(255,255,255,.95);
+}
+
 .menu-empty{ background:rgba(0,0,0,.25); border:1px dashed rgba(255,255,255,.35); padding:18px; border-radius:12px; color:var(--chalk-muted); }
 
-/* =============================== In-page links & knoppen (ROOD) =============================== */
 .link-arrow,
 .btn-primary,
 a.button,
@@ -180,19 +193,18 @@ a.button,
   display:inline-block;
   font-family:'Playfair Display', serif;
   font-weight:700;
-  color: var(--walrus-red);
+  color: var(--brand-gold);
   text-decoration:none;
 }
-.link-arrow{ border-bottom:2px solid var(--walrus-red); padding-bottom:2px; }
+.link-arrow{ border-bottom:2px solid var(--brand-gold); padding-bottom:2px; }
 .btn-primary{
-  padding:10px 14px; border-radius:12px; border:2px solid var(--walrus-red);
+  padding:10px 14px; border-radius:12px; border:2px solid var(--brand-gold);
 }
 .link-arrow:hover,
 .btn-primary:hover,
 a.button:hover,
 .button:hover{ opacity:.9; transform: translateY(-1px); }
 
-/* =============================== Infobar (NIET AANRAKEN) =============================== */
 .infobar{
   position:relative; background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   color:#fff; padding:12px 20px 18px; margin-top:0; box-shadow:0 -14px 32px rgba(0,0,0,.534);
@@ -216,7 +228,6 @@ a.button:hover,
 .infobar-brand .walrus{ font-family:'Alex Brush', cursive; font-size:22px; color:#fff; line-height:1; display:block; }
 .infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
 
-/* =============================== Responsive =============================== */
 @media (max-width:1100px){
   .menu-wrap{ grid-template-columns:1fr; max-width:100%; }
   .menu-side{ position:static; order:2; }

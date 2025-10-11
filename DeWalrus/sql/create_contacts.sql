@@ -1,4 +1,4 @@
-|-- log in je PHPMYADMIN en maak een nieuwe database met de naam walrus ( kleine letters ) en daarna als je op die walrus klikt zie je boven in t midden ong SQL staan dan klik je daarop en plak je de code hier onder helemaal er in en daarna druk je op GO
+
 CREATE DATABASE IF NOT EXISTS walrus
   DEFAULT CHARACTER SET utf8mb4
   COLLATE utf8mb4_0900_ai_ci;

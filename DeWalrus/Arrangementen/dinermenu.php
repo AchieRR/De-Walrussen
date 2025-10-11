@@ -45,7 +45,8 @@
   </ul>
   <p>Heb je speciale wensen of wil je het arrangement uitbreiden? Neem contact met ons op via <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a> of bel naar <a href="tel:0582137740">058 - 21 377 40</a>.</p>
 
-  <p><a class="btn btn-primary" href="/Reserveren.php">Reserveer nu</a></p>
+  <a class="btn btn-primary" href="/reserveren.php?type=diner">Reserveer nu</a>
+
   </main>
 
   

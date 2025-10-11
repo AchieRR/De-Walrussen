@@ -17,11 +17,9 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
   <link rel="stylesheet" href="Contact.css" />
 </head>
 <body class="theme-walrus-cream">
-  <!-- NAV zoals homepage -->
   <?php require __DIR__ . '/nav.php'; ?>
 
   <main class="page-content">
-    <!-- Titel (NIET AANRAKEN) -->
     <div class="page-title" aria-hidden="true">
       <img class="title-line" src="https://www.dewalrus.nl/websites/implementatie/website/images/line-title.png" alt="" />
       <h1 class="title-text">CONTACT</h1>
@@ -31,14 +29,11 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
     <section class="apply-form" aria-labelledby="contact-titel">
       <h2 id="contact-titel">Neem contact met ons op!</h2>
       <p class="form-intro">
-        Onze telefoon staat bíjna altijd aan en je kan ons bereiken in Leeuwarden op 
-        <a href="tel:0582137740">058 213 7740</a> of in Sneek op
-        <a href="tel:0515438100">0515 438 100</a>.
-        Een mailtje sturen mag natuurlijk ook! Vul daarvoor het formulier hieronder in.
+        Bel Leeuwarden <a href="tel:0582137740">058 213 7740</a> of Sneek <a href="tel:0515438100">0515 438 100</a>.
+        Mailen kan natuurlijk ook — gebruik het formulier hieronder.
       </p>
 
-      <form action="Bedankt/Contactbedankt.php" method="post">
-        <!-- CSRF -->
+      <form action="Bedankt/Contactbedankt.php" method="post" novalidate>
         <input type="hidden" name="csrf" value="<?= $csrf ?>">
 
         <!-- Honeypot -->
@@ -51,7 +46,7 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
         <h3 class="form-subtitle">Persoonlijke gegevens</h3>
         <div class="form-row-3">
           <div class="form-field">
-            <label for="voornaam">Voornaam<span aria-hidden="true">*</span></label>
+            <label for="voornaam">Voornaam<span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="voornaam" name="voornaam" autocomplete="given-name" required>
           </div>
           <div class="form-field">
@@ -59,29 +54,28 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
             <input type="text" id="tussenvoegsel" name="tussenvoegsel" autocomplete="additional-name" placeholder="van, de, van der…">
           </div>
           <div class="form-field">
-            <label for="achternaam">Achternaam<span aria-hidden="true">*</span></label>
+            <label for="achternaam">Achternaam<span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="achternaam" name="achternaam" autocomplete="family-name" required>
           </div>
         </div>
 
         <!-- Contact -->
-        <h3 class="form-subtitle">Contact</h3>
+        <h3 class="form-subtitle">Contact <span class="req" aria-hidden="true">*</span> <span class="req-note">(vul minimaal e-mail of telefoon in)</span></h3>
         <div class="form-row">
           <div class="form-field">
-            <label for="email">E-mail<span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.nl" required>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.nl">
           </div>
           <div class="form-field">
-            <label for="telefoon">Telefoon (NL)<span aria-hidden="true">*</span></label>
+            <label for="telefoon">Telefoon (NL)</label>
             <input
               type="tel"
               id="telefoon"
               name="telefoon"
               autocomplete="tel"
               inputmode="tel"
-              pattern="^(?:0\d{9}|(?:\+|00)31\d{9})$"
+              pattern="^(?:0\\d{9}|(?:\\+|00)31\\d{9})$"
               placeholder="0612345678, +31612345678 of 0031612345678"
-              required
               title="Voer 0612345678, +31612345678 of 0031612345678 in.">
           </div>
         </div>
@@ -90,7 +84,7 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
         <h3 class="form-subtitle">Locatie</h3>
         <div class="form-row">
           <div class="form-field">
-            <label for="locatie">Voorkeurslocatie<span aria-hidden="true">*</span></label>
+            <label for="locatie">Voorkeurslocatie<span class="req" aria-hidden="true">*</span></label>
             <select id="locatie" name="locatie" required>
               <option value="" disabled selected>Kies een locatie</option>
               <option value="Leeuwarden">De Walrus Leeuwarden</option>
@@ -103,11 +97,11 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
         <!-- Omschrijving -->
         <h3 class="form-subtitle">Omschrijving</h3>
         <div class="form-field">
-          <label for="onderwerp">Onderwerp<span aria-hidden="true">*</span></label>
+          <label for="onderwerp">Onderwerp<span class="req" aria-hidden="true">*</span></label>
           <textarea id="onderwerp" name="onderwerp" rows="1" placeholder="Afspraak maken… (etc.)" required></textarea>
         </div>
         <div class="form-field">
-          <label for="bericht">Bericht<span aria-hidden="true">*</span></label>
+          <label for="bericht">Bericht<span class="req" aria-hidden="true">*</span></label>
           <textarea id="bericht" name="bericht" rows="8" placeholder="Algemene informatie…" required></textarea>
         </div>
 
@@ -120,70 +114,6 @@ $csrf = htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
     <div class="section-divider" aria-hidden="true"></div>
   </main>
 
-  <!-- INFOBAR (NIET AANRAKEN) -->
-  <footer class="infobar">
-    <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
-
-    <div class="info-content">
-      <div class="info-section">
-        <h4>De Walrus Leeuwarden</h4>
-        <p>
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
-            Gouverneursplein 37<br>
-            8911 HH Leeuwarden
-          </a><br><br>
-          Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
-          <strong>Tel:</strong> <a href="tel:0582137740">058-2137740</a><br>
-          <strong>E-mail:</strong> <a href="mailto:info@dewalrusleeuwarden.nl">info@dewalrusleeuwarden.nl</a>
-        </p>
-        <div class="socials">
-          <a href="https://www.facebook.com/DeWalrusLeeuwarden/?locale=nl_NL" target="_blank" rel="noopener" aria-label="Facebook Leeuwarden">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="">
-          </a>
-          <a href="https://www.instagram.com/dewalrusleeuwarden/" target="_blank" rel="noopener" aria-label="Instagram Leeuwarden">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="">
-          </a>
-        </div>
-      </div>
-
-      <div class="info-section">
-        <h4>De Walrus Sneek</h4>
-        <p>
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
-            Leeuwenburg 11<br>
-            8601 CG Sneek
-          </a><br><br>
-          Zondag t/m Zaterdag van 10:00 tot 01:00<br><br>
-          <strong>Tel:</strong> <a href="tel:0515438100">0515-438100</a><br>
-          <strong>E-mail:</strong> <a href="mailto:info@dewalrussneek.nl">info@dewalrussneek.nl</a>
-        </p>
-        <div class="socials">
-          <a href="https://www.facebook.com/DeWalrusSneek/?locale=nl_NL" target="_blank" rel="noopener" aria-label="Facebook Sneek">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="social-icon" alt="">
-          </a>
-          <a href="https://www.instagram.com/dewalrussneek/" target="_blank" rel="noopener" aria-label="Instagram Sneek">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="social-icon" alt="">
-          </a>
-        </div>
-      </div>
-
-      <div class="right-side">
-        <div class="infobar-right-text">Leuk dat je bent geweest</div>
-        <div class="city-images">
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Leeuwarden" target="_blank" rel="noopener">
-            <img src="https://res.cloudinary.com/laad-media-b-v/image/upload/s--J6Q_KcqC--/c_scale,dpr_auto,f_auto,q_auto:best/v1/Afbeeldingen%20knooppunten/266-8911/Grand-Caf%C3%A9_De_Walrus_Leeuwarden" alt="De Walrus Leeuwarden">
-          </a>
-          <a href="https://www.google.com/maps/place/Grand+Caf%C3%A9+De+Walrus+-+Sneek" target="_blank" rel="noopener">
-            <img src="https://res.cloudinary.com/laad-media-b-v/image/upload/s--dLwzwzgP--/c_scale,dpr_auto,f_auto,q_auto:best/v1/Afbeeldingen%20knooppunten/513-8601/Grand-Caf%C3%A9_De_Walrus_Sneek" alt="De Walrus Sneek">
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="infobar-brand">
-      <span class="walrus">De Walrus</span>
-      <span class="grandcafe">— GRAND CAFÉ —</span>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/_footer.inc.html'; ?>
 </body>
 </html>

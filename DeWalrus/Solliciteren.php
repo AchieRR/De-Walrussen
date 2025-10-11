@@ -115,7 +115,7 @@
       <h3 class="form-subtitle">Persoonlijke gegevens</h3>
       <div class="form-row-3">
         <div class="form-field">
-          <label for="voornaam">Voornaam*</label>
+          <label for="voornaam">Voornaam<span aria-hidden="true" class="req">*</span></label>
           <input type="text" id="voornaam" name="voornaam" autocomplete="given-name" required>
         </div>
         <div class="form-field">
@@ -123,7 +123,7 @@
           <input type="text" id="tussenvoegsel" name="tussenvoegsel" autocomplete="additional-name" placeholder="van, de, van der…">
         </div>
         <div class="form-field">
-          <label for="achternaam">Achternaam*</label>
+          <label for="achternaam">Achternaam<span aria-hidden="true" class="req">*</span></label>
           <input type="text" id="achternaam" name="achternaam" autocomplete="family-name" required>
         </div>
       </div>
@@ -132,11 +132,11 @@
       <h3 class="form-subtitle">Contact</h3>
       <div class="form-row">
         <div class="form-field">
-          <label for="email">E-mail*</label>
+          <label for="email">E-mail<span aria-hidden="true" class="req">*</span></label>
           <input type="email" id="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.nl" required>
         </div>
         <div class="form-field">
-          <label for="telefoon">Telefoon (NL)*</label>
+          <label for="telefoon">Telefoon (NL)<span aria-hidden="true" class="req">*</span></label>
           <input
             type="tel"
             id="telefoon"
@@ -154,15 +154,15 @@
       <h3 class="form-subtitle">Adres</h3>
       <div class="form-row-4">
         <div class="form-field">
-          <label for="straat">Straat*</label>
+          <label for="straat">Straat<span aria-hidden="true" class="req">*</span></label>
           <input type="text" id="straat" name="straat" autocomplete="address-line1" required>
         </div>
         <div class="form-field">
-          <label for="huisnummer">Huisnummer*</label>
+          <label for="huisnummer">Huisnummer<span aria-hidden="true" class="req">*</span></label>
           <input type="text" id="huisnummer" name="huisnummer" autocomplete="address-line2" required>
         </div>
         <div class="form-field">
-          <label for="postcode">Postcode*</label>
+          <label for="postcode">Postcode<span aria-hidden="true" class="req">*</span></label>
           <input
             type="text" id="postcode" name="postcode"
             autocomplete="postal-code" placeholder="1234 AB"
@@ -170,7 +170,7 @@
             title="Voer een geldige Nederlandse postcode in, bijv. 1234 AB.">
         </div>
         <div class="form-field">
-          <label for="woonplaats">Woonplaats*</label>
+          <label for="woonplaats">Woonplaats<span aria-hidden="true" class="req">*</span></label>
           <input type="text" id="woonplaats" name="woonplaats" autocomplete="address-level2" required>
         </div>
       </div>
@@ -178,7 +178,7 @@
       <!-- Over jezelf -->
       <h3 class="form-subtitle">Over jezelf</h3>
       <div class="form-field">
-        <label for="leeftijd">Leeftijd*</label>
+        <label for="leeftijd">Leeftijd<span aria-hidden="true" class="req">*</span></label>
         <input
           type="number" id="leeftijd" name="leeftijd"
           min="16" max="80" step="1"
@@ -192,7 +192,7 @@
       <h3 class="form-subtitle">Dienstverband</h3>
       <div class="form-row">
         <div class="form-field">
-          <label for="dienstverband">Dienstverband*</label>
+          <label for="dienstverband">Dienstverband<span aria-hidden="true" class="req">*</span></label>
           <select id="dienstverband" name="dienstverband" required>
             <option value="" disabled selected>Kies een optie</option>
             <option>Fulltime</option>
@@ -208,7 +208,7 @@
       <!-- Functie -->
       <h3 class="form-subtitle">Functie</h3>
       <div class="form-field">
-        <label for="functie">Functie*</label>
+        <label for="functie">Functie<span aria-hidden="true" class="req">*</span></label>
         <select id="functie" name="functie" required>
           <option value="" disabled selected>Kies een functie</option>
           <option value="Keukenhulp/Afwasser">Keukenhulp/Afwasser</option>
@@ -224,7 +224,7 @@
       <!-- Motivatie -->
       <h3 class="form-subtitle">Motivatie</h3>
       <div class="form-field">
-        <label for="motivatie">Motivatie*</label>
+        <label for="motivatie">Motivatie<span aria-hidden="true" class="req">*</span></label>
         <textarea id="motivatie" name="motivatie" rows="10" placeholder="Vertel kort iets over jezelf en waarom je bij ons wil werken." required></textarea>
       </div>
 
@@ -232,7 +232,7 @@
       <h3 class="form-subtitle">Locatie</h3>
       <div class="form-row">
         <div class="form-field">
-          <label for="locatie">Voorkeurslocatie*</label>
+          <label for="locatie">Voorkeurslocatie<span aria-hidden="true" class="req">*</span></label>
           <select id="locatie" name="locatie" required>
             <option value="" disabled selected>Kies een locatie</option>
             <option value="Leeuwarden">De Walrus Leeuwarden</option>

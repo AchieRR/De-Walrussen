@@ -44,7 +44,6 @@
         <ul class="slides">
           <!-- LEEUWARDEN -->
           <li class="slide slide-1">
-            <a class="slide-link" href="Leeuwardenwalrus.php" aria-label="Naar De Walrus Leeuwarden"></a>
             <img loading="eager" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f4/46/74/sfeerimpressie.jpg?w=1600&h=1000&s=1" alt="De Walrus Leeuwarden — terras aan het Gouverneursplein">
             <div class="caption">
               <h3>De Walrus Leeuwarden</h3>
@@ -54,7 +53,6 @@
 
           <!-- SNEEK -->
           <li class="slide slide-2">
-            <a class="slide-link" href="Sneekwalrus.php" aria-label="Naar De Walrus Sneek"></a>
             <img loading="lazy" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/8d/3d/98/de-walrus-sneek-voorzijde.jpg?w=1600&h=1000&s=1" alt="De Walrus Sneek — pand aan de Leeuwenburg">
             <div class="caption">
               <h3>De Walrus Sneek</h3>

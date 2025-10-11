@@ -1,57 +1,65 @@
-/* ===============================
-  Variabelen
-  =============================== */
 :root{
   --header-h: clamp(56px, 7vw, 86px);
   --ink: #0b2140;
-
-  /* NAV breedte ALTIJD 1300px */
   --nav-max: 1300px;
 
-  /* Walrus rood voor in-page links/knoppen */
-  --walrus-red: #b6911a;
+  /* uit menukaart.css */
+  --brand-gold: #b6911a;
   --brand-gold-dark: #b6911a;
-  /* Neutrals */
+
+  /* zakelijk extra */
   --field-border: #d8d8d8;
   --focus: #7cb6ff;
+  --walrus-red: #b6911a;
 }
 
-/* Reset/basis */
-*{ box-sizing:border-box; }
+/* ===== reset/basis ===== */
+*{ box-sizing: border-box; }
 html, body{
   margin:0; padding:0; height:100%;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:#fff; color:#111; line-height:1.4;
-  max-width:100%; overflow-x:hidden;
+  color:#111; line-height:1.45; max-width:100%; overflow-x:hidden;
 }
-
-/* Links + focus (alleen content, niet nav) */
-.page-content a{ text-decoration: none; }
-.page-content a:hover{ opacity:.9; }
+a{ color:inherit; text-decoration:none; }
+a:hover{ opacity:.9; }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
   outline: 3px solid var(--focus); outline-offset: 2px;
 }
 
-/* Midden content — top padding voor fixed header */
+.header-gap{ height: var(--header-h); }
+
+/* ===== theme bg (zoals menukaart.css) ===== */
+.theme-walrus-cream{
+  background-color:#fbf5ea;
+  background-image:
+    radial-gradient(80% 50% at 50% -10%, #f5e7d9 0%, #fbf5ea 45%, #ffffff 80%),
+    radial-gradient(900px 500px at 50% 115%, rgba(194,156,30,0.06), rgba(255,255,255,0) 60%),
+    radial-gradient(rgba(11,33,64,0.035) 1px, transparent 1px);
+  background-size:auto, auto, 44px 44px;
+  background-position:center top, center bottom, 0 0;
+  background-repeat:no-repeat, no-repeat, repeat;
+}
+
+/* ===== page wrapper (zoals menukaart.css) ===== */
 .page-content{
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 24px 20px 60px;
-  padding-top: calc(var(--header-h) + 12px);
+  max-width: 1580px;
+  margin:0 auto;
+  padding:22px 18px 56px;
   min-height: calc(100vh - var(--header-h));
   overflow-x: clip;
 }
 
-/* ===============================
-  Header / Navbar (via nav.php)
-  =============================== */
+/* ===== NAV (gekopieerd-stijl uit menukaart.css) ===== */
 header{
   position:fixed; inset:0 0 auto 0; height:var(--header-h);
   background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
-  z-index:2000; display:flex; align-items:center; padding:0 clamp(8px,3vw,24px);
+  z-index:2000; display:flex; align-items:center; padding:0 clamp(10px,3vw,22px);
   box-shadow:0 12px 25px rgba(0,0,0,.75);
 }
-.topnav{ width:100%; max-width: var(--nav-max); margin:0 auto; display:flex; align-items:center; gap:18px; }
+.topnav{
+  width:100%; max-width: var(--nav-max); margin:0 auto;
+  display:flex; align-items:center; gap:18px;
+}
 .logo{ display:flex; flex-direction:column; text-decoration:none; }
 .logo .walrus{
   font-family:'Alex Brush', cursive; font-size: clamp(28px, 4vw, 42px);
@@ -64,12 +72,15 @@ header{
 .nav-list{ list-style:none; display:flex; align-items:center; gap:8px; margin:0; padding:0; flex:1; }
 .nav-list .push-right{ margin-left:auto; display:flex; gap:8px; }
 
-/* Nav-knoppen — Playfair (logo blijft anders) */
 .nav-btn{
   display:inline-flex; align-items:center; justify-content:center;
   padding:9px 12px; background:transparent; color:#fff; border:1px solid transparent;
-  border-radius:10px; text-decoration:none; white-space:nowrap;
-  font-family:'Playfair Display', serif; font-weight:800; letter-spacing:.01em; text-transform:none;
+  border-radius:10px;
+  font-family:'Playfair Display', serif;
+  font-weight:800;
+  letter-spacing:.01em;
+  text-transform:none;
+  text-decoration:none; white-space:nowrap;
   transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 .nav-btn:hover,
@@ -80,13 +91,10 @@ header{
   box-shadow:0 6px 16px rgba(0,0,0,.18);
 }
 
-/* ===============================
-  Pagina-titel (NIET AANRAKEN)
-  =============================== */
+/* ===== Page title (zelfde als menukaart.css) ===== */
 .page-title{
   display:flex; align-items:center; justify-content:center;
-  gap: clamp(12px, 2.5vw, 28px);
-  margin: 4px 0 20px;
+  gap: clamp(12px, 2.5vw, 28px); margin:4px 0 10px;
 }
 .title-text{
   margin:0; font-family:'Playfair Display', serif; font-weight:700;
@@ -96,105 +104,85 @@ header{
 .title-line{ display:block; height: clamp(10px, 1.6vw, 16px); width:auto; opacity:.9; }
 @media (max-width:600px){ .title-line{ display:none; } }
 
-/* ===============================
-  Zakelijk content
-  =============================== */
+/* ===== ZAKELIJK hero/inhoud ===== */
 .zakelijk-hero{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-bottom: 14px;
+  display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;
 }
-.zakelijk-hero img{
-  width:100%; height:auto; display:block; border-radius:12px;
-  box-shadow:0 10px 28px rgba(0,0,0,.12);
+.zakelijk-hero .hero-item{
+  position: relative; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0,0,0,.10);
+  aspect-ratio: 16 / 9;
+}
+.zakelijk-hero .hero-item img{
+  width:100%; height:100%; display:block; object-fit: cover; object-position: center;
+}
+@media (max-width:900px){
+  .zakelijk-hero{ grid-template-columns:1fr; }
+  .zakelijk-hero .hero-item{ aspect-ratio: 21/9; }
 }
 
 .zakelijk-content .lead-h{
-  font-family:'Playfair Display', serif;
-  font-size: clamp(22px, 2.6vw, 32px);
-  margin: 10px 0 6px;
-  color: var(--ink);
+  font-family:'Playfair Display', serif; font-size: clamp(22px, 2.6vw, 32px);
+  margin: 10px 0 6px; color: var(--ink);
 }
 .zakelijk-content .lead-p{
-  font-size: 18px;
-  line-height: 1.65;
-  margin: 0 0 12px;
-  color: #333;
+  font-size: 18px; line-height: 1.65; margin: 0 0 12px; color: #333;
 }
-
 .zakelijk-content h3{
-  font-family:'Playfair Display', serif;
-  margin: 16px 0 8px;
-  color: var(--ink);
+  font-family:'Playfair Display', serif; margin: 16px 0 8px; color: var(--ink);
 }
 .zakelijk-content p{ color:#333; line-height:1.6; margin:0 0 12px; }
-
-.usp-list{
-  margin: 0 0 12px 18px;
-  padding: 0;
-}
+.usp-list{ margin: 0 0 12px 18px; padding: 0; }
 .usp-list li{ margin: 6px 0; }
 
-/* In-page call to action (rood) */
+/* CTA zonder gele glow */
 .cta-wrap{ margin: 14px 0 4px; }
 .btn-red{
-  display:inline-block;
-  border: 2px solid var(--walrus-red);
-  background: var(--walrus-red);
-  color:#ffffff;
-  font-family:'Playfair Display', serif;
-  font-weight:800;
-  padding:10px 16px;
-  border-radius:12px;
-  text-decoration:none;
+  display:inline-block; border:2px solid var(--brand-gold); background: var(--brand-gold);
+  color:#fff; font-family:'Playfair Display', serif; font-weight:800;
+  padding:10px 16px; border-radius:12px; text-decoration:none;
   transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
 }
-.btn-red:hover{
-  filter: brightness(.95);
-  transform: translateY(-1px);
-  box-shadow:0 8px 24px rgb(255, 247, 0);
-}
+.btn-red:hover{ filter: brightness(.95); transform: translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.12); }
 
-/* ===============================
-  Divider
-  =============================== */
+/* Divider */
 .section-divider{ height:1px; background:#eee; margin:36px auto; max-width:1200px; }
 
-/* ===============================
-  Formulier
-  =============================== */
+/* ===== Formulier (jouw wensen) ===== */
 .apply-form{
   background:#fff; border:1px solid #eee; border-radius:12px; padding:20px;
   box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
 .apply-form h2{
-  font-family:'Playfair Display', serif;
-  font-size: clamp(22px, 3.2vw, 34px);
+  font-family:'Playfair Display', serif; font-size: clamp(22px, 3.2vw, 34px);
   margin:0 0 8px; color:var(--ink);
 }
 .form-intro{ margin:0 0 18px; color:#333; }
-.form-subtitle{
-  font-family:'Playfair Display', serif; font-weight:700; color:#222; font-size:18px; margin:18px 0 10px;
+
+/* tel-links donker + onderstreept */
+.page-content a[href^="tel:"]{
+  color:#333 !important;
+  text-decoration: underline !important;
+  text-decoration-color:#333 !important;
 }
 
-/* Grids */
+.form-subtitle{
+  display:flex; align-items:center; gap:8px;
+  font-family:'Playfair Display', serif; font-weight:700; color:#222; font-size:18px; margin:18px 0 10px;
+}
+.req-note{ font-weight:600; font-size:12px; color:#666; }
+.req{ color:#b60000; } /* rode sterretjes */
+
 .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 .form-row-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
 
-/* Fields */
 .form-field{ display:flex; flex-direction:column; gap:6px; }
 label{ font-weight:600; }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea{
+input[type="text"], input[type="email"], input[type="tel"], select, textarea{
   border:1px solid var(--field-border);
   border-radius:8px;
-  padding:10px 12px;
-  font-size:16px;
+  padding:10px 12px; font-size:16px;
   transition:border-color .15s ease, box-shadow .15s ease;
   width:100%;
 }
@@ -205,26 +193,17 @@ input:focus, select:focus, textarea:focus{
   box-shadow:0 0 0 3px rgb(124 182 255 / 30%);
   outline:0;
 }
-label span[aria-hidden="true"]{ color:#03befc; margin-left:2px; }
 
-/* Actions */
 .form-actions{ display:flex; justify-content:flex-end; margin-top:18px; }
 .btn-submit{
-  appearance:none; border:2px solid var(--walrus-red);
-  background: var(--walrus-red);
+  appearance:none; border:2px solid var(--brand-gold); background: var(--brand-gold);
   color:#fff; font-weight:800; font-family:'Playfair Display', serif;
   padding:10px 18px; border-radius:12px; cursor:pointer;
   transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;
 }
-.btn-submit:hover{
-  filter: brightness(0.95);
-  transform:translateY(-1px);
-  box-shadow:0 8px 24px rgba(0,0,0,.12);
-}
+.btn-submit:hover{ filter: brightness(0.95); transform:translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.12); }
 
-/* ===============================
-  Infobar (NIET AANRAKEN)
-  =============================== */
+/* ===== INFOBAR (zoals menukaart.css) ===== */
 .infobar{
   position:relative; background:url('https://www.dewalrus.nl/websites/implementatie/website/images/bg-footer.jpg') center/cover no-repeat;
   color:#fff; padding:12px 20px 18px; margin-top:0; box-shadow:0 -14px 32px rgba(0,0,0,.534);
@@ -248,30 +227,11 @@ label span[aria-hidden="true"]{ color:#03befc; margin-left:2px; }
 .infobar-brand .walrus{ font-family:'Alex Brush', cursive; font-size:22px; color:#fff; line-height:1; display:block; }
 .infobar-brand .grandcafe{ font-family:Georgia, serif; font-size:11px; letter-spacing:2px; color:#fff; text-transform:uppercase; display:block; margin-top:2px; }
 
-/* ===== THEME: Walrus Cream ===== */
-.theme-walrus-cream{
-  background-color:#fbf5ea;
-  background-image:
-    radial-gradient(80% 50% at 50% -10%, #f5e7d9 0%, #fbf5ea 45%, #ffffff 80%),
-    radial-gradient(900px 500px at 50% 115%, rgba(194,156,30,0.06), rgba(255,255,255,0) 60%),
-    radial-gradient(rgba(11,33,64,0.035) 1px, transparent 1px);
-  background-size:auto, auto, 44px 44px;
-  background-position:center top, center bottom, 0 0;
-  background-repeat:no-repeat, no-repeat, repeat;
-}
-.theme-walrus-cream .apply-form{ background:#ffffff; box-shadow:0 8px 24px rgba(0,0,0,.08); }
-.theme-walrus-cream .title-text{ color: var(--ink); }
-.theme-walrus-cream .title-line{ opacity:.9; filter:none; }
-
-/* ===============================
-  Responsive
-  =============================== */
-@media (max-width:960px){
-  .page-content{ padding:20px 16px 56px; }
+/* ===== Responsive (zoals menukaart.css aangevuld) ===== */
+@media (max-width:1100px){
   .zakelijk-hero{ grid-template-columns:1fr; }
-  .form-row{ grid-template-columns:1fr; }
-  .form-row-3{ grid-template-columns:1fr; }
 }
 @media (max-width:780px){
-  .topnav{ flex-wrap: wrap; }
+  .page-content{ padding:18px 14px 52px; }
+  .topnav{ flex-wrap:wrap; }
 }

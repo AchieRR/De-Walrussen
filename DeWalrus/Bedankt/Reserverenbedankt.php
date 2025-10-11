@@ -1,6 +1,5 @@
 <?php
 // DeWalrus/Bedankt/Reserverenbedankt.php
-// Valideert reservering, schrijft naar DB, toont bevestiging.
 
 session_start();
 require __DIR__ . '/../db.php';
@@ -8,34 +7,36 @@ require __DIR__ . '/../db.php';
 function bad($msg){ http_response_code(400); exit($msg); }
 function e($v){ return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
 
-// ---- CSRF
 if (empty($_POST['csrf']) || empty($_SESSION['csrf']) || !hash_equals($_SESSION['csrf'], $_POST['csrf'])) {
   bad('Ongeldige sessie (CSRF).');
 }
+if (!empty($_POST['website'])) { bad('Ongeldige invoer.'); }
 
-// ---- Honeypot
-if (!empty($_POST['website'])) {
-  // Bot gespot
-  bad('Ongeldige invoer.');
-}
-
-// ---- verplichte velden
-$required = ['voornaam','achternaam','email','telefoon','locatie','type','date','guests','time'];
+// verplichte velden behalve contact (email/telefoon is minstens één)
+$required = ['voornaam','achternaam','locatie','type','date','guests','time'];
 foreach ($required as $f) {
   if (!isset($_POST[$f]) || $_POST[$f] === '') bad("Ontbrekend veld: $f");
 }
 
-// ---- normaliseren + validaties
 $voornaam   = trim($_POST['voornaam']);
 $tussen     = ($_POST['tussenvoegsel'] ?? '') !== '' ? trim($_POST['tussenvoegsel']) : null;
 $achternaam = trim($_POST['achternaam']);
 
-$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-if (!$email) bad('Ongeldig e-mailadres.');
+$email = null;
+if (isset($_POST['email']) && $_POST['email'] !== '') {
+  $tmp = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+  if (!$tmp) bad('Ongeldig e-mailadres.');
+  $email = $tmp;
+}
 
-$tel = preg_replace('/\s+/', '', $_POST['telefoon']);
-$tel = preg_replace('/^00/', '+', $tel); // 0031 -> +31
-if (!preg_match('/^(0\d{9}|\+31\d{9})$/', $tel)) bad('Ongeldig telefoonnummer.');
+$tel = null;
+if (isset($_POST['telefoon']) && $_POST['telefoon'] !== '') {
+  $t = preg_replace('/\s+/', '', $_POST['telefoon']);
+  $t = preg_replace('/^00/', '+', $t);
+  if (!preg_match('/^(0\d{9}|\+31\d{9})$/', $t)) bad('Ongeldig telefoonnummer.');
+  $tel = $t;
+}
+if ($email === null && $tel === null) bad('Vul e-mail en/of telefoon in.');
 
 $locaties = ['Leeuwarden','Sneek'];
 $locatie  = $_POST['locatie'];
@@ -49,7 +50,7 @@ $types = [
 $type = $_POST['type'];
 if (!in_array($type, $types, true)) bad('Ongeldig type reservering.');
 
-$date = $_POST['date']; // YYYY-MM-DD
+$date = $_POST['date'];                       // YYYY-MM-DD
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) bad('Ongeldige datum.');
 $today = new DateTime('today');
 $dObj  = DateTime::createFromFormat('Y-m-d', $date);
@@ -58,45 +59,48 @@ $max   = (clone $today)->modify('+365 days');
 if ($dObj < $today) bad('Datum kan niet in het verleden.');
 if ($dObj > $max)   bad('Datum te ver in de toekomst.');
 
-$time = $_POST['time']; // HH:MM
+$time = $_POST['time'];                       // HH:MM
 if (!preg_match('/^(?:[01]\d|2[0-3]):[0-5]\d$/', $time)) bad('Ongeldige tijd.');
+list($th,$tm) = array_map('intval', explode(':', $time));
+if ($th < 10 || $th > 23 || ($tm % 15) !== 0) bad('Tijd buiten toegestane tijden.');
+if ($dObj->format('Y-m-d') === $today->format('Y-m-d')) {
+  $now = new DateTime();                      // servertijd
+  if ($time < $now->format('H:i')) {
+    bad('Tijd kan niet in het verleden liggen.');
+  }
+}
 
 $guests = filter_var($_POST['guests'], FILTER_VALIDATE_INT, ['options'=>['min_range'=>1,'max_range'=>15]]);
 if ($guests === false) bad('Aantal gasten moet tussen 1 en 15 zijn.');
 
-// ---- INSERT
+// --------- SQL: géén user_agent/ip_address meer (die kolommen zitten niet in je tabel)
 $sql = "INSERT INTO reservations
   (voornaam, tussenvoegsel, achternaam, email, telefoon,
-   locatie, type, reservation_date, reservation_time, guests,
-   user_agent, ip_address)
+   locatie, type, reservation_date, reservation_time, guests)
   VALUES
   (:voornaam,:tussen,:achternaam,:email,:telefoon,
-   :locatie,:type,:rdate,:rtime,:guests,
-   :ua, INET6_ATON(:ip))";
+   :locatie,:type,:rdate,:rtime,:guests)";
 
 $pdo->prepare($sql)->execute([
   ':voornaam'   => $voornaam,
   ':tussen'     => $tussen,
   ':achternaam' => $achternaam,
-  ':email'      => $email,
-  ':telefoon'   => $tel,
+  ':email'      => $email   ?? '',     // lege string i.p.v. NULL vanwege NOT NULL schema
+  ':telefoon'   => $tel     ?? '',
   ':locatie'    => $locatie,
   ':type'       => $type,
   ':rdate'      => $date,
   ':rtime'      => $time . ':00',
   ':guests'     => $guests,
-  ':ua'         => substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 255),
-  ':ip'         => $_SERVER['REMOTE_ADDR'] ?? null,
 ]);
 
-// ---- weergave helpers
 $naamParts = [$voornaam];
 if ($tussen) $naamParts[] = $tussen;
 $naamParts[] = $achternaam;
 $naamVol = implode(' ', $naamParts);
 
 $telDisplay = $tel;
-if (strpos($telDisplay, '+31') === 0) $telDisplay = '+31 ' . substr($telDisplay, 3);
+if ($telDisplay !== null && strpos($telDisplay, '+31') === 0) $telDisplay = '+31 ' . substr($telDisplay, 3);
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -104,16 +108,12 @@ if (strpos($telDisplay, '+31') === 0) $telDisplay = '+31 ' . substr($telDisplay,
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>De Walrus — Bedankt</title>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="Bedankt.css" />
 </head>
 <body class="theme-walrus-cream">
  <?php
-  $BASE = '/'; 
+  $BASE = '/';
   require dirname(__DIR__) . '/nav.php';
 ?>
   <div class="header-gap" aria-hidden="true"></div>
@@ -136,13 +136,13 @@ if (strpos($telDisplay, '+31') === 0) $telDisplay = '+31 ' . substr($telDisplay,
         We hebben je verzoek ontvangen voor <strong><?= e($locatie) ?></strong> op
         <strong><?= e($date) ?></strong> om <strong><?= e($time) ?></strong> voor
         <strong><?= e($guests) ?></strong> personen. Je hoort snel van ons.
-        Vragen? Bel Leeuwarden <a href="tel:0582137740">058 213 7740</a> of Sneek <a href="tel:0515438100">0515 438 100</a>.
+        Vragen? Bel Leeuwarden <a href="tel:0582137740">058 213 7740</a> of Sneek <a href="tel:0515 438 100">0515 438 100</a>.
       </p>
 
       <div class="identity-row">
         <div><span class="k">Naam</span><span class="v"><?= e($naamVol) ?></span></div>
-        <div><span class="k">E-mail</span><span class="v"><?= e($email) ?></span></div>
-        <div><span class="k">Telefoon</span><span class="v"><?= e($telDisplay) ?></span></div>
+        <div><span class="k">E-mail</span><span class="v"><?= e($email ?? '—') ?></span></div>
+        <div><span class="k">Telefoon</span><span class="v"><?= e($telDisplay ?? '—') ?></span></div>
       </div>
 
       <details class="more">
@@ -163,7 +163,6 @@ if (strpos($telDisplay, '+31') === 0) $telDisplay = '+31 ' . substr($telDisplay,
     </div>
   </main>
 
-  <!-- Footer (zelfde stijl als overige pagina’s) -->
   <footer class="infobar">
     <div class="infobar-top-text">Kom langs of bel ons — Bekijk onze socials</div>
     <div class="info-content">
